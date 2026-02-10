@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    @@include('components/layout/head.html')
+</head>
+
+<body class="index">
+    @@include('components/layout/header.html')
+    @@include('components/layout/menu.html')
+    @@include('components/sections/hero.html')
+    @@include('components/sections/about.html')
+    @@include('components/sections/course.html')
+    @@include('components/sections/news.html')
+    @@include('components/sections/helpful.html')
+    @@include('components/sections/hom-carusel.html')
+    @@include('components/sections/backrund.html')
+    <div>
+        <div class="container">
+            @@include('components/sections/services.html')
+            @@include('components/sections/faq.html')
+        </div>
+    </div>
+    @@include('components/sections/links.html')
+    @@include('components/layout/footer.html')
+</body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const header = document.querySelector('.header');
+        if (!header) return;
+
+        function onScroll() {
+            header.classList.toggle('light', window.scrollY <=  751);
+        }
+
+        onScroll();
+        window.addEventListener('scroll', onScroll);
+    });
+
+</script>
+
+</html>

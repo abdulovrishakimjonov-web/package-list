@@ -1,0 +1,141 @@
+<section class="helpful">
+    <div class="container">
+        <div class="helpful-wrapper">
+
+            <!-- CHAP TOMON: 680px -->
+            <div class="helpful-left">
+                <div class="helpful-left__header">
+                    <h2>Interaktiv Xizmatlar</h2>
+                    <button class="helpful-btn">Batafsil <i class="i-next"></i></button>
+                </div>
+                <div class="helpful-left__cards">
+                    <a href="#" class="helpful-card helpful-card--purple">
+                        <div class="helpful-card__icon">
+                            <img src="../../images/helpful-img-1.svg" alt="">
+                        </div>
+                        <div class="helpful-card__content">
+                            <h3>Akkreditatsiyadan o’tkazish</h3>
+                            <p>Malakani baholash markazlarini akkreditatsiyadan o'tkazish bo'yicha davlat xizmati.</p>
+                        </div>
+                    </a>
+
+                    <a href="#" class="helpful-card helpful-card--blue">
+                        <div class="helpful-card__icon">
+                            <img src="../../images/helpful-img-2.svg" alt="">
+                        </div>
+                        <div class="helpful-card__content">
+                            <h3>Malaka oshirish kurslari</h3>
+                            <p>Tarmoq kengashlariga, Ekspertlarga, Malakani baholash markazlariga shartnoma asosida.</p>
+                        </div>
+                    </a>
+
+                    <a href="#" class="helpful-card helpful-card--cyan">
+                        <div class="helpful-card__icon">
+                            <img src="../../images/helpful-img-3.svg" alt="">
+                        </div>
+                        <div class="helpful-card__content">
+                            <h3>Hujjatlar ekspertizasi</h3>
+                            <p>Tarmoq malaka ramkalari, kasbiy standartlar va baholash vositalari ekspertizadan
+                                o'tkaziladi.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="helpful-right">
+                <div class="helpful-right__header">
+                    <h2>Ko'p beriladigan savollar</h2>
+                    <button class="helpful-btn" style="width: auto;">Batafsil <i class="i-next"></i></button>
+                </div>
+                <div class="helpful-right__accordion">
+
+                    <div class="accordion-item">
+                        <button class="accordion-toggle">
+                            Baholovchi ekspert kim?
+                            <span><i class="i-pilus"></i></span>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="top"></div>
+                            <p>Baholovchi ekspert - bu muayyan sohada chuqur bilim va tajribaga ega bo'lgan
+                                mutaxassisdir.</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <button class="accordion-toggle">
+                            Akkreditatsiyadan o'tkazish jarayoni?
+                            <span><i class="i-pilus"></i></span>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="top"></div>
+                            <p>lorem100</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <button class="accordion-toggle">
+                            Milliy malaka tizimi nima?
+                            <span><i class="i-pilus"></i></span>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="top"></div>
+                            <p>Milliy malaka tizimi - bu kadrlarning malakasiga qo'yilgan talablarni tartibga soluvchi
+                                tizim.</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <button class="accordion-toggle">
+                            Milliy malaka tizimi nima?
+                            <span><i class="i-pilus"></i></span>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="top"></div>
+                            <p>Milliy malaka tizimi - bu kadrlarning malakasiga qo'yilgan talablarni tartibga soluvchi
+                                tizim.</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <button class="accordion-toggle">
+                            Milliy malaka tizimi nima?
+                            <span><i class="i-pilus"></i></span>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="top"></div>
+                            <p>Milliy malaka tizimi - bu kadrlarning malakasiga qo'yilgan talablarni tartibga soluvchi
+                                tizim.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<script>
+    const toggles = document.querySelectorAll(".accordion-toggle");
+    toggles.forEach(toggle => {
+        toggle.addEventListener("click", function () {
+            const item = this.parentElement;
+            const content = this.nextElementSibling;
+
+            document.querySelectorAll(".accordion-item").forEach(el => {
+                if (el !== item) {
+                    el.classList.remove("active");
+                    el.querySelector(".accordion-content").style.maxHeight = null;
+                }
+            });
+
+            item.classList.toggle("active");
+            if (item.classList.contains("active")) {
+                content.style.maxHeight = content.scrollHeight + "px";
+            } else {
+                content.style.maxHeight = null;
+            }
+        });
+    });
+</script>

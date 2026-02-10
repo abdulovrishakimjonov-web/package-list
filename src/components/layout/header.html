@@ -1,0 +1,118 @@
+<header class="header" role="banner">
+    <div class="container">
+        <a href="/" class="logo">
+            <img src="../../images/logo.svg" alt="Logo" class="header-brand-img" />
+            <span>Milliy malaka <br> tizimini rivojlantirish <br> instituti</span>
+        </a>
+
+        <div class="header-top"></div>
+
+        <div class="header-content">
+            <div class="header-actions">
+                <div class="header-actions-action">
+                    <a href="mailto:info@mmtri.uz"><i class="i-maile"></i>info@mmtri.uz</a>
+                    <a href="tel:+998555165453"><i class="i-phone"></i>+99855 516-54-53 (0)</a>
+                </div>
+
+                <div class="header-actions-divider">
+                    <div class="header-actions-divider-icons">
+                        <i class="i-instagram"></i>
+                        <i class="i-telegram"></i>
+                        <i class="i-facebook"></i>
+                        <i class="i-youtube"></i>
+                    </div>
+                    <div class="header-actions-divider-line"></div>
+                    <div class="header-actions-divider-search"><i class="i-search"></i></div>
+                    <div class="header-actions-divider-line"></div>
+
+                    <div class="header-actions-divider-user dropdown-lang" id="langDropdown">
+                        <div class="header-actions-divider-user-uzb">
+                            <img src="../images/uzb.svg" alt="UZB">
+                            <a href="javascript:void(0)">O’zbekcha</a>
+                            <i class="i-dropdown"></i>
+                        </div>
+                        <ul class="dropdown-list">
+                            <li><a href="#"><img src="../../images/ru.png" alt="RUS"> Ruscha</a></li>
+                            <li><a href="#"><img src="../../images/eng.png" alt="ENG"> English</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="top2"></div>
+
+            <div class="header-main">
+                <nav class="header-main-nav">
+                    <div class="nav-item-wrapper">
+                        <a href="#" class="nav-item">Institut <i class="i-dropdown"></i></a>
+                        <ul class="nav-dropdown-menu">
+                            <li><a href="../../faq.html">Biz Haqimizda</a></li>
+                            <li><a href="../../structure.html">Insitut tuzilmasi </a></li>
+                            <li><a href="../../leadership.html">Rahbariyat</a></li>
+                            <li><a href="../../central.html">Markaziy apparat</a></li>
+                            <li><a href="../../manners.html">Odob - axloq qoidalari</a></li>
+                            <li><a href="#">Milliy malaka tizimi “MMT”</a></li>
+                            <li><a href="../../International.html">Xalqaro hamkorlik</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="nav-item-wrapper">
+                        <a href="#" class="nav-item">Faoliyat <i class="i-dropdown"></i></a>
+                        <ul class="nav-dropdown-menu">
+                            <li><a href="../../laws.html">laws</a></li>
+                            <li><a href="#">Korrupsiyaga qarshi kurashish</a></li>
+                            <li><a href="../../equality.html">O’zbekiston Gender Tenglik va Ayollarga Huquq hamda
+                                    imkoniyatlari</a></li>
+                            <li><a href="../../listpage.html">Nashirlar </a></li>
+                            <li><a href="../../forgive.html">Bo’sh ish o’rinlari</a></li>
+                        </ul>
+                    </div>
+
+                    <a href="../../services.html" class="nav-item">Xizmatlar</a>
+
+                    <div class="nav-item-wrapper">
+                        <a href="#" class="nav-item">Tadbirlar <i class="i-dropdown"></i></a>
+                        <ul class="nav-dropdown-menu">
+                            <li><a href="../../events.html">Konferensiyalar</a></li>
+                            <li><a href="#">Seminar - treninglar</a></li>
+                            <li><a href="#">Uchrashuvlar</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="nav-item-wrapper">
+                        <a href="#" class="nav-item">Axborot Xizmati <i class="i-dropdown"></i></a>
+                        <ul class="nav-dropdown-menu">
+                            <li><a href="../../news-page.html">Yangliklar </a></li>
+                            <li><a href="../../cements.html">E’lonlar </a></li>
+                            <li><a href="../../questions.html">Ko’p beriladigan savollar</a></li>
+                            <li><a href="#">Ochiq ma’lumotlar</a></li>
+                            <li><a href="#">Media</a></li>
+                            <li><a href="#">OAV biz haqimizda</a></li>
+                            <li><a href="#">Matbuot anjumanlari</a></li>
+                            <li><a href="../../press-service.html">Matbuot xizmati bilan bog’lanish</a></li>
+                        </ul>
+                    </div>
+                </nav>
+                <a href="../../contacts.html"><button class="btn-contact">Bog’lanish <i
+                            class="i-next left"></i></button></a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const langDropdown = document.getElementById('langDropdown');
+
+        langDropdown.addEventListener('click', function (e) {
+            e.stopPropagation();
+            this.classList.toggle('active');
+        });
+
+        document.addEventListener('click', function (e) {
+            if (!langDropdown.contains(e.target)) {
+                langDropdown.classList.remove('active');
+            }
+        });
+    });
+</script>

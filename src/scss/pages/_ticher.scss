@@ -1,0 +1,90 @@
+.ticher {
+    &-text {
+        background-color: #ffffffff;
+        padding: 16px;
+        border-radius: 16px;
+        margin-bottom: 16px;
+        h2 {
+            color: #121926;
+            font-size: 30px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+        &-top {
+            width: 100%;
+            height: 0.5px;
+            background-color: #E3E8EF;
+            margin-bottom: 16px;
+        }
+        b {
+            color: #121926;
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        ul {
+            li {
+                color: #121926;
+                font-size: 18px;
+                font-family: 500;
+            }
+        }
+    }
+    &-input {
+        background-color: #ffffffff;
+        padding: 16px;
+        border-radius: 16px;
+        h2 {
+           color: #121926;
+            font-size: 30px;
+            font-weight: 600;
+            margin-bottom: 16px; 
+        }
+        &-top {
+            width: 100%;
+            height: 0.5px;
+            background-color: #E3E8EF;
+            margin-bottom: 16px;
+        }
+        &-img {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-bottom: 20px;
+            &-flex {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                &-p1 {
+                    font-size: 18px;
+                    color: #4B5565;
+                    font-weight: 500;
+                }
+                &-p2 {
+                    font-size: 18px;
+                    color: #4B5565;
+                    font-weight: 600;
+                }
+            }
+        }
+        form {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+        &-btn {
+            background:linear-gradient(to right, #083D91, #0071DC);
+            border-radius: 12px;
+            border: none;
+            width: 130px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 600;
+        }
+    }
+}

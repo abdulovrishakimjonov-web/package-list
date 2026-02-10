@@ -1,0 +1,36 @@
+.xizmatlar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  &-card {
+    width: 520px;
+    border-radius: 16px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    cursor: pointer;
+    h2 {
+      font-size: 24px;
+      font-weight: 600;
+      color: #ffffffff;
+      margin-bottom: 8px;
+    }
+    p {
+      font-size: 18px;
+      font-weight: 400px;
+      color: #EEF2F6;
+    }
+
+  }
+
+  .pink {
+    background: linear-gradient(to right, #875bf7, #a48afb);
+  }
+  .blue {
+    background: linear-gradient(to right, #1570ef, #2e90fa);
+  }
+  .cyan {
+    background: linear-gradient(to right, #088ab2, #06aed4);
+  }
+}

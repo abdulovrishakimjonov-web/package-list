@@ -1,0 +1,55 @@
+.publications {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  &-card {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    &-text {
+        position: relative;
+        top: -40px;
+        background-color:#F8FAFC;
+        border-radius: 16px;
+        padding: 16px;
+        h3 {
+            font-size: 18px;
+            font-weight: 500;
+            color: #000000;
+            margin-bottom: 5px;
+        }
+        p {
+            font-size: 14px;
+            font-weight: 400;
+            color: #000000;
+            opacity: 0.6;
+            margin-bottom: 10px;
+        }
+        &-link {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            p {
+                display: flex;
+                align-items: center;
+                gap: 6px;
+                font-size: 16px;
+                font-weight: 500;
+                color: #000000;
+                i {
+                    font-size: 20px;
+                    color: #145FCB;
+                }
+            }
+        }
+
+    }
+  }
+  &-top {
+    width: 100%;
+    height: 0.5px;
+    background-color: #00000025;
+    margin-bottom: 10px;
+  }
+}      

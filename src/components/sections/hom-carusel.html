@@ -1,0 +1,101 @@
+<section class="cta">
+    <div class="container">
+        <h2>Foydali havolalar</h2>
+    </div>
+    <div class="ovul owl-carousel owl-theme">
+
+        <div class="cta-card">
+            <div class="cta-card-inner">
+                <img src="../../images/hom-carusel-img-3.svg" alt="logo">
+                <div class="cta-card-text">
+                    <p>O'zbekiston Respublikasi Prezidentining rasmiy veb-sayti</p>
+                    <a href="http://www.president.uz">http://www.president.uz</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-card">
+            <div class="cta-card-inner">
+                <img src="../../images/dawun.svg" alt="logo">
+                <div class="cta-card-text">
+                    <p>O'zbekiston Respublikasi Oliy Majlisining Inson huquqlari bo'yicha vakili (Ombudsman)</p>
+                    <a href="http://ombudsman.uz">http://ombudsman.uz</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-card">
+            <div class="cta-card-inner">
+                <img src="../../images/logo.svg" alt="logo">
+                <div class="cta-card-text">
+                    <p>Normativ-huquqiy hujjatlar loyihalarini muhokama qilish portali</p>
+                    <a href="http://regulation.gov.uz">http://regulation.gov.uz</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-card">
+            <div class="cta-card-inner">
+                <img src="../../images/hom-carusel-img-4.svg" alt="logo">
+                <div class="cta-card-text">
+                    <p>Jamiyatiy murqaratlar portali</p>
+                    <a href="http://monitoring.uz">http://monitoring.uz</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-card">
+            <div class="cta-card-inner">
+                <img src="../../images/logo.svg" alt="logo">
+                <div class="cta-card-text">
+                    <p>O'zbekiston Respublikasi Majlisma Oliy kengashi</p>
+                    <a href="http://parliament.gov.uz">http://parliament.gov.uz</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-card">
+            <div class="cta-card-inner">
+                <img src="../../images/hom-carusel-img-4.svg" alt="logo">
+                <div class="cta-card-text">
+                    <p>O'zbekiston Respublikasi Majlisma Oliy kengashi</p>
+                    <a href="http://parliament.gov.uz">http://parliament.gov.uz</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script>
+    $(function () {
+        $('.ovul').owlCarousel({
+            items: 5,
+            center: true,
+            loop: true,
+            margin: 20,
+            nav: false,
+            dots: false,
+            autoplay: true,
+            autoplayTimeout: 4000,
+            smartSpeed: 800,
+
+            responsive: {
+                0: {
+                    items: 1,
+                    center: false
+                },
+                576: {
+                    items: 3,
+                    center: true
+                },
+                992: {
+                    items: 5,
+                    center: true
+                }
+            }
+        });
+    });
+</script>
