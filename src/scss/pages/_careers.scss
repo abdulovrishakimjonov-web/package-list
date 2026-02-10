@@ -1,153 +1,49 @@
-.careers {
+.forgive {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 16px;
-
-    @media(max-width:1279px) {
-        grid-template-columns: 1fr;
-    }
-
-    &-item {
-        background: #fff;
-        padding: 16px !important;
-        border-radius: 12px;
-        display: flex;
-        flex-direction: column;
-        @include font500(#757D8E, 18px);
-        line-height: 140%;
-
-        i {
-            color: #25575A;
-            font-size: 22px;
+    &-card {
+        // width: 407px;
+        border-radius: 16px;
+        background-color: #ffffffff;
+        h3 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #000000;
+            padding: 16px;
         }
-
-        .bold {
-            @include font700(#061422, 18px);
-            line-height: 140%;
+        &-top {
+            width: 100%;
+            height: 0.5px;
+            background-color: #E3E8EF;
+            margin-bottom: 16px;
         }
-
-        &-wrapper {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
+        p {
+            display: flex;
+            align-items: center;
             gap: 12px;
-
-            @media(max-width:1279px) {
+            color: #364152;
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 20px;
+            padding: 0px 16px;
+        }
+        &-left {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px;
+            background-color: #F8FAFC;
+            border-radius: 0px 0px 12px 12px;
+            b {
                 display: flex;
-                flex-direction: column;
-            }
-
-            .bold {
-                @include font700(#061422, 18px);
-                line-height: 140%;
-            }
-        }
-
-        &-content {
-            display: flex;
-            align-items: center;
-            flex-direction: row;
-            gap: 8px;
-
-            i {
-                font-size: 22px;
-            }
-        }
-    }
-
-    &-title {
-        @include font700(#061422, 22px);
-        line-height: 130%;
-        margin-bottom: 4px;
-        color: #061422;
-    }
-
-    &-desc {
-        line-height: 140%;
-        @include font500(#3D4B5D, 18px);
-    }
-
-    hr {
-        border-top: 1px solid #E2E8F2;
-        opacity: 1;
-
-    }
-
-    &-footer {
-        display: flex;
-        gap: 12px;
-        align-items: center;
-        flex-direction: row;
-
-        i {
-            color: #B7BBCB;
-
-        }
-
-        .date,
-        .view {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            gap: 4px;
-            @include font500(#3D4B5D, 18px);
-            line-height: 140%;
-        }
-
-        .button {
-            background: transparent;
-            color: #25575A !important;
-            box-shadow: none;
-            padding: 0;
-            height: unset;
-            gap: 2px;
-            border: 0;
-
-            i {
-                color: #25575A;
-                font-size: 20px;
-
-            }
-        }
-    }
-
-    &-view {
-
-
-        &-header {
-            margin-bottom: 12px;
-            background: #fff;
-            border-radius: 12px;
-            padding: 16px;
-        }
-
-        &-body {
-            margin-bottom: 12px;
-            background: #fff;
-            border-radius: 12px;
-            padding: 16px;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-
-            &-title {
-                @include font700(#061422, 22px);
-                margin-bottom: 4px;
-                line-height: 130%;
-            }
-
-            &-desc {
-                line-height: 140%;
-                @include font500(#3D4B5D, 18px);
-                margin-bottom: 16px;
-            }
-
-            .button {
-                background: #25575A;
-                gap: 4px;
-                color: #fff;
-
+                align-items: center;
+                gap: 6px;
+                color: #000000;
+                font-size: 16px;
+                font-weight: 500;
                 i {
-                    font-size: 22px;
+                    color: #145FCB;
                 }
             }
         }
