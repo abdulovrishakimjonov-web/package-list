@@ -8,7 +8,6 @@
     @include devices(md) {
       margin-bottom: 20px;
     }
-
     @include devices(sm) {
       margin-bottom: 15px;
     }
@@ -23,36 +22,45 @@
   @include devices(sm) {
     font-size: 13px;
   }
-
   @include devices(xs) {
     font-size: 12px;
   }
 
+  /* ================= CARD 4 ================= */
   &-card4 {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     background-color: #ffffff;
     border-radius: 12px;
     background-image: url("../../images/events-img.png");
     background-repeat: no-repeat;
     cursor: pointer;
     margin-bottom: 30px;
+
+    /* ✅ details card ichida chiqishi uchun */
     overflow: hidden;
 
     @include devices(lg) {
       margin-bottom: 25px;
     }
-
     @include devices(md) {
-      flex-direction: column;
       background-image: none;
       margin-bottom: 20px;
+      position: relative;
     }
-
     @include devices(sm) {
       border-radius: 10px;
       margin-bottom: 15px;
+    }
+
+    /* ✅ cardning yuqori qismi (oldingi flex layout) */
+    &-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      @include devices(md) {
+        flex-direction: column;
+        align-items: stretch;
+      }
     }
 
     &-img {
@@ -80,7 +88,7 @@
     }
 
     &-line {
-      left: 45px;
+      left: 10px;
       width: 15px;
       height: 334px;
       background-color: #063462;
@@ -99,7 +107,7 @@
 
     &-gerb {
       position: relative;
-      left: 130px;
+      left: 60px;
       z-index: 10;
 
       @include devices(lg) {
@@ -129,21 +137,6 @@
       }
     }
 
-    &-top {
-      width: 100%;
-      height: 0.5px;
-      background-color: #e3e8ef;
-      margin-bottom: 16px;
-
-      @include devices(md) {
-        margin-bottom: 14px;
-      }
-
-      @include devices(sm) {
-        margin-bottom: 12px;
-      }
-    }
-
     &-text {
       position: relative;
       left: 49px;
@@ -164,7 +157,6 @@
       @include devices(sm) {
         padding: 16px;
       }
-
       @include devices(xs) {
         padding: 12px;
       }
@@ -181,21 +173,17 @@
         @include devices(lg) {
           font-size: 16px;
         }
-
         @include devices(md) {
           font-size: 15px;
           margin-bottom: 8px;
         }
-
         @include devices(sm) {
           font-size: 14px;
           gap: 6px;
         }
-
         @include devices(xs) {
           font-size: 13px;
         }
-
         @include devices(xxs) {
           font-size: 12px;
         }
@@ -209,12 +197,10 @@
           @include devices(md) {
             height: 22px;
           }
-
           @include devices(sm) {
             width: 3px;
             height: 20px;
           }
-
           @include devices(xs) {
             height: 18px;
           }
@@ -231,22 +217,18 @@
           font-size: 24px;
           margin-bottom: 24px;
         }
-
         @include devices(md) {
           font-size: 22px;
           margin-bottom: 20px;
         }
-
         @include devices(sm) {
           font-size: 20px;
           margin-bottom: 16px;
         }
-
         @include devices(xs) {
           font-size: 18px;
           margin-bottom: 14px;
         }
-
         @include devices(xxs) {
           font-size: 16px;
           margin-bottom: 12px;
@@ -263,12 +245,10 @@
           gap: 12px;
           margin-bottom: 14px;
         }
-
         @include devices(md) {
           gap: 10px;
           margin-bottom: 12px;
         }
-
         @include devices(sm) {
           grid-template-columns: 1fr;
           gap: 8px;
@@ -290,25 +270,21 @@
             font-size: 15px;
             padding: 9px 14px;
           }
-
           @include devices(md) {
             font-size: 14px;
             padding: 8px 12px;
             border-radius: 10px;
           }
-
           @include devices(sm) {
             font-size: 13px;
             padding: 8px 12px;
             gap: 6px;
           }
-
           @include devices(xs) {
             font-size: 12px;
             padding: 7px 10px;
             border-radius: 8px;
           }
-
           @include devices(xxs) {
             font-size: 11px;
             padding: 6px 8px;
@@ -322,15 +298,12 @@
             @include devices(lg) {
               font-size: 22px;
             }
-
             @include devices(md) {
               font-size: 20px;
             }
-
             @include devices(sm) {
               font-size: 18px;
             }
-
             @include devices(xs) {
               font-size: 16px;
             }
@@ -346,7 +319,6 @@
         @include devices(md) {
           gap: 12px;
         }
-
         @include devices(sm) {
           flex-direction: column;
           align-items: stretch;
@@ -372,39 +344,25 @@
             font-size: 15px;
             padding: 9px 14px;
           }
-
           @include devices(md) {
             font-size: 14px;
             padding: 8px 12px;
             border-radius: 10px;
           }
-
           @include devices(sm) {
             font-size: 13px;
             padding: 8px 12px;
             gap: 6px;
             width: 100%;
           }
-
           @include devices(xs) {
             font-size: 12px;
             padding: 7px 10px;
             border-radius: 8px;
           }
-
           @include devices(xxs) {
             font-size: 11px;
             padding: 6px 8px;
-          }
-
-          i {
-            @include devices(xs) {
-              font-size: 14px;
-            }
-
-            @include devices(xxs) {
-              font-size: 12px;
-            }
           }
 
           &:hover {
@@ -418,34 +376,46 @@
 }
 
 .lider-details-wrapper {
-  background-color: #e3e8ef;
+  width: 100%;
+  display: none;
+  background: transparent; 
+  padding: 20px 25px 25px 25px;
+
+  @include devices(md) {
+    padding: 0 20px 20px 20px;
+  }
+  @include devices(sm) {
+    padding: 0 16px 16px 16px;
+  }
+  @include devices(xs) {
+    padding: 0 12px 12px 12px;
+  }
+
+  &.is-open {
+    display: block;
+  }
 }
 
 .lider-details {
   display: none;
-  background: #ffffff;
-  padding: 25px;
-  border-radius: 16px;
-  border: 1px solid #e3e8ef;
+  background: transparent; 
+  border: 0;
+  border-radius: 0;
+  margin: 0;
+  padding: 0;
   animation: slideDown 0.3s ease-out;
-  margin-bottom: 30px;
+  border-radius: 12px;
+  &.is-active {
+    display: block;
+    padding-top: 18px;
+    border-top: 1px solid #e3e8ef;
 
-  @include devices(md) {
-    padding: 20px;
-    margin-bottom: 25px;
-    border-radius: 14px;
-  }
-
-  @include devices(sm) {
-    padding: 16px;
-    margin-bottom: 20px;
-    border-radius: 12px;
-  }
-
-  @include devices(xs) {
-    padding: 12px;
-    margin-bottom: 15px;
-    border-radius: 10px;
+    @include devices(sm) {
+      padding-top: 14px;
+    }
+    @include devices(xs) {
+      padding-top: 12px;
+    }
   }
 
   h5 {
@@ -457,17 +427,14 @@
       font-size: 16px;
       margin-bottom: 12px;
     }
-
     @include devices(sm) {
       font-size: 15px;
       margin-bottom: 10px;
     }
-
     @include devices(xs) {
       font-size: 14px;
       margin-bottom: 8px;
     }
-
     @include devices(xxs) {
       font-size: 13px;
     }
@@ -488,18 +455,15 @@
         padding-left: 18px;
         margin-bottom: 8px;
       }
-
       @include devices(sm) {
         font-size: 14px;
         padding-left: 16px;
       }
-
       @include devices(xs) {
         font-size: 13px;
         padding-left: 14px;
         margin-bottom: 6px;
       }
-
       @include devices(xxs) {
         font-size: 12px;
       }
@@ -509,6 +473,22 @@
         position: absolute;
         left: 0;
       }
+    }
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #121926;
+
+    @include devices(md) {
+      font-size: 15px;
+    }
+    @include devices(sm) {
+      font-size: 14px;
+    }
+    @include devices(xs) {
+      font-size: 13px;
     }
   }
 }
