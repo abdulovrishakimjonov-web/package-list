@@ -241,6 +241,32 @@
     <div class="offcanvas-overlay" id="offcanvasOverlay"></div>
 </header>
 
+<script>
+  const langDropdown = document.getElementById("langDropdown");
+
+  if (langDropdown) {
+    const trigger = langDropdown.querySelector(".header-actions-divider-user-uzb");
+    const menuLinks = langDropdown.querySelectorAll(".dropdown-list a");
+
+    trigger.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      langDropdown.classList.toggle("active");
+    });
+
+    menuLinks.forEach((a) => {
+      a.addEventListener("click", (e) => {
+        e.preventDefault();
+        langDropdown.classList.remove("active");
+      });
+    });
+
+    document.addEventListener("click", () => {
+      langDropdown.classList.remove("active");
+    });
+  }
+</script>
+
     <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasMenu"
     aria-labelledby="offcanvasMenuLabel">
     <div class="offcanvas-header">

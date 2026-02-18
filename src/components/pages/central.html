@@ -163,21 +163,18 @@
                 const targetContent = document.getElementById(targetId);
                 const currentCard = this.closest('.lider-card1');
                 
-                // Shu kartadagi barcha detaillarni yopish
                 currentCard.querySelectorAll('.lider-details').forEach(detail => {
                     if (detail.id !== targetId) {
                         detail.classList.remove('active');
                     }
                 });
                 
-                // Shu kartadagi barcha buttonlardan active classni olib tashlash
                 currentCard.querySelectorAll('.toggle-btn').forEach(btn => {
                     if (btn !== this) {
                         btn.classList.remove('active');
                     }
                 });
 
-                // Toggle qilish
                 if (targetContent) {
                     targetContent.classList.toggle('active');
                     this.classList.toggle('active');
