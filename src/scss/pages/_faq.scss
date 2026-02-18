@@ -13,6 +13,16 @@ $text: #121926;
   display: flex;
   flex-direction: column;
   gap: 12px;
+
+  @include devices(sm) {
+    padding: 0 16px;
+    gap: 10px;
+  }
+
+  @include devices(xs) {
+    padding: 0 12px;
+    gap: 8px;
+  }
 }
 
 .faq-item {
@@ -21,26 +31,55 @@ $text: #121926;
   border-radius: 10px;
   border: 1px solid #eef2f6;
   overflow: hidden;
+
+  @include devices(sm) {
+    border-radius: 8px;
+  }
 }
 
 .faq-header {
   width: 100%;
   border: 0;
   background: #fff;
-  padding: 18px 18px;
+  padding: 18px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 16px;
   cursor: pointer;
   text-align: left;
-
   transition: background 0.2s ease;
 
+  @include devices(md) {
+    padding: 16px;
+  }
+
+  @include devices(sm) {
+    padding: 14px;
+    gap: 12px;
+  }
+
+  @include devices(xs) {
+    padding: 12px;
+    gap: 10px;
+  }
+
   .question {
-    color: #121926;
+    color: $text;
     font-weight: 500;
     font-size: 20px;
+
+    @include devices(md) {
+      font-size: 18px;
+    }
+
+    @include devices(sm) {
+      font-size: 16px;
+    }
+
+    @include devices(xs) {
+      font-size: 15px;
+    }
   }
 
   &:hover {
@@ -53,6 +92,18 @@ $text: #121926;
   height: 22px;
   position: relative;
   flex: 0 0 22px;
+
+  @include devices(sm) {
+    width: 20px;
+    height: 20px;
+    flex: 0 0 20px;
+  }
+
+  @include devices(xs) {
+    width: 18px;
+    height: 18px;
+    flex: 0 0 18px;
+  }
 }
 
 .icon::before,
@@ -68,6 +119,10 @@ $text: #121926;
   transition:
     transform 0.2s ease,
     background 0.2s ease;
+
+  @include devices(xs) {
+    width: 10px;
+  }
 }
 
 .icon::after {
@@ -76,20 +131,32 @@ $text: #121926;
 
 /* Body yopiq */
 .faq-body {
-  height: 0; // animatsiya uchun
+  height: 0;
   overflow: hidden;
-  padding: 0 18px; // ochilganda JS bilan past padding qo‘shamiz
+  padding: 0 18px;
   opacity: 0;
   transition:
     height 0.25s ease,
     opacity 0.2s ease,
     padding 0.25s ease;
+
+  @include devices(sm) {
+    padding: 0 14px;
+  }
+
+  @include devices(xs) {
+    padding: 0 12px;
+  }
 }
 
 .faq-body .line {
   height: 1px;
   background: #eef2f6;
   margin: 0 0 12px 0;
+
+  @include devices(xs) {
+    margin-bottom: 10px;
+  }
 }
 
 .faq-body p {
@@ -98,6 +165,19 @@ $text: #121926;
   font-weight: 400;
   line-height: 1.6;
   color: #4b5565;
+
+  @include devices(md) {
+    font-size: 16px;
+  }
+
+  @include devices(sm) {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  @include devices(xs) {
+    font-size: 13px;
+  }
 }
 
 .faq-item.active .faq-header {
@@ -108,6 +188,7 @@ $text: #121926;
   transform: translate(-50%, -50%) rotate(-45deg);
   background: #ff4d4d;
 }
+
 .faq-item.active .icon::after {
   transform: translate(-50%, -50%) rotate(45deg);
   background: #ff4d4d;
@@ -116,4 +197,12 @@ $text: #121926;
 .faq-item.active .faq-body {
   opacity: 1;
   padding: 0 18px 14px;
+
+  @include devices(sm) {
+    padding: 0 14px 12px;
+  }
+
+  @include devices(xs) {
+    padding: 0 12px 10px;
+  }
 }

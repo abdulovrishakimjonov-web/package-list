@@ -2,6 +2,26 @@
   display: flex;
   align-items: center;
   gap: 16px;
+
+  @include devices(lg) {
+    gap: 14px;
+  }
+
+  @include devices(md) {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  @include devices(sm) {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  @include devices(xs) {
+    gap: 10px;
+  }
+
   &-card {
     width: 520px;
     border-radius: 16px;
@@ -10,18 +30,80 @@
     align-items: center;
     gap: 16px;
     cursor: pointer;
+
+    @include devices(xl) {
+      width: 500px;
+    }
+
+    @include devices(lg) {
+      width: calc(50% - 7px);
+      padding: 14px;
+      gap: 14px;
+    }
+
+    @include devices(md) {
+      width: 100%;
+      padding: 12px;
+      gap: 12px;
+      border-radius: 14px;
+    }
+
+    @include devices(sm) {
+      padding: 12px;
+      border-radius: 12px;
+    }
+
+    @include devices(xs) {
+      padding: 10px;
+      gap: 10px;
+    }
+
     h2 {
       font-size: 24px;
       font-weight: 600;
       color: #ffffffff;
       margin-bottom: 8px;
-    }
-    p {
-      font-size: 18px;
-      font-weight: 400px;
-      color: #EEF2F6;
+
+      @include devices(lg) {
+        font-size: 22px;
+      }
+
+      @include devices(md) {
+        font-size: 20px;
+        margin-bottom: 6px;
+      }
+
+      @include devices(sm) {
+        font-size: 18px;
+      }
+
+      @include devices(xs) {
+        font-size: 16px;
+        margin-bottom: 4px;
+      }
     }
 
+    p {
+      font-size: 18px;
+      font-weight: 400;
+      color: #eef2f6;
+
+      @include devices(lg) {
+        font-size: 16px;
+      }
+
+      @include devices(md) {
+        font-size: 15px;
+      }
+
+      @include devices(sm) {
+        font-size: 14px;
+      }
+
+      @include devices(xs) {
+        font-size: 13px;
+      }
+    }
   }
 
   .pink {

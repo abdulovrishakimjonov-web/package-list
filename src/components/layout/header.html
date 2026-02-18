@@ -4,6 +4,10 @@
             <img src="../../images/logo.svg" alt="Logo" class="header-brand-img" />
             <span>Milliy malaka <br> tizimini rivojlantirish <br> instituti</span>
         </a>
+        <button class="header__top--left-item-menu" type="button" aria-controls="offcanvas" aria-expanded="false"
+            data-bs-toggle="offcanvasMenu" data-bs-target="true">
+            <i class="i-menu"></i>
+        </button>
 
         <div class="header-top"></div>
 
@@ -28,7 +32,7 @@
                     <div class="header-actions-divider-user dropdown-lang" id="langDropdown">
                         <div class="header-actions-divider-user-uzb">
                             <img src="../images/uzb.svg" alt="UZB">
-                            <a href="javascript:void(0)">O’zbekcha</a>
+                            <a href="javascript:void(0)">O'zbekcha</a>
                             <i class="i-dropdown"></i>
                         </div>
                         <ul class="dropdown-list">
@@ -51,7 +55,7 @@
                             <li><a href="../../leadership.html">Rahbariyat</a></li>
                             <li><a href="../../central.html">Markaziy apparat</a></li>
                             <li><a href="../../manners.html">Odob - axloq qoidalari</a></li>
-                            <li><a href="../../system.html">Milliy malaka tizimi “MMT”</a></li>
+                            <li><a href="../../system.html">Milliy malaka tizimi "MMT"</a></li>
                             <li><a href="../../International.html">Xalqaro hamkorlik</a></li>
                         </ul>
                     </div>
@@ -61,10 +65,10 @@
                         <ul class="nav-dropdown-menu">
                             <li><a href="../../laws.html">laws</a></li>
                             <li><a href="#">Korrupsiyaga qarshi kurashish</a></li>
-                            <li><a href="../../equality.html">O’zbekiston Gender Tenglik va Ayollarga Huquq hamda
+                            <li><a href="../../equality.html">O'zbekiston Gender Tenglik va Ayollarga Huquq hamda
                                     imkoniyatlari</a></li>
                             <li><a href="../../publications.html">Nashirlar </a></li>
-                            <li><a href="../../careers.html">Bo’sh ish o’rinlari</a></li>
+                            <li><a href="../../careers.html">Bo'sh ish o'rinlari</a></li>
                         </ul>
                     </div>
 
@@ -83,36 +87,131 @@
                         <a href="#" class="nav-item">Axborot Xizmati <i class="i-dropdown"></i></a>
                         <ul class="nav-dropdown-menu">
                             <li><a href="../../news-page.html">Yangliklar </a></li>
-                            <li><a href="../../announcement.html">E’lonlar </a></li>
-                            <li><a href="../../faq.html">Ko’p beriladigan savollar</a></li>
-                            <li><a href="#">Ochiq ma’lumotlar</a></li>
+                            <li><a href="../../announcement.html">E'lonlar </a></li>
+                            <li><a href="../../faq.html">Ko'p beriladigan savollar</a></li>
+                            <li><a href="#">Ochiq ma'lumotlar</a></li>
                             <li><a href="#">Media</a></li>
                             <li><a href="#">OAV biz haqimizda</a></li>
                             <li><a href="#">Matbuot anjumanlari</a></li>
-                            <li><a href="../../press-contact.html">Matbuot xizmati bilan bog’lanish</a></li>
+                            <li><a href="../../press-contact.html">Matbuot xizmati bilan bog'lanish</a></li>
                         </ul>
                     </div>
                 </nav>
-                <a href="../../contacts.html"><button class="btn-contact">Bog’lanish <i
+                <a href="../../contacts.html"><button class="btn-contact">Bog'lanish <i
                             class="i-next left"></i></button></a>
             </div>
         </div>
     </div>
+
+    <div class="offcanvas-menu" id="offcanvasMenu">
+        <div class="offcanvas-header">
+            <div class="offcanvas-logo">
+                <img src="../../images/logo.svg" alt="Logo" />
+                <span>Milliy malaka tizimini rivojlantirish instituti</span>
+            </div>
+            <button class="offcanvas-close" id="closeOffcanvas">
+                <i class="i-close">✕</i>
+            </button>
+        </div>
+
+        <div class="offcanvas-body">
+            <div class="offcanvas-lang">
+                <div class="offcanvas-lang-current" id="mobileLangDropdown">
+                    <img src="../images/uzb.svg" alt="UZB">
+                    <span>O'zbekcha</span>
+                    <i class="i-dropdown"></i>
+                </div>
+                <ul class="offcanvas-lang-list">
+                    <li><a href="#"><img src="../../images/ru.png" alt="RUS"> Ruscha</a></li>
+                    <li><a href="#"><img src="../../images/eng.png" alt="ENG"> English</a></li>
+                </ul>
+            </div>
+
+            <nav class="offcanvas-nav">
+                <div class="offcanvas-nav-item">
+                    <a href="#" class="offcanvas-nav-link">
+                        <span>Institut</span>
+                        <i class="i-dropdown"></i>
+                    </a>
+                    <ul class="offcanvas-submenu">
+                        <li><a href="../../about.html">Biz Haqimizda</a></li>
+                        <li><a href="../../structure.html">Insitut tuzilmasi</a></li>
+                        <li><a href="../../leadership.html">Rahbariyat</a></li>
+                        <li><a href="../../central.html">Markaziy apparat</a></li>
+                        <li><a href="../../manners.html">Odob - axloq qoidalari</a></li>
+                        <li><a href="../../system.html">Milliy malaka tizimi "MMT"</a></li>
+                        <li><a href="../../International.html">Xalqaro hamkorlik</a></li>
+                    </ul>
+                </div>
+
+                <div class="offcanvas-nav-item">
+                    <a href="#" class="offcanvas-nav-link">
+                        <span>Faoliyat</span>
+                        <i class="i-dropdown"></i>
+                    </a>
+                    <ul class="offcanvas-submenu">
+                        <li><a href="../../laws.html">laws</a></li>
+                        <li><a href="#">Korrupsiyaga qarshi kurashish</a></li>
+                        <li><a href="../../equality.html">O'zbekiston Gender Tenglik va Ayollarga Huquq hamda
+                                imkoniyatlari</a></li>
+                        <li><a href="../../publications.html">Nashirlar</a></li>
+                        <li><a href="../../careers.html">Bo'sh ish o'rinlari</a></li>
+                    </ul>
+                </div>
+
+                <div class="offcanvas-nav-item">
+                    <a href="../../services.html" class="offcanvas-nav-link">
+                        <span>Xizmatlar</span>
+                    </a>
+                </div>
+
+                <div class="offcanvas-nav-item">
+                    <a href="#" class="offcanvas-nav-link">
+                        <span>Tadbirlar</span>
+                        <i class="i-dropdown"></i>
+                    </a>
+                    <ul class="offcanvas-submenu">
+                        <li><a href="../../events.html">Konferensiyalar</a></li>
+                        <li><a href="#">Seminar - treninglar</a></li>
+                        <li><a href="#">Uchrashuvlar</a></li>
+                    </ul>
+                </div>
+
+                <div class="offcanvas-nav-item">
+                    <a href="#" class="offcanvas-nav-link">
+                        <span>Axborot Xizmati</span>
+                        <i class="i-dropdown"></i>
+                    </a>
+                    <ul class="offcanvas-submenu">
+                        <li><a href="../../news-page.html">Yangliklar</a></li>
+                        <li><a href="../../announcement.html">E'lonlar</a></li>
+                        <li><a href="../../faq.html">Ko'p beriladigan savollar</a></li>
+                        <li><a href="#">Ochiq ma'lumotlar</a></li>
+                        <li><a href="#">Media</a></li>
+                        <li><a href="#">OAV biz haqimizda</a></li>
+                        <li><a href="#">Matbuot anjumanlari</a></li>
+                        <li><a href="../../press-contact.html">Matbuot xizmati bilan bog'lanish</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <div class="offcanvas-contacts">
+                <a href="mailto:info@mmtri.uz"><i class="i-maile"></i>info@mmtri.uz</a>
+                <a href="tel:+998555165453"><i class="i-phone"></i>+99855 516-54-53 (0)</a>
+            </div>
+
+            <div class="offcanvas-social">
+                <i class="i-instagram"></i>
+                <i class="i-telegram"></i>
+                <i class="i-facebook"></i>
+                <i class="i-youtube"></i>
+            </div>
+
+            <a href="../../contacts.html" class="offcanvas-btn">
+                Bog'lanish <i class="i-next left"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="offcanvas-overlay" id="offcanvasOverlay"></div>
 </header>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const langDropdown = document.getElementById('langDropdown');
-
-        langDropdown.addEventListener('click', function (e) {
-            e.stopPropagation();
-            this.classList.toggle('active');
-        });
-
-        document.addEventListener('click', function (e) {
-            if (!langDropdown.contains(e.target)) {
-                langDropdown.classList.remove('active');
-            }
-        });
-    });
-</script>

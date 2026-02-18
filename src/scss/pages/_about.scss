@@ -4,16 +4,48 @@
     border-radius: 16px;
     padding: 16px;
     margin-bottom: 16px;
+
+    @include devices(md) {
+      padding: 14px;
+      border-radius: 14px;
+    }
+
+    @include devices(sm) {
+      padding: 12px;
+      border-radius: 12px;
+    }
+
+    @include devices(xs) {
+      padding: 10px;
+    }
+
     &-image {
       display: grid;
       grid-template-columns: 2fr 1fr;
       gap: 16px;
+
+      @include devices(lg) {
+        gap: 14px;
+      }
+
+      @include devices(md) {
+        grid-template-columns: 1fr; // 2 ustun -> 1 ustun
+        gap: 12px;
+      }
+
+      @include devices(sm) {
+        gap: 10px;
+      }
 
       > img {
         width: 100%;
         height: 100%;
         object-fit: cover;
         border-radius: 12px;
+
+        @include devices(sm) {
+          border-radius: 10px;
+        }
       }
 
       &-img {
@@ -21,46 +53,147 @@
         grid-template-rows: 1fr 1fr;
         gap: 16px;
 
+        @include devices(lg) {
+          gap: 14px;
+        }
+
+        @include devices(md) {
+          grid-template-columns: 1fr 1fr; // pastdagi 2 rasm yonma-yon
+          grid-template-rows: auto;
+          gap: 12px;
+        }
+
+        @include devices(sm) {
+          grid-template-columns: 1fr; // juda kichikda bitta-bitta
+          gap: 10px;
+        }
+
         img {
           width: 100%;
           height: 100%;
           object-fit: cover;
           border-radius: 12px;
+
+          @include devices(sm) {
+            border-radius: 10px;
+          }
         }
       }
     }
   }
+
   .about-page-text {
     background-color: #ffffff;
     border-radius: 16px;
     padding: 16px;
     margin-bottom: 16px;
 
+    @include devices(md) {
+      padding: 14px;
+      border-radius: 14px;
+    }
+
+    @include devices(sm) {
+      padding: 12px;
+      border-radius: 12px;
+    }
+
+    @include devices(xs) {
+      padding: 10px;
+    }
+
     h2 {
       font-size: 24px;
       font-weight: 700;
       color: #1f2937;
       margin-bottom: 24px;
+
+      @include devices(lg) {
+        font-size: 22px;
+        margin-bottom: 20px;
+      }
+
+      @include devices(md) {
+        font-size: 20px;
+        margin-bottom: 18px;
+      }
+
+      @include devices(sm) {
+        font-size: 18px;
+        margin-bottom: 16px;
+      }
+
+      @include devices(xs) {
+        font-size: 17px;
+        margin-bottom: 14px;
+      }
     }
+
     p {
       color: #364152;
       font-weight: 500;
       font-size: 16px;
       line-height: 28px;
+
+      @include devices(md) {
+        font-size: 15px;
+        line-height: 26px;
+      }
+
+      @include devices(sm) {
+        font-size: 14px;
+        line-height: 24px;
+      }
+
+      @include devices(xs) {
+        font-size: 13px;
+        line-height: 22px;
+      }
     }
 
     &-list {
       line-height: 28px;
+
+      @include devices(sm) {
+        line-height: 24px;
+      }
+
       li {
         font-size: 18px;
         font-weight: 500;
         color: #364152;
         display: flex;
         gap: 8px;
+
+        @include devices(md) {
+          font-size: 16px;
+        }
+
+        @include devices(sm) {
+          font-size: 15px;
+          gap: 6px;
+        }
+
+        @include devices(xs) {
+          font-size: 14px;
+        }
+
         &::before {
           content: "•";
           font-size: 18px;
           line-height: 1;
+
+          @include devices(md) {
+            font-size: 16px;
+          }
+
+          @include devices(sm) {
+            font-size: 15px;
+          }
+
+          @include devices(xs) {
+            font-size: 14px;
+          }
         }
       }
     }
@@ -70,10 +203,23 @@
       justify-content: space-between;
       gap: 16px;
 
+      @include devices(lg) {
+        gap: 14px;
+        flex-wrap: wrap; // sig‘masa pastga tushadi
+      }
+
+      @include devices(md) {
+        gap: 12px;
+      }
+
+      @include devices(sm) {
+        gap: 10px;
+        justify-content: center;
+      }
+
       &-card1 {
         position: relative;
         width: 235px;
-        // height: 280px;
         padding: 30px 20px;
         border: 1px solid #e3e8ef;
         border-radius: 12px;
@@ -84,6 +230,24 @@
         text-align: center;
         overflow: hidden;
         transition: transform 0.3s ease;
+
+        @include devices(lg) {
+          width: calc(50% - 7px); // 2ta ustun bo‘lib turadi
+          padding: 26px 18px;
+        }
+
+        @include devices(md) {
+          width: 100%; // 1 tadan
+          padding: 22px 16px;
+        }
+
+        @include devices(sm) {
+          padding: 20px 14px;
+        }
+
+        @include devices(xs) {
+          padding: 18px 12px;
+        }
 
         &:hover {
           transform: translateY(-5px);
@@ -101,6 +265,16 @@
           background-repeat: no-repeat;
           background-size: contain;
           opacity: 0.8;
+
+          @include devices(sm) {
+            width: 64px;
+            height: 64px;
+          }
+
+          @include devices(xs) {
+            width: 56px;
+            height: 56px;
+          }
         }
 
         &::after {
@@ -115,6 +289,16 @@
           background-size: contain;
           transform: rotate(180deg);
           opacity: 0.8;
+
+          @include devices(sm) {
+            width: 64px;
+            height: 64px;
+          }
+
+          @include devices(xs) {
+            width: 56px;
+            height: 56px;
+          }
         }
 
         img {
@@ -123,6 +307,18 @@
           border-radius: 50%;
           margin-bottom: 16px;
           z-index: 2;
+
+          @include devices(sm) {
+            width: 64px;
+            height: 64px;
+            margin-bottom: 14px;
+          }
+
+          @include devices(xs) {
+            width: 56px;
+            height: 56px;
+            margin-bottom: 12px;
+          }
         }
 
         .line-blue {
@@ -131,6 +327,14 @@
           background-color: #145fcb;
           margin-bottom: 15px;
           opacity: 0.8;
+
+          @include devices(sm) {
+            margin-bottom: 12px;
+          }
+
+          @include devices(xs) {
+            margin-bottom: 10px;
+          }
         }
 
         b {
@@ -139,6 +343,19 @@
           color: #111827;
           margin-bottom: 10px;
           z-index: 2;
+
+          @include devices(md) {
+            font-size: 17px;
+          }
+
+          @include devices(sm) {
+            font-size: 16px;
+            margin-bottom: 8px;
+          }
+
+          @include devices(xs) {
+            font-size: 15px;
+          }
         }
 
         p {
@@ -147,16 +364,34 @@
           color: #4b5563;
           line-height: 1.5;
           z-index: 2;
+
+          @include devices(sm) {
+            font-size: 13px;
+          }
+
+          @include devices(xs) {
+            font-size: 12px;
+          }
         }
       }
     }
   }
+
   &-top {
     width: 100%;
     height: 0;
     border: 1px solid #e3e8ef;
     margin-bottom: 16px;
+
+    @include devices(sm) {
+      margin-bottom: 12px;
+    }
+
+    @include devices(xs) {
+      margin-bottom: 10px;
+    }
   }
+
   .top2 {
     width: 100%;
     border: 1px solid #145fcb;

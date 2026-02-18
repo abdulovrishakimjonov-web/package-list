@@ -2,14 +2,38 @@
   background-color: #ffffff;
   border-radius: 16px;
   padding: 16px;
+
   background-image:
     url("../../images/strukture-backrund.png"),
     url("../../images/strukture-img-2.png");
-  background-position:
-    left top,
-    right bottom;
+  background-position: left top, right bottom;
   background-repeat: no-repeat, no-repeat;
   background-size: 222px, 222px;
+
+  @include devices(lg) {
+    padding: 14px;
+    background-size: 190px, 190px;
+  }
+
+  @include devices(md) {
+    padding: 12px;
+    border-radius: 14px;
+    background-size: 160px, 160px;
+  }
+
+  @include devices(sm) {
+    padding: 12px;
+    border-radius: 12px;
+    background-image: none; // mobilda toza ko‘rinadi
+  }
+
+  @include devices(xs) {
+    padding: 10px;
+  }
+
+  @include devices(xxs) {
+    padding: 8px;
+  }
 
   h2 {
     font-size: 30px;
@@ -17,6 +41,29 @@
     color: #000000;
     text-align: center;
     margin-bottom: 16px;
+
+    @include devices(lg) {
+      font-size: 28px;
+    }
+
+    @include devices(md) {
+      font-size: 26px;
+      margin-bottom: 14px;
+    }
+
+    @include devices(sm) {
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+
+    @include devices(xs) {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    @include devices(xxs) {
+      font-size: 18px;
+    }
   }
 
   &-top {
@@ -24,6 +71,18 @@
     height: 0.5px;
     background-color: #e3e8ef;
     margin-bottom: 16px;
+
+    @include devices(md) {
+      margin-bottom: 14px;
+    }
+
+    @include devices(sm) {
+      margin-bottom: 12px;
+    }
+
+    @include devices(xs) {
+      margin-bottom: 10px;
+    }
   }
 
   img {
@@ -31,5 +90,25 @@
     display: block;
     margin: 0 auto;
     max-width: 100%;
+
+    @include devices(lg) {
+      padding: 26px 40px;
+    }
+
+    @include devices(md) {
+      padding: 22px 28px;
+    }
+
+    @include devices(sm) {
+      padding: 18px 10px; 
+    }
+
+    @include devices(xs) {
+      padding: 14px 6px;
+    }
+
+    @include devices(xxs) {
+      padding: 12px 4px;
+    }
   }
 }

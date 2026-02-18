@@ -4,20 +4,89 @@
     height: 1px;
     background-color: #e3e8ef;
     margin-bottom: 16px;
+
+    @include devices(md) {
+      margin-bottom: 14px;
+    }
+
+    @include devices(sm) {
+      margin-bottom: 12px;
+    }
+
+    @include devices(xs) {
+      margin-bottom: 10px;
+    }
   }
+
   &-image {
     padding: 16px;
     border-radius: 16px;
     background-color: #ffffff;
     margin-bottom: 16px;
+
+    @include devices(md) {
+      padding: 14px;
+      border-radius: 14px;
+      margin-bottom: 14px;
+    }
+
+    @include devices(sm) {
+      padding: 12px;
+      border-radius: 12px;
+      margin-bottom: 12px;
+    }
+
+    @include devices(xs) {
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    @include devices(xxs) {
+      padding: 8px;
+    }
+
     img {
       width: 100%;
       margin-bottom: 16px;
+
+      @include devices(md) {
+        margin-bottom: 14px;
+      }
+
+      @include devices(sm) {
+        margin-bottom: 12px;
+      }
+
+      @include devices(xs) {
+        margin-bottom: 10px;
+      }
     }
+
     p {
       color: #121926;
       font-size: 24px;
       font-weight: 500;
+
+      @include devices(lg) {
+        font-size: 22px;
+      }
+
+      @include devices(md) {
+        font-size: 20px;
+      }
+
+      @include devices(sm) {
+        font-size: 18px;
+      }
+
+      @include devices(xs) {
+        font-size: 16px;
+      }
+
+      @include devices(xxs) {
+        font-size: 15px;
+      }
+
       span {
         color: #145fcb;
       }
@@ -28,18 +97,80 @@
     padding: 16px;
     border-radius: 16px;
     background-color: #ffffff;
+
+    @include devices(md) {
+      padding: 14px;
+      border-radius: 14px;
+    }
+
+    @include devices(sm) {
+      padding: 12px;
+      border-radius: 12px;
+    }
+
+    @include devices(xs) {
+      padding: 10px;
+    }
+
+    @include devices(xxs) {
+      padding: 8px;
+    }
+
     h2 {
       font-size: 30px;
       font-weight: 600;
       color: #121926;
       margin-bottom: 16px;
+
+      @include devices(lg) {
+        font-size: 28px;
+      }
+
+      @include devices(md) {
+        font-size: 26px;
+        margin-bottom: 14px;
+      }
+
+      @include devices(sm) {
+        font-size: 22px;
+        margin-bottom: 12px;
+      }
+
+      @include devices(xs) {
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+
+      @include devices(xxs) {
+        font-size: 18px;
+      }
     }
+
     &-link {
       li {
         color: #364152;
         font-size: 18px;
         font-weight: 600;
         line-height: 28px;
+
+        @include devices(md) {
+          font-size: 16px;
+          line-height: 26px;
+        }
+
+        @include devices(sm) {
+          font-size: 15px;
+          line-height: 24px;
+        }
+
+        @include devices(xs) {
+          font-size: 14px;
+          line-height: 22px;
+        }
+
+        @include devices(xxs) {
+          font-size: 13px;
+        }
       }
     }
   }

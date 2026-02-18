@@ -7,6 +7,18 @@
   position: relative;
   overflow: hidden;
 
+  @include devices(lg) {
+    padding: 20px 0;
+  }
+
+  @include devices(md) {
+    padding: 18px 0;
+  }
+
+  @include devices(sm) {
+    padding: 15px 0;
+  }
+
   &::before {
     content: "";
     position: absolute;
@@ -21,6 +33,15 @@
     );
     z-index: 1;
     transform: rotate(45deg);
+
+    @include devices(md) {
+      left: -300px;
+      width: 300px;
+    }
+
+    @include devices(sm) {
+      display: none;
+    }
   }
 
   &::after {
@@ -37,6 +58,15 @@
     );
     z-index: 1;
     transform: rotate(-45deg);
+
+    @include devices(md) {
+      right: -300px;
+      width: 300px;
+    }
+
+    @include devices(sm) {
+      display: none;
+    }
   }
 
   .container {
@@ -50,10 +80,42 @@
     justify-content: space-between;
     margin-bottom: 30px;
 
+    @include devices(md) {
+      margin-bottom: 25px;
+      gap: 15px;
+    }
+
+    @include devices(sm) {
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 20px;
+      gap: 15px;
+    }
+
     h2 {
       color: #ffffff;
       font-size: 36px;
       font-weight: 700;
+
+      @include devices(lg) {
+        font-size: 32px;
+      }
+
+      @include devices(md) {
+        font-size: 28px;
+      }
+
+      @include devices(sm) {
+        font-size: 24px;
+      }
+
+      @include devices(xs) {
+        font-size: 22px;
+      }
+
+      @include devices(xxs) {
+        font-size: 20px;
+      }
     }
 
     button {
@@ -70,14 +132,52 @@
       align-items: center;
       gap: 8px;
       cursor: pointer;
+      flex-shrink: 0;
+
+      @include devices(lg) {
+        padding: 9px 20px;
+        font-size: 15px;
+      }
+
+      @include devices(md) {
+        padding: 8px 18px;
+        font-size: 14px;
+      }
+
+      @include devices(sm) {
+        padding: 8px 16px;
+        font-size: 14px;
+        gap: 6px;
+      }
+
+      @include devices(xs) {
+        padding: 7px 14px;
+        font-size: 13px;
+      }
+
+      @include devices(xxs) {
+        padding: 6px 12px;
+        font-size: 12px;
+      }
+
       i {
         transition: transform 0.3s ease;
+
+        @include devices(xs) {
+          font-size: 14px;
+        }
+
+        @include devices(xxs) {
+          font-size: 12px;
+        }
       }
+
       &:hover {
         i {
           transform: translateX(4px);
         }
       }
+
       &:active {
         transform: translateY(0) scale(0.96);
         box-shadow: 0 2px 8px rgba(0, 113, 220, 0.2);
@@ -93,6 +193,27 @@
     z-index: 10;
     margin-bottom: 25px;
 
+    @include devices(xl) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    @include devices(lg) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    @include devices(md) {
+      gap: 14px;
+    }
+
+    @include devices(sm) {
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-bottom: 15px;
+    }
+
     &-card {
       display: flex;
       flex-direction: column;
@@ -107,7 +228,19 @@
         transform 0.25s ease,
         opacity 0.25s ease;
 
-     
+      @include devices(md) {
+        padding: 14px;
+        border-radius: 14px;
+      }
+
+      @include devices(sm) {
+        padding: 12px;
+        border-radius: 12px;
+      }
+
+      @include devices(xs) {
+        padding: 10px;
+      }
 
       &::before {
         content: "";
@@ -120,6 +253,16 @@
         transform: translateX(50%);
         transition: transform 0.45s ease;
         z-index: 0;
+
+        @include devices(lg) {
+          background-size: 100px;
+          background-position: right 100px bottom 40px;
+        }
+
+        @include devices(sm) {
+          background-size: 80px;
+          background-position: right 80px bottom 30px;
+        }
       }
 
       &:hover::before {
@@ -137,6 +280,21 @@
         gap: 16px;
         margin-bottom: 20px;
 
+        @include devices(md) {
+          gap: 12px;
+          margin-bottom: 16px;
+        }
+
+        @include devices(sm) {
+          gap: 10px;
+          margin-bottom: 14px;
+        }
+
+        @include devices(xs) {
+          gap: 8px;
+          margin-bottom: 12px;
+        }
+
         .icon-box {
           width: 92px;
           height: 92px;
@@ -145,9 +303,47 @@
           display: flex;
           align-items: center;
           justify-content: center;
+          flex-shrink: 0;
+
+          @include devices(lg) {
+            width: 80px;
+            height: 80px;
+          }
+
+          @include devices(md) {
+            width: 70px;
+            height: 70px;
+            border-radius: 6px;
+          }
+
+          @include devices(sm) {
+            width: 60px;
+            height: 60px;
+          }
+
+          @include devices(xs) {
+            width: 50px;
+            height: 50px;
+          }
 
           img {
             width: 70px;
+
+            @include devices(lg) {
+              width: 60px;
+            }
+
+            @include devices(md) {
+              width: 50px;
+            }
+
+            @include devices(sm) {
+              width: 45px;
+            }
+
+            @include devices(xs) {
+              width: 35px;
+            }
           }
         }
 
@@ -157,6 +353,26 @@
           font-weight: 700;
           margin: 0;
           line-height: 1.2;
+
+          @include devices(lg) {
+            font-size: 20px;
+          }
+
+          @include devices(md) {
+            font-size: 18px;
+          }
+
+          @include devices(sm) {
+            font-size: 16px;
+          }
+
+          @include devices(xs) {
+            font-size: 15px;
+          }
+
+          @include devices(xxs) {
+            font-size: 14px;
+          }
         }
       }
 
@@ -164,6 +380,11 @@
         width: 100%;
         height: 1px;
         background-color: #ecf4ff;
+        margin-bottom: 12px;
+
+        @include devices(sm) {
+          margin-bottom: 10px;
+        }
       }
 
       h5 {
@@ -172,6 +393,26 @@
         font-weight: 500;
         line-height: 1.5;
         margin: 0;
+
+        @include devices(lg) {
+          font-size: 18px;
+        }
+
+        @include devices(md) {
+          font-size: 16px;
+        }
+
+        @include devices(sm) {
+          font-size: 15px;
+        }
+
+        @include devices(xs) {
+          font-size: 14px;
+        }
+
+        @include devices(xxs) {
+          font-size: 13px;
+        }
       }
     }
   }

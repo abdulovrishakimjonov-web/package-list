@@ -2,19 +2,66 @@
   padding: 80px 0;
   background-color: #f9fafb;
 
+  @include devices(lg) {
+    padding: 60px 0;
+  }
+
+  @include devices(md) {
+    padding: 50px 0;
+  }
+
+  @include devices(sm) {
+    padding: 40px 0;
+  }
+
+  @include devices(xs) {
+    padding: 30px 0;
+  }
+
   &-text {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 30px;
 
+    @include devices(md) {
+      margin-bottom: 25px;
+    }
+
+    @include devices(sm) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
     h2 {
       color: #000000;
       font-size: 36px;
       font-weight: 700;
+
+      @include devices(lg) {
+        font-size: 32px;
+      }
+
+      @include devices(md) {
+        font-size: 28px;
+      }
+
+      @include devices(sm) {
+        font-size: 24px;
+      }
+
+      @include devices(xs) {
+        font-size: 22px;
+      }
+
+      @include devices(xxs) {
+        font-size: 20px;
+      }
     }
 
-     button {
+    button {
       background: #f5f9ff;
       background-size: 150% auto;
       color: #145fcb;
@@ -30,14 +77,55 @@
       align-items: center;
       gap: 8px;
       cursor: pointer;
+      flex-shrink: 0;
+
+      @include devices(lg) {
+        width: 110px;
+        padding: 9px;
+        font-size: 15px;
+      }
+
+      @include devices(md) {
+        width: 100px;
+        padding: 8px;
+        font-size: 14px;
+      }
+
+      @include devices(sm) {
+        width: auto;
+        padding: 8px 16px;
+        font-size: 14px;
+        gap: 6px;
+      }
+
+      @include devices(xs) {
+        padding: 7px 14px;
+        font-size: 13px;
+      }
+
+      @include devices(xxs) {
+        padding: 6px 12px;
+        font-size: 12px;
+      }
+
       i {
         transition: transform 0.3s ease;
+
+        @include devices(xs) {
+          font-size: 14px;
+        }
+
+        @include devices(xxs) {
+          font-size: 12px;
+        }
       }
+
       &:hover {
         i {
           transform: translateX(4px);
         }
       }
+
       &:active {
         transform: translateY(0) scale(0.96);
         box-shadow: 0 2px 8px rgba(0, 113, 220, 0.2);
@@ -47,16 +135,45 @@
 
   &-main {
     display: grid;
-    grid-template-columns:repeat(2, 1fr); 
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
     height: 600px;
-    
+
+    @include devices(lg) {
+      height: 500px;
+      gap: 16px;
+    }
+
+    @include devices(md) {
+      height: 450px;
+      gap: 14px;
+    }
+
+    @include devices(sm) {
+      grid-template-columns: 1fr;
+      height: auto;
+      gap: 16px;
+    }
 
     &-card {
       position: relative;
       border-radius: 20px;
       overflow: hidden;
       height: 100%;
+
+      @include devices(md) {
+        border-radius: 16px;
+      }
+
+      @include devices(sm) {
+        height: 350px;
+        border-radius: 14px;
+      }
+
+      @include devices(xs) {
+        height: 300px;
+        border-radius: 12px;
+      }
 
       img {
         width: 100%;
@@ -78,6 +195,18 @@
         justify-content: flex-end;
         padding: 24px;
         color: #fff;
+
+        @include devices(md) {
+          padding: 20px;
+        }
+
+        @include devices(sm) {
+          padding: 16px;
+        }
+
+        @include devices(xs) {
+          padding: 14px;
+        }
       }
 
       &__meta {
@@ -85,12 +214,23 @@
         align-items: center;
         gap: 12px;
         margin-bottom: 15px;
+        flex-wrap: wrap;
+
+        @include devices(md) {
+          gap: 10px;
+          margin-bottom: 12px;
+        }
+
+        @include devices(sm) {
+          gap: 8px;
+          margin-bottom: 10px;
+        }
 
         span {
           display: flex;
           align-items: center;
           gap: 6px;
-          background:#0634624D; 
+          background: #0634624D;
           backdrop-filter: blur(8px);
           padding: 7px 10px;
           opacity: 70%;
@@ -98,10 +238,40 @@
           border-radius: 6px;
           font-size: 13px;
           font-weight: 500;
-          color: #ffffffff ;
+          color: #ffffffff;
           z-index: 100;
-          
-          i { font-size: 20px;}
+
+          @include devices(md) {
+            padding: 6px 8px;
+            font-size: 12px;
+            gap: 5px;
+          }
+
+          @include devices(sm) {
+            padding: 5px 7px;
+            font-size: 11px;
+          }
+
+          @include devices(xs) {
+            padding: 4px 6px;
+            font-size: 10px;
+          }
+
+          i {
+            font-size: 20px;
+
+            @include devices(md) {
+              font-size: 18px;
+            }
+
+            @include devices(sm) {
+              font-size: 16px;
+            }
+
+            @include devices(xs) {
+              font-size: 14px;
+            }
+          }
         }
       }
 
@@ -110,6 +280,14 @@
         margin-bottom: 10px;
         line-height: 1.3;
         color: #fff;
+
+        @include devices(md) {
+          margin-bottom: 8px;
+        }
+
+        @include devices(sm) {
+          margin-bottom: 6px;
+        }
       }
 
       &__text {
@@ -121,16 +299,99 @@
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
         overflow: hidden;
+
+        @include devices(md) {
+          font-size: 14px;
+        }
+
+        @include devices(sm) {
+          font-size: 13px;
+          -webkit-line-clamp: 2;
+        }
+
+        @include devices(xs) {
+          font-size: 12px;
+        }
       }
 
       &--large {
-        .news-main-card__title { font-size: 28px; }
+        .news-main-card__title {
+          font-size: 28px;
+
+          @include devices(lg) {
+            font-size: 24px;
+          }
+
+          @include devices(md) {
+            font-size: 22px;
+          }
+
+          @include devices(sm) {
+            font-size: 20px;
+          }
+
+          @include devices(xs) {
+            font-size: 18px;
+          }
+
+          @include devices(xxs) {
+            font-size: 16px;
+          }
+        }
       }
 
       &--small {
-        .news-main-card__title { font-size: 16px; }
-        .news-main-card__text { font-size: 13px; }
-        .news-main-card__overlay { padding: 15px; }
+        .news-main-card__title {
+          font-size: 16px;
+
+          @include devices(md) {
+            font-size: 15px;
+          }
+
+          @include devices(sm) {
+            font-size: 14px;
+          }
+
+          @include devices(xs) {
+            font-size: 13px;
+          }
+
+          @include devices(xxs) {
+            font-size: 12px;
+          }
+        }
+
+        .news-main-card__text {
+          font-size: 13px;
+
+          @include devices(md) {
+            font-size: 12px;
+          }
+
+          @include devices(sm) {
+            font-size: 11px;
+          }
+
+          @include devices(xs) {
+            font-size: 10px;
+          }
+        }
+
+        .news-main-card__overlay {
+          padding: 15px;
+
+          @include devices(md) {
+            padding: 12px;
+          }
+
+          @include devices(sm) {
+            padding: 10px;
+          }
+
+          @include devices(xs) {
+            padding: 8px;
+          }
+        }
       }
     }
 
@@ -140,6 +401,23 @@
       grid-template-rows: 1fr 1fr;
       gap: 16px;
       height: 600px;
+
+      @include devices(lg) {
+        height: 500px;
+        gap: 14px;
+      }
+
+      @include devices(md) {
+        height: 450px;
+        gap: 12px;
+      }
+
+      @include devices(sm) {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        height: auto;
+        gap: 16px;
+      }
     }
   }
 }

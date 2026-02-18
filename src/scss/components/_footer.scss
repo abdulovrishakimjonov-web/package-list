@@ -1,10 +1,25 @@
-
 .footer {
   background: linear-gradient(135deg, #002662 0%, #004382 100%);
   padding-top: 100px;
   padding-bottom: 20px;
   color: #ffffff;
   position: relative;
+
+  @include devices(lg) {
+    padding-top: 90px;
+  }
+
+  @include devices(md) {
+    padding-top: 80px;
+  }
+
+  @include devices(sm) {
+    padding-top: 70px;
+  }
+
+  @include devices(xs) {
+    padding-top: 60px;
+  }
 
   &::before {
     content: "";
@@ -40,12 +55,48 @@
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     position: relative;
     z-index: 10;
-    
-    
+
+    @include devices(lg) {
+      flex-wrap: wrap;
+      gap: 16px;
+      padding: 20px;
+      margin-top: -140px;
+      margin-bottom: 50px;
+    }
+
+    @include devices(md) {
+      padding: 18px;
+      margin-top: -120px;
+      margin-bottom: 40px;
+    }
+
+    @include devices(sm) {
+      padding: 16px;
+      margin-top: -100px;
+      margin-bottom: 32px;
+      border-radius: 14px;
+    }
+
+    @include devices(xs) {
+      padding: 14px;
+      margin-top: -90px;
+      margin-bottom: 28px;
+      border-radius: 12px;
+    }
+
     &-img {
       display: flex;
       align-items: center;
       gap: 12px;
+
+      @include devices(lg) {
+        flex: 0 0 calc(50% - 8px);
+      }
+
+      @include devices(sm) {
+        flex: 0 0 100%;
+        gap: 10px;
+      }
 
       i {
         background-color: #e8f3ff;
@@ -56,6 +107,22 @@
         display: flex;
         align-items: center;
         justify-content: center;
+
+        @include devices(md) {
+          font-size: 26px;
+          padding: 12px;
+        }
+
+        @include devices(sm) {
+          font-size: 24px;
+          padding: 10px;
+          border-radius: 10px;
+        }
+
+        @include devices(xs) {
+          font-size: 22px;
+          padding: 9px;
+        }
       }
 
       &-text {
@@ -64,24 +131,37 @@
           font-size: 18px;
           font-weight: 600;
           display: block;
+
+          @include devices(md) {
+            font-size: 16px;
+          }
+
+          @include devices(sm) {
+            font-size: 15px;
+          }
+
+          @include devices(xs) {
+            font-size: 14px;
+          }
         }
+
         p {
           color: #4b5565;
           font-size: 16px;
           margin: 0;
-        }
-      }
-    }
 
-    @media (max-width: 1024px) {
-      flex-wrap: wrap;
-      &-img {
-        flex: 0 0 calc(50% - 10px);
-      }
-    }
-    @media (max-width: 640px) {
-      &-img {
-        flex: 0 0 100%;
+          @include devices(md) {
+            font-size: 14px;
+          }
+
+          @include devices(sm) {
+            font-size: 13px;
+          }
+
+          @include devices(xs) {
+            font-size: 12px;
+          }
+        }
       }
     }
   }
@@ -92,32 +172,113 @@
     gap: 40px;
     padding-bottom: 50px;
     flex-wrap: wrap;
+
+    @include devices(lg) {
+      gap: 28px;
+      padding-bottom: 40px;
+    }
+
+    @include devices(md) {
+      gap: 24px;
+      padding-bottom: 34px;
+    }
+
+    @include devices(sm) {
+      gap: 20px;
+      padding-bottom: 28px;
+    }
+
+    @include devices(xs) {
+      gap: 16px;
+      padding-bottom: 24px;
+    }
   }
 
   &-logo {
     flex: 0 0 300px;
+
+    @include devices(lg) {
+      flex: 0 0 calc(50% - 14px);
+    }
+
+    @include devices(md) {
+      flex: 0 0 100%;
+    }
+
     &-image {
       display: flex;
       align-items: center;
       gap: 12px;
       margin-bottom: 25px;
+
+      @include devices(sm) {
+        margin-bottom: 18px;
+      }
+
       img {
         width: 100px;
+
+        @include devices(md) {
+          width: 90px;
+        }
+
+        @include devices(sm) {
+          width: 80px;
+        }
+
+        @include devices(xs) {
+          width: 70px;
+        }
       }
+
       p {
         font-size: 16px;
         font-weight: 700;
         line-height: 1.3;
+
+        @include devices(md) {
+          font-size: 15px;
+        }
+
+        @include devices(sm) {
+          font-size: 14px;
+        }
+
+        @include devices(xs) {
+          font-size: 13px;
+        }
       }
     }
+
     h3 {
       font-size: 18px;
       margin-bottom: 15px;
+
+      @include devices(md) {
+        font-size: 17px;
+      }
+
+      @include devices(sm) {
+        font-size: 16px;
+        margin-bottom: 12px;
+      }
+
+      @include devices(xs) {
+        font-size: 15px;
+        margin-bottom: 10px;
+      }
     }
+
     &-links {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 10px;
+
+      @include devices(sm) {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
       a {
         background: linear-gradient(90deg, #1a3975, #254d9a);
         border-radius: 8px;
@@ -129,6 +290,17 @@
         align-items: center;
         gap: 8px;
         transition: 0.5s;
+
+        @include devices(sm) {
+          padding: 10px 12px;
+          font-size: 13px;
+        }
+
+        @include devices(xs) {
+          padding: 9px 10px;
+          font-size: 12px;
+        }
+
         &:hover {
           transform: translateY(-4px);
         }
@@ -136,11 +308,31 @@
     }
   }
 
+  // LINKS / TEXT COLUMNS
   &-text {
+    @include devices(lg) {
+      flex: 0 0 calc(50% - 14px);
+    }
+
+    @include devices(md) {
+      flex: 0 0 100%;
+    }
+
     h3 {
       font-size: 18px;
       margin-bottom: 20px;
+
+      @include devices(sm) {
+        font-size: 16px;
+        margin-bottom: 14px;
+      }
+
+      @include devices(xs) {
+        font-size: 15px;
+        margin-bottom: 12px;
+      }
     }
+
     a {
       color: rgba(255, 255, 255, 0.7);
       text-decoration: none;
@@ -148,6 +340,16 @@
       margin-bottom: 10px;
       display: block;
       transition: 0.3s;
+
+      @include devices(sm) {
+        font-size: 14px;
+        margin-bottom: 8px;
+      }
+
+      @include devices(xs) {
+        font-size: 13px;
+      }
+
       &:hover {
         color: #fff;
         transform: translateX(5px);
@@ -160,6 +362,14 @@
     height: 1px;
     background: rgba(255, 255, 255, 0.1);
     margin-bottom: 20px;
+
+    @include devices(sm) {
+      margin-bottom: 16px;
+    }
+
+    @include devices(xs) {
+      margin-bottom: 14px;
+    }
   }
 
   &-end {
@@ -169,15 +379,34 @@
     padding-bottom: 20px;
     font-size: 14px;
     color: rgba(255, 255, 255, 0.6);
+
+    @include devices(sm) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+      padding-bottom: 16px;
+      font-size: 13px;
+    }
+
+    @include devices(xs) {
+      font-size: 12px;
+      padding-bottom: 14px;
+    }
+
     .developer {
       display: flex;
       align-items: center;
       gap: 8px;
       text-decoration: none;
       color: #fff;
+
       img {
         height: 22px;
         filter: brightness(0) invert(1);
+
+        @include devices(xs) {
+          height: 20px;
+        }
       }
     }
   }

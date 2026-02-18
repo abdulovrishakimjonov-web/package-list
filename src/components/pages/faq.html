@@ -94,7 +94,6 @@
         const btn = item.querySelector(".faq-header");
         const body = item.querySelector(".faq-body");
 
-        // boshlang'ich: active bo'lsa ochib qo'yish
         if (item.classList.contains("active")) {
             body.style.height = body.scrollHeight + "px";
             body.style.opacity = "1";
@@ -103,7 +102,6 @@
         btn.addEventListener("click", () => {
             const isOpen = item.classList.contains("active");
 
-            // boshqalarini yopish (faqat bittasi ochiq bo'lsin)
             items.forEach((other) => {
                 if (other !== item) {
                     other.classList.remove("active");
@@ -113,7 +111,6 @@
                 }
             });
 
-            // o'zini toggle
             if (!isOpen) {
                 item.classList.add("active");
                 body.style.height = body.scrollHeight + "px";
@@ -125,7 +122,6 @@
             }
         });
 
-        // resize bo'lsa ochiq item heightini qayta hisoblash
         window.addEventListener("resize", () => {
             if (item.classList.contains("active")) {
                 body.style.height = body.scrollHeight + "px";

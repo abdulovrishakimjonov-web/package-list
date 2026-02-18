@@ -163,7 +163,7 @@
 // Mobile responsiveness
 @include devices(md) {
     .offcanvas {
-        --bs-offcanvas-width: 280px;
+        --bs-offcanvas-width: 280px   ;
     }
 }
 

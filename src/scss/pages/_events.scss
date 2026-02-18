@@ -1,7 +1,7 @@
 .events {
- display: grid;
- grid-template-columns: repeat(3, 1fr);
- gap: 16px; 
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
 
   &-card {
     display: flex;
@@ -55,7 +55,6 @@
   }
 }
 
-
 .events-view {
   &-list {
     background-color: #ffffff;
@@ -94,6 +93,9 @@
       height: 0.5px;
       background-color: #e3e8ef;
       margin-bottom: 16px;
+    }
+    img {
+      width: 100%;
     }
   }
   &-text {

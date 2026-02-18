@@ -3,41 +3,123 @@
   flex-direction: column;
   gap: 16px;
 
+  @include devices(sm) {
+    gap: 12px;
+  }
+
+  @include devices(xs) {
+    gap: 10px;
+  }
+
   &-main,
   &-input {
     background-color: #ffffff;
     padding: 16px;
     border-radius: 16px;
 
+    @include devices(md) {
+      padding: 14px;
+      border-radius: 14px;
+    }
+
+    @include devices(sm) {
+      padding: 12px;
+      border-radius: 12px;
+    }
+
+    @include devices(xs) {
+      padding: 10px;
+    }
+
     h2 {
       font-size: 30px;
       font-weight: 600;
       color: #121926;
       margin-bottom: 16px;
+
+      @include devices(lg) {
+        font-size: 28px;
+      }
+
+      @include devices(md) {
+        font-size: 26px;
+        margin-bottom: 14px;
+      }
+
+      @include devices(sm) {
+        font-size: 22px;
+        margin-bottom: 12px;
+      }
+
+      @include devices(xs) {
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
     }
   }
 
   &-main-top {
     width: 100%;
-    height: 1px; 
+    height: 1px;
     margin-bottom: 16px;
     background-color: #e3e8ef;
+
+    @include devices(sm) {
+      margin-bottom: 12px;
+    }
+
+    @include devices(xs) {
+      margin-bottom: 10px;
+    }
   }
 
   &-main {
     background-image: url("../../images/malumo-img.png");
     background-repeat: no-repeat;
     background-position: right bottom;
+
+    @include devices(lg) {
+      background-size: 260px;
+    }
+
+    @include devices(md) {
+      background-size: 220px;
+    }
+
+    @include devices(sm) {
+      background-image: none; // telefonda toza bo‘lsin
+    }
+
     &-link {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 30px;
-      
+
+      @include devices(lg) {
+        gap: 24px;
+      }
+
+      @include devices(md) {
+        grid-template-columns: 1fr; // 2 -> 1
+        gap: 16px;
+      }
+
+      @include devices(sm) {
+        gap: 14px;
+      }
 
       &-text {
         display: flex;
         align-items: center;
         gap: 12px;
+
+        @include devices(sm) {
+          gap: 10px;
+        }
+
+        @include devices(xs) {
+          gap: 8px;
+        }
 
         i {
           font-size: 44px;
@@ -46,6 +128,22 @@
           background-color: #f4f8fd;
           border-radius: 12px;
           flex: 0 0 auto;
+
+          @include devices(md) {
+            font-size: 38px;
+            padding: 12px;
+          }
+
+          @include devices(sm) {
+            font-size: 34px;
+            padding: 10px;
+            border-radius: 10px;
+          }
+
+          @include devices(xs) {
+            font-size: 30px;
+            padding: 9px;
+          }
         }
 
         &-item {
@@ -54,17 +152,43 @@
           gap: 2px;
 
           b {
-            font-size: 18px; 
+            font-size: 18px;
             font-weight: 600;
             color: #121926;
+
+            @include devices(md) {
+              font-size: 16px;
+            }
+
+            @include devices(sm) {
+              font-size: 15px;
+            }
+
+            @include devices(xs) {
+              font-size: 14px;
+            }
           }
 
           p {
-            margin: 0; 
+            margin: 0;
             font-weight: 500;
-            font-size: 16px; 
+            font-size: 16px;
             line-height: 24px;
             color: #4b5565;
+
+            @include devices(md) {
+              font-size: 14px;
+              line-height: 22px;
+            }
+
+            @include devices(sm) {
+              font-size: 13px;
+              line-height: 20px;
+            }
+
+            @include devices(xs) {
+              font-size: 12px;
+            }
           }
         }
       }
@@ -81,12 +205,29 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 18px;
+
+      @include devices(md) {
+        grid-template-columns: 1fr; // 2 -> 1
+        gap: 14px;
+      }
+
+      @include devices(sm) {
+        gap: 12px;
+      }
+
+      @include devices(xs) {
+        gap: 10px;
+      }
     }
 
     .field {
       display: flex;
       flex-direction: column;
       gap: 8px;
+
+      @include devices(xs) {
+        gap: 6px;
+      }
     }
 
     .field--full {
@@ -97,6 +238,10 @@
       font-size: 13px;
       font-weight: 600;
       color: #111827;
+
+      @include devices(xs) {
+        font-size: 12px;
+      }
 
       b {
         color: #e11d48;
@@ -117,11 +262,25 @@
       transition:
         border-color 0.2s ease,
         box-shadow 0.2s ease;
+
+      @include devices(sm) {
+        padding: 11px 12px;
+        font-size: 13px;
+      }
+
+      @include devices(xs) {
+        padding: 10px 11px;
+        font-size: 12px;
+      }
     }
 
     .field textarea {
       min-height: 110px;
       resize: vertical;
+
+      @include devices(xs) {
+        min-height: 100px;
+      }
     }
 
     .field input:focus,
@@ -137,6 +296,11 @@
       gap: 10px;
       font-size: 13px;
       color: #2563eb;
+
+      @include devices(xs) {
+        font-size: 12px;
+        gap: 8px;
+      }
 
       input {
         width: 16px;
@@ -169,20 +333,18 @@
         transform 0.05s ease,
         opacity 0.2s ease;
 
+      @include devices(sm) {
+        width: 100%;
+        padding: 10px 16px;
+      }
+
+      @include devices(xs) {
+        font-size: 13px;
+      }
+
       &:active {
         transform: translateY(1px);
       }
-    }
-  }
-
-  @media (max-width: 768px) {
-    &-main-link {
-      grid-template-columns: 1fr !important;
-      gap: 16px !important;
-    }
-
-    &-input .grid {
-      grid-template-columns: 1fr;
     }
   }
 }
