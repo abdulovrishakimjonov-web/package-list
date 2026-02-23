@@ -1,342 +1,147 @@
 .about {
-  padding: 80px 0;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+  padding: clamp(30px, 5vw, 80px) 0;
+  margin-bottom: clamp(20px, 4vw, 60px);
   background-color: #f8f9fb;
-  margin-bottom: 60px;
-  background-image: url("../../images/strukture-backrund.png");
-  background-repeat: no-repeat;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("../../images/strukture-backrund.png");
+    background-repeat: no-repeat;
+    background-size: min(200px, 45vw);
+    z-index: 0;
+  }
 
   @include devices(lg) {
-    padding: 60px 0;
-    margin-bottom: 50px;
+    &::before {
+      background-size: min(460px, 52vw);
+    }
   }
 
   @include devices(md) {
-    padding: 50px 0;
-    margin-bottom: 40px;
+    &::before {
+      background-position: right -40px top -30px;
+      background-size: min(420px, 70vw);
+    }
   }
 
   @include devices(sm) {
-    padding: 40px 0;
-    margin-bottom: 30px;
+    &::before {
+      background-position: right -60px top -40px;
+      background-size: min(380px, 82vw);
+    }
   }
 
   @include devices(xs) {
-    padding: 30px 0;
-    margin-bottom: 20px;
+    &::before {
+      background-position: right -80px top -50px;
+      background-size: min(320px, 92vw);
+    }
   }
 
   .container {
-    margin: 0 auto;
+    position: relative;
+    z-index: 1; 
   }
 
   &-fiz {
-    font-size: 36px;
+    font-size: clamp(20px, 2.2vw, 36px);
     font-weight: 700;
-    color: #000000;
-    margin-bottom: 30px;
-
-    @include devices(lg) {
-      font-size: 32px;
-      margin-bottom: 25px;
-    }
-
-    @include devices(md) {
-      font-size: 28px;
-      margin-bottom: 20px;
-    }
-
-    @include devices(sm) {
-      font-size: 24px;
-      margin-bottom: 18px;
-    }
-
-    @include devices(xs) {
-      font-size: 22px;
-      margin-bottom: 15px;
-    }
-
-    @include devices(xxs) {
-      font-size: 20px;
-    }
+    margin-bottom: clamp(15px, 2vw, 30px);
   }
 
   &-main {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(20px, 3vw, 40px);
     align-items: center;
-
-    @include devices(lg) {
-      gap: 30px;
-    }
 
     @include devices(md) {
       grid-template-columns: 1fr;
-      gap: 30px;
-    }
-
-    @include devices(sm) {
-      gap: 25px;
     }
 
     &-image {
       display: grid;
-      grid-template-columns: 1fr 257px;
+      grid-template-columns: 1fr clamp(130px, 22vw, 257px);
       grid-template-rows: 1fr 1fr;
       gap: 16px;
-
-      @include devices(lg) {
-        grid-template-columns: 1fr 220px;
-        gap: 12px;
-      }
-
-      @include devices(md) {
-        grid-template-columns: 1fr 200px;
-        order: 2;
-      }
-
-      @include devices(sm) {
-        grid-template-columns: 1fr 180px;
-        gap: 10px;
-      }
-
-      @include devices(xs) {
-        grid-template-columns: 1fr 150px;
-        gap: 8px;
-      }
-
-      @include devices(xxs) {
-        grid-template-columns: 1fr 130px;
-      }
 
       img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        border-radius: 24px;
+        border-radius: 20px;
         box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-
-        @include devices(md) {
-          border-radius: 20px;
-        }
-
-        @include devices(sm) {
-          border-radius: 16px;
-        }
-
-        @include devices(xs) {
-          border-radius: 12px;
-        }
       }
 
       .large-image {
         grid-row: 1 / 3;
-        grid-column: 1 / 2;
+        aspect-ratio: 4 / 3;
       }
 
       .small-image {
-        grid-column: 2 / 3;
+        aspect-ratio: 1 / 1;
       }
     }
 
     &-vertical {
-      @include devices(md) {
-        order: 1;
-      }
-
       h3 {
-        font-size: 30px;
+        font-size: clamp(18px, 1.8vw, 30px);
         font-weight: 600;
-        color: #000000;
-        margin-bottom: 18px;
-
-        @include devices(lg) {
-          font-size: 26px;
-          margin-bottom: 16px;
-        }
-
-        @include devices(md) {
-          font-size: 24px;
-          margin-bottom: 14px;
-        }
-
-        @include devices(sm) {
-          font-size: 22px;
-          margin-bottom: 12px;
-        }
-
-        @include devices(xs) {
-          font-size: 20px;
-          margin-bottom: 10px;
-        }
-
-        @include devices(xxs) {
-          font-size: 18px;
-        }
+        margin-bottom: 15px;
       }
 
       &-p {
-        font-size: 24px;
-        font-weight: 500;
-        color: #000000;
+        font-size: clamp(14px, 1.4vw, 20px);
         opacity: 0.7;
-        margin-bottom: 25px;
-        line-height: 1.4;
-
-        @include devices(lg) {
-          font-size: 20px;
-          margin-bottom: 20px;
-        }
-
-        @include devices(md) {
-          font-size: 18px;
-          margin-bottom: 18px;
-        }
-
-        @include devices(sm) {
-          font-size: 16px;
-          margin-bottom: 16px;
-        }
-
-        @include devices(xs) {
-          font-size: 15px;
-          margin-bottom: 14px;
-        }
-
-        @include devices(xxs) {
-          font-size: 14px;
-          margin-bottom: 12px;
-        }
+        margin-bottom: 20px;
+        line-height: 1.6;
       }
 
       button {
         background: linear-gradient(90deg, #083d91, #0071dc);
-        background-size: 150% auto;
-        color: white;
+        color: #fff;
         border: none;
         padding: 10px 24px;
         border-radius: 12px;
-        display: flex;
+        display: inline-flex;
         align-items: center;
         gap: 8px;
         cursor: pointer;
-        width: 130px;
-        margin-bottom: 30px;
-        font-size: 16px;
-
-        @include devices(lg) {
-          padding: 9px 20px;
-          width: 120px;
-          margin-bottom: 25px;
-        }
-
-        @include devices(md) {
-          padding: 8px 18px;
-          width: 110px;
-          margin-bottom: 20px;
-          font-size: 15px;
-        }
-
-        @include devices(sm) {
-          padding: 8px 16px;
-          width: 100px;
-          font-size: 14px;
-        }
-
-        @include devices(xs) {
-          padding: 7px 14px;
-          width: auto;
-          font-size: 13px;
-        }
-
-        @include devices(xxs) {
-          padding: 6px 12px;
-          font-size: 12px;
-          gap: 6px;
-        }
-
-        i {
-          transition: transform 0.3s ease;
-
-          @include devices(xs) {
-            font-size: 14px;
-          }
-
-          @include devices(xxs) {
-            font-size: 12px;
-          }
-        }
+        margin-bottom: 25px;
+        transition: 0.3s;
 
         &:hover {
-          box-shadow: 0 5px 15px rgba(0, 114, 220, 0.116);
-          i {
-            transform: translateX(4px);
-          }
-        }
-
-        &:active {
-          transform: translateY(0) scale(0.96);
-          box-shadow: 0 2px 8px rgba(0, 113, 220, 0.2);
+          box-shadow: 0 8px 20px rgba(0, 113, 220, 0.2);
         }
       }
 
       &-horizantal {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 18px;
-
-        @include devices(lg) {
-          gap: 15px;
-        }
-
-        @include devices(md) {
-          gap: 12px;
-        }
+        gap: 16px;
 
         @include devices(sm) {
           grid-template-columns: 1fr;
-          gap: 10px;
         }
 
         &-qoshimcha {
           display: flex;
+          justify-content: space-between;
           align-items: center;
-          gap: 45px;
-          background-color: #ffffff;
+          background: #fff;
+          padding: 12px;
           border-radius: 16px;
-          padding: 10px;
           cursor: pointer;
-          transition:
-            transform 0.3s ease,
-            box-shadow 0.3s ease;
-
-          @include devices(lg) {
-            gap: 30px;
-            padding: 8px;
-          }
-
-          @include devices(md) {
-            gap: 20px;
-            border-radius: 12px;
-          }
-
-          @include devices(sm) {
-            gap: 15px;
-            padding: 10px;
-          }
-
-          @include devices(xs) {
-            gap: 12px;
-            padding: 8px;
-          }
-
-          @include devices(xxs) {
-            gap: 10px;
-            padding: 6px;
-          }
+          transition: 0.3s;
 
           &:hover {
-            transform: translateY(-0.1px) scale(1);
+            transform: translateY(-2px);
             box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
           }
 
@@ -344,164 +149,41 @@
             display: flex;
             align-items: center;
             gap: 12px;
-
-            @include devices(md) {
-              gap: 10px;
-            }
-
-            @include devices(xs) {
-              gap: 8px;
-            }
           }
 
           p {
-            color: #000000;
-            font-size: 20px;
             font-weight: 500;
-
-            @include devices(lg) {
-              font-size: 18px;
-            }
-
-            @include devices(md) {
-              font-size: 16px;
-            }
-
-            @include devices(sm) {
-              font-size: 15px;
-            }
-
-            @include devices(xs) {
-              font-size: 14px;
-            }
-
-            @include devices(xxs) {
-              font-size: 13px;
-            }
           }
 
           .img1 {
             background: linear-gradient(to top, #d2ac67, #f3e2a5);
-            padding: 10px;
+            padding: 8px;
             border-radius: 12px;
-
-            @include devices(md) {
-              padding: 8px;
-              border-radius: 10px;
-            }
-
-            @include devices(xs) {
-              padding: 6px;
-              border-radius: 8px;
-            }
           }
-
           .img2 {
             background: linear-gradient(to top, #6172f3, #8098f9);
-            padding: 10px;
+            padding: 8px;
             border-radius: 12px;
-
-            @include devices(md) {
-              padding: 8px;
-              border-radius: 10px;
-            }
-
-            @include devices(xs) {
-              padding: 6px;
-              border-radius: 8px;
-            }
           }
-
           .img3 {
-            background: linear-gradient(to top, #1570ef, #2e90fa);
-            padding: 10px;
+            background: linear-gradient(to top, #6172f3, #8098f9);
+            padding: 8px;
             border-radius: 12px;
-
-            @include devices(md) {
-              padding: 8px;
-              border-radius: 10px;
-            }
-
-            @include devices(xs) {
-              padding: 6px;
-              border-radius: 8px;
-            }
           }
-
           .img4 {
-            background: linear-gradient(to top, #875bf7, #a48afb);
-            padding: 10px;
+            background: linear-gradient(to top, #6172f3, #8098f9);
+            padding: 8px;
             border-radius: 12px;
-
-            @include devices(md) {
-              padding: 8px;
-              border-radius: 10px;
-            }
-
-            @include devices(xs) {
-              padding: 6px;
-              border-radius: 8px;
-            }
           }
-
           .img5 {
-            background: linear-gradient(to top, #088ab2, #06aed4);
-            padding: 10px;
+            background: linear-gradient(to top, #6172f3, #8098f9);
+            padding: 8px;
             border-radius: 12px;
-
-            @include devices(md) {
-              padding: 8px;
-              border-radius: 10px;
-            }
-
-            @include devices(xs) {
-              padding: 6px;
-              border-radius: 8px;
-            }
           }
-
           .img6 {
-            background: linear-gradient(to top, #107569, #15b79e);
-            padding: 10px;
+            background: linear-gradient(to top, #6172f3, #8098f9);
+            padding: 8px;
             border-radius: 12px;
-
-            @include devices(md) {
-              padding: 8px;
-              border-radius: 10px;
-            }
-
-            @include devices(xs) {
-              padding: 6px;
-              border-radius: 8px;
-            }
-          }
-
-          i {
-            background-color: #f4f8fd;
-            border-radius: 6px;
-            padding: 12px;
-            font-size: 24px;
-            font-weight: 500;
-
-            @include devices(lg) {
-              padding: 10px;
-              font-size: 20px;
-            }
-
-            @include devices(md) {
-              padding: 8px;
-              font-size: 18px;
-            }
-
-            @include devices(xs) {
-              padding: 6px;
-              font-size: 16px;
-            }
-
-            @include devices(xxs) {
-              padding: 5px;
-              font-size: 14px;
-            }
           }
         }
       }

@@ -1,117 +1,92 @@
 .services {
   display: flex;
-  align-items: center;
-  gap: 16px;
-
-  @include devices(lg) {
-    gap: 14px;
-  }
-
-  @include devices(md) {
-    flex-wrap: wrap;
-    gap: 12px;
-  }
+  align-items: stretch;
+  gap: clamp(10px, 1.4vw, 16px);
+  flex-wrap: wrap; 
 
   @include devices(sm) {
     flex-direction: column;
-    align-items: stretch;
-    gap: 12px;
-  }
-
-  @include devices(xs) {
-    gap: 10px;
   }
 
   &-card {
-    width: 520px;
-    border-radius: 16px;
-    padding: 16px;
+    flex: 1 1 360px;    
+    max-width: 520px;    
+    width: 100%;
+
+    border-radius: clamp(12px, 1.4vw, 16px);
+    padding: clamp(10px, 1.4vw, 16px);
+
     display: flex;
     align-items: center;
-    gap: 16px;
-    cursor: pointer;
+    gap: clamp(10px, 1.4vw, 16px);
 
-    @include devices(xl) {
-      width: 500px;
-    }
+    cursor: pointer;
+    min-width: 0;
+
+    transition: transform 0.2s ease, box-shadow 0.25s ease;
 
     @include devices(lg) {
-      width: calc(50% - 7px);
-      padding: 14px;
-      gap: 14px;
+      max-width: none;
+      flex: 1 1 calc(50% - 8px);
     }
 
     @include devices(md) {
-      width: 100%;
-      padding: 12px;
-      gap: 12px;
-      border-radius: 14px;
+      flex: 1 1 100%;
+      border-radius: clamp(12px, 1.2vw, 14px);
     }
 
-    @include devices(sm) {
-      padding: 12px;
-      border-radius: 12px;
+    &:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
     }
 
-    @include devices(xs) {
-      padding: 10px;
-      gap: 10px;
+    .icon {
+      flex-shrink: 0;
+    }
+
+    .content {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: clamp(4px, 0.8vw, 8px);
     }
 
     h2 {
-      font-size: 24px;
+      font-size: clamp(16px, 1.6vw, 24px);
       font-weight: 600;
-      color: #ffffffff;
-      margin-bottom: 8px;
+      color: #ffffff;
+      margin: 0;
+      line-height: 1.2;
 
-      @include devices(lg) {
-        font-size: 22px;
-      }
-
-      @include devices(md) {
-        font-size: 20px;
-        margin-bottom: 6px;
-      }
-
-      @include devices(sm) {
-        font-size: 18px;
-      }
-
-      @include devices(xs) {
-        font-size: 16px;
-        margin-bottom: 4px;
-      }
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
     }
 
     p {
-      font-size: 18px;
+      font-size: clamp(13px, 1.2vw, 18px);
       font-weight: 400;
       color: #eef2f6;
+      margin: 0;
+      line-height: 1.4;
 
-      @include devices(lg) {
-        font-size: 16px;
-      }
-
-      @include devices(md) {
-        font-size: 15px;
-      }
-
-      @include devices(sm) {
-        font-size: 14px;
-      }
-
-      @include devices(xs) {
-        font-size: 13px;
-      }
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      opacity: 0.95;
     }
   }
 
   .pink {
     background: linear-gradient(to right, #875bf7, #a48afb);
   }
+
   .blue {
     background: linear-gradient(to right, #1570ef, #2e90fa);
   }
+
   .cyan {
     background: linear-gradient(to right, #088ab2, #06aed4);
   }

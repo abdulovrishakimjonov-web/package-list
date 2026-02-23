@@ -1,5 +1,5 @@
 .course {
-  padding: 25px 0;
+  padding: clamp(14px, 2vw, 25px) 0;
   background-color: #013a89;
   background-image: url("../../images/backrount.png");
   background-size: cover;
@@ -7,22 +7,10 @@
   position: relative;
   overflow: hidden;
 
-  @include devices(lg) {
-    padding: 20px 0;
-  }
-
-  @include devices(md) {
-    padding: 18px 0;
-  }
-
-  @include devices(sm) {
-    padding: 15px 0;
-  }
-
   &::before {
     content: "";
     position: absolute;
-    top: 30;
+    top: 30px;
     left: -250px;
     width: 400px;
     height: 100%;
@@ -72,104 +60,55 @@
   .container {
     position: relative;
     z-index: 5;
+    width: 100%;
+    margin: 0 auto;
   }
 
   &-text {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 30px;
-
-    @include devices(md) {
-      margin-bottom: 25px;
-      gap: 15px;
-    }
+    margin-bottom: clamp(16px, 2vw, 30px);
+    gap: 14px;
 
     @include devices(sm) {
       flex-direction: column;
       align-items: flex-start;
-      margin-bottom: 20px;
-      gap: 15px;
     }
 
     h2 {
       color: #ffffff;
-      font-size: 36px;
+      font-size: clamp(20px, 2.2vw, 36px);
       font-weight: 700;
-
-      @include devices(lg) {
-        font-size: 32px;
-      }
-
-      @include devices(md) {
-        font-size: 28px;
-      }
-
-      @include devices(sm) {
-        font-size: 24px;
-      }
-
-      @include devices(xs) {
-        font-size: 22px;
-      }
-
-      @include devices(xxs) {
-        font-size: 20px;
-      }
+      line-height: 1.15;
+      margin: 0;
     }
 
     button {
       background: #f5f9ff;
-      background-size: 150% auto;
       color: #145fcb;
-      border: none;
       border: 1px solid #145fcb;
-      padding: 10px 24px;
+
+      padding: clamp(6px, 1vw, 10px) clamp(12px, 2vw, 24px);
       border-radius: 12px;
-      display: flex;
-      font-size: 16px;
-      font-weight: 600;
+
+      display: inline-flex;
       align-items: center;
-      gap: 8px;
+      justify-content: center;
+      gap: clamp(6px, 1vw, 8px);
+
       cursor: pointer;
       flex-shrink: 0;
+      width: fit-content;
 
-      @include devices(lg) {
-        padding: 9px 20px;
-        font-size: 15px;
-      }
+      font-size: clamp(12px, 1.1vw, 16px);
+      font-weight: 600;
 
-      @include devices(md) {
-        padding: 8px 18px;
-        font-size: 14px;
-      }
-
-      @include devices(sm) {
-        padding: 8px 16px;
-        font-size: 14px;
-        gap: 6px;
-      }
-
-      @include devices(xs) {
-        padding: 7px 14px;
-        font-size: 13px;
-      }
-
-      @include devices(xxs) {
-        padding: 6px 12px;
-        font-size: 12px;
-      }
+      transition: transform 0.15s ease, box-shadow 0.25s ease;
 
       i {
         transition: transform 0.3s ease;
-
-        @include devices(xs) {
-          font-size: 14px;
-        }
-
-        @include devices(xxs) {
-          font-size: 12px;
-        }
+        font-size: 1em;
       }
 
       &:hover {
@@ -179,67 +118,60 @@
       }
 
       &:active {
-        transform: translateY(0) scale(0.96);
+        transform: scale(0.96);
         box-shadow: 0 2px 8px rgba(0, 113, 220, 0.2);
       }
     }
   }
 
+  /* ✅ GRID — ham desktop, ham tablet uchun stabil */
   &-main {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
     position: relative;
     z-index: 10;
-    margin-bottom: 25px;
+    margin-bottom: clamp(14px, 1.6vw, 25px);
 
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: clamp(12px, 1.4vw, 20px);
+    align-items: stretch;
+
+    /* Large ekran biroz kichrayganda 3 ta */
     @include devices(xl) {
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
-    @include devices(lg) {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-      margin-bottom: 20px;
-    }
-
+    /* ✅ iPad / Tablet: 2 ta ustun (eng to‘g‘risi) */
     @include devices(md) {
-      gap: 14px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
+    /* ✅ Telefon: 1 ta ustun va markazda */
     @include devices(sm) {
       grid-template-columns: 1fr;
-      gap: 12px;
-      margin-bottom: 15px;
+      justify-items: center; // ✅ center
     }
 
     &-card {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      padding: 16px;
+
+      padding: clamp(10px, 1.2vw, 16px);
+      border-radius: clamp(12px, 1.2vw, 16px);
+
       overflow: hidden;
-      border-radius: 16px;
       background-color: #ffffff;
       position: relative;
       z-index: 10;
-      transition:
-        transform 0.25s ease,
-        opacity 0.25s ease;
 
-      @include devices(md) {
-        padding: 14px;
-        border-radius: 14px;
-      }
+      transition: transform 0.25s ease, opacity 0.25s ease;
 
+      /* ✅ Grid bo‘lgani uchun karta width 100% bo‘lsin */
+      width: 100%;
+
+      /* ✅ Telefon: kartani juda keng qilib yubormaslik */
       @include devices(sm) {
-        padding: 12px;
-        border-radius: 12px;
-      }
-
-      @include devices(xs) {
-        padding: 10px;
+        max-width: 520px;
       }
 
       &::before {
@@ -248,21 +180,15 @@
         inset: 0;
         background-image: url("../../images/hover-gerb.svg");
         background-repeat: no-repeat;
-        background-size: 130px;
-        background-position: right 130px bottom 50px;
+
+        background-size: clamp(80px, 8vw, 130px);
+        background-position: right clamp(60px, 10vw, 130px) bottom
+          clamp(24px, 5vw, 50px);
+
         transform: translateX(50%);
         transition: transform 0.45s ease;
         z-index: 0;
-
-        @include devices(lg) {
-          background-size: 100px;
-          background-position: right 100px bottom 40px;
-        }
-
-        @include devices(sm) {
-          background-size: 80px;
-          background-position: right 80px bottom 30px;
-        }
+        pointer-events: none;
       }
 
       &:hover::before {
@@ -277,101 +203,46 @@
       .card-header {
         display: flex;
         align-items: center;
-        gap: 16px;
-        margin-bottom: 20px;
-
-        @include devices(md) {
-          gap: 12px;
-          margin-bottom: 16px;
-        }
-
-        @include devices(sm) {
-          gap: 10px;
-          margin-bottom: 14px;
-        }
-
-        @include devices(xs) {
-          gap: 8px;
-          margin-bottom: 12px;
-        }
+        gap: clamp(8px, 1.2vw, 16px);
+        margin-bottom: clamp(12px, 1.6vw, 20px);
+        min-width: 0;
 
         .icon-box {
-          width: 92px;
-          height: 92px;
+          width: clamp(50px, 6.2vw, 92px);
+          height: clamp(50px, 6.2vw, 92px);
+
           background: #ecf4ff;
-          border-radius: 8px;
+          border-radius: clamp(6px, 0.8vw, 8px);
+
           display: flex;
           align-items: center;
           justify-content: center;
           flex-shrink: 0;
 
-          @include devices(lg) {
-            width: 80px;
-            height: 80px;
-          }
-
-          @include devices(md) {
-            width: 70px;
-            height: 70px;
-            border-radius: 6px;
-          }
-
-          @include devices(sm) {
-            width: 60px;
-            height: 60px;
-          }
-
-          @include devices(xs) {
-            width: 50px;
-            height: 50px;
-          }
-
           img {
-            width: 70px;
-
-            @include devices(lg) {
-              width: 60px;
-            }
-
-            @include devices(md) {
-              width: 50px;
-            }
-
-            @include devices(sm) {
-              width: 45px;
-            }
-
-            @include devices(xs) {
-              width: 35px;
-            }
+            width: clamp(35px, 4.5vw, 70px);
+            height: auto;
+            display: block;
           }
         }
 
         p {
           color: #121926;
-          font-size: 24px;
+          font-size: clamp(14px, 1.5vw, 24px);
           font-weight: 700;
           margin: 0;
           line-height: 1.2;
 
-          @include devices(lg) {
-            font-size: 20px;
-          }
-
-          @include devices(md) {
-            font-size: 18px;
-          }
+          min-width: 0;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
 
           @include devices(sm) {
-            font-size: 16px;
-          }
-
-          @include devices(xs) {
-            font-size: 15px;
-          }
-
-          @include devices(xxs) {
-            font-size: 14px;
+            white-space: normal;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
           }
         }
       }
@@ -380,39 +251,15 @@
         width: 100%;
         height: 1px;
         background-color: #ecf4ff;
-        margin-bottom: 12px;
-
-        @include devices(sm) {
-          margin-bottom: 10px;
-        }
+        margin-bottom: clamp(10px, 1.2vw, 12px);
       }
 
       h5 {
         color: #364152;
-        font-size: 20px;
+        font-size: clamp(13px, 1.2vw, 20px);
         font-weight: 500;
-        line-height: 1.5;
+        line-height: 1.55;
         margin: 0;
-
-        @include devices(lg) {
-          font-size: 18px;
-        }
-
-        @include devices(md) {
-          font-size: 16px;
-        }
-
-        @include devices(sm) {
-          font-size: 15px;
-        }
-
-        @include devices(xs) {
-          font-size: 14px;
-        }
-
-        @include devices(xxs) {
-          font-size: 13px;
-        }
       }
     }
   }

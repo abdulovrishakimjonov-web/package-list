@@ -1,29 +1,31 @@
 .international {
   &-text {
     background-color: #fff;
-    border-radius: 16px;
-    padding: 16px;
-    margin-bottom: 16px;
+    border-radius: clamp(12px, 1.4vw, 16px);
+    padding: clamp(10px, 1.4vw, 16px);
+    margin-bottom: clamp(10px, 1.4vw, 16px);
 
     h2 {
-      font-size: 30px;
+      font-size: clamp(18px, 1.9vw, 30px);
       font-weight: 600;
       color: #121926;
-      margin-bottom: 16px;
+      margin: 0 0 clamp(10px, 1.4vw, 16px);
+      line-height: 1.2;
     }
 
     &-top {
       width: 100%;
-      height: 0.5px;
+      height: 1px;
       background-color: #e3e8ef;
-      margin-bottom: 16px;
+      margin-bottom: clamp(10px, 1.4vw, 16px);
     }
 
     p {
       color: #364152;
-      font-size: 18px;
+      font-size: clamp(13px, 1.2vw, 18px);
       font-weight: 500;
-      margin-bottom: 16px;
+      margin: 0 0 clamp(10px, 1.4vw, 16px);
+      line-height: 1.55;
     }
 
     ul {
@@ -33,12 +35,14 @@
 
       li {
         position: relative;
-        padding-left: 32px;
-        margin-bottom: 16px;
+
+        padding-left: clamp(24px, 3vw, 32px);
+        margin-bottom: clamp(10px, 1.4vw, 16px);
 
         color: #364152;
-        font-size: 18px;
+        font-size: clamp(13px, 1.2vw, 18px);
         font-weight: 500;
+        line-height: 1.6;
 
         span {
           color: #121926;
@@ -49,11 +53,13 @@
           content: "";
           position: absolute;
           left: 0;
-          top: 4px;
-          width: 19px;
-          height: 19px;
+          top: 0.2em;
+
+          width: clamp(14px, 1.6vw, 19px);
+          height: clamp(14px, 1.6vw, 19px);
+
           border-radius: 50%;
-          border: 3px solid #145fcb;
+          border: clamp(2px, 0.35vw, 3px) solid #145fcb;
           background: #f3e2a5;
           box-sizing: border-box;
         }
@@ -61,10 +67,11 @@
         &:not(:last-child)::after {
           content: "";
           position: absolute;
-          left: 9px;
-          top: 26px;
+          left: calc(clamp(14px, 1.6vw, 19px) / 2);
+          top: calc(0.2em + clamp(14px, 1.6vw, 19px) + 8px);
+
           width: 1px;
-          height: calc(100% + 16px);
+          height: calc(100% + clamp(10px, 1.4vw, 16px));
 
           background-image: linear-gradient(
             to bottom,
@@ -75,6 +82,7 @@
           );
           background-size: 3px 8px;
           background-repeat: repeat-y;
+          opacity: 0.9;
         }
       }
     }
@@ -82,10 +90,20 @@
 
   &-carusel {
     background-color: #fff;
-    border-radius: 16px;
-    padding: 16px;
+    border-radius: clamp(12px, 1.4vw, 16px);
+    padding: clamp(10px, 1.4vw, 16px);
+
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: clamp(10px, 1.4vw, 16px);
+
+    min-width: 0;
+
+    flex-wrap: wrap;
+
+    @include devices(sm) {
+      flex-direction: column;
+      align-items: stretch;
+    }
   }
 }

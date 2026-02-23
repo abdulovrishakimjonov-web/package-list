@@ -24,7 +24,7 @@
   @include devices(sm) {
     padding: 12px;
     border-radius: 12px;
-    background-image: none; // mobilda toza ko‘rinadi
+    background-image: none;
   }
 
   @include devices(xs) {

@@ -1,81 +1,63 @@
 .about-page {
-  &-card {
+  &-card,
+  .about-page-text {
     background-color: #ffffff;
-    border-radius: 16px;
-    padding: 16px;
-    margin-bottom: 16px;
+    border-radius: clamp(12px, 1.4vw, 16px);
+    padding: clamp(10px, 1.4vw, 16px);
+    margin-bottom: clamp(10px, 1.4vw, 16px);
+  }
 
-    @include devices(md) {
-      padding: 14px;
-      border-radius: 14px;
-    }
-
-    @include devices(sm) {
-      padding: 12px;
-      border-radius: 12px;
-    }
-
-    @include devices(xs) {
-      padding: 10px;
-    }
-
+  &-card {
     &-image {
       display: grid;
       grid-template-columns: 2fr 1fr;
-      gap: 16px;
-
-      @include devices(lg) {
-        gap: 14px;
-      }
+      gap: clamp(10px, 1.4vw, 16px);
 
       @include devices(md) {
-        grid-template-columns: 1fr; // 2 ustun -> 1 ustun
-        gap: 12px;
-      }
-
-      @include devices(sm) {
-        gap: 10px;
+        grid-template-columns: 1fr;
       }
 
       > img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        border-radius: 12px;
+        border-radius: clamp(10px, 1vw, 12px);
 
-        @include devices(sm) {
-          border-radius: 10px;
+        aspect-ratio: 16 / 10;
+
+        @include devices(md) {
+          aspect-ratio: 16 / 9;
         }
       }
 
       &-img {
         display: grid;
         grid-template-rows: 1fr 1fr;
-        gap: 16px;
-
-        @include devices(lg) {
-          gap: 14px;
-        }
+        gap: clamp(10px, 1.4vw, 16px);
 
         @include devices(md) {
-          grid-template-columns: 1fr 1fr; // pastdagi 2 rasm yonma-yon
+          grid-template-columns: 1fr 1fr;
           grid-template-rows: auto;
-          gap: 12px;
         }
 
         @include devices(sm) {
-          grid-template-columns: 1fr; // juda kichikda bitta-bitta
-          gap: 10px;
+          grid-template-columns: 1fr;
         }
 
         img {
           width: 100%;
           height: 100%;
           object-fit: cover;
-          border-radius: 12px;
+          border-radius: clamp(10px, 1vw, 12px);
+
+          aspect-ratio: 16 / 10;
+
+          @include devices(md) {
+            aspect-ratio: 1 / 1; 
+          }
 
           @include devices(sm) {
-            border-radius: 10px;
+            aspect-ratio: 16 / 9;
           }
         }
       }
@@ -83,297 +65,146 @@
   }
 
   .about-page-text {
-    background-color: #ffffff;
-    border-radius: 16px;
-    padding: 16px;
-    margin-bottom: 16px;
-
-    @include devices(md) {
-      padding: 14px;
-      border-radius: 14px;
-    }
-
-    @include devices(sm) {
-      padding: 12px;
-      border-radius: 12px;
-    }
-
-    @include devices(xs) {
-      padding: 10px;
-    }
-
     h2 {
-      font-size: 24px;
+      font-size: clamp(17px, 1.5vw, 24px);
       font-weight: 700;
       color: #1f2937;
-      margin-bottom: 24px;
-
-      @include devices(lg) {
-        font-size: 22px;
-        margin-bottom: 20px;
-      }
-
-      @include devices(md) {
-        font-size: 20px;
-        margin-bottom: 18px;
-      }
-
-      @include devices(sm) {
-        font-size: 18px;
-        margin-bottom: 16px;
-      }
-
-      @include devices(xs) {
-        font-size: 17px;
-        margin-bottom: 14px;
-      }
+      margin: 0 0 clamp(14px, 2vw, 24px);
+      line-height: 1.2;
     }
 
     p {
       color: #364152;
       font-weight: 500;
-      font-size: 16px;
-      line-height: 28px;
-
-      @include devices(md) {
-        font-size: 15px;
-        line-height: 26px;
-      }
-
-      @include devices(sm) {
-        font-size: 14px;
-        line-height: 24px;
-      }
-
-      @include devices(xs) {
-        font-size: 13px;
-        line-height: 22px;
-      }
+      font-size: clamp(13px, 1.05vw, 16px);
+      line-height: clamp(22px, 2vw, 28px);
+      margin: 0;
     }
 
     &-list {
-      line-height: 28px;
-
-      @include devices(sm) {
-        line-height: 24px;
-      }
+      line-height: clamp(22px, 2vw, 28px);
 
       ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
         li {
-        font-size: 18px;
-        font-weight: 500;
-        color: #364152;
-        display: flex;
-        gap: 8px;
+          font-size: clamp(14px, 1.2vw, 18px);
+          font-weight: 500;
+          color: #364152;
+          display: flex;
+          gap: clamp(6px, 0.8vw, 8px);
+          align-items: flex-start;
 
-        @include devices(md) {
-          font-size: 16px;
-        }
-
-        @include devices(sm) {
-          font-size: 15px;
-          gap: 6px;
-        }
-
-        @include devices(xs) {
-          font-size: 14px;
-        }
-
-        &::before {
-          content: "•";
-          font-size: 18px;
-          line-height: 1;
-
-          @include devices(md) {
-            font-size: 16px;
-          }
-
-          @include devices(sm) {
-            font-size: 15px;
-          }
-
-          @include devices(xs) {
-            font-size: 14px;
+          &::before {
+            content: "•";
+            font-size: 1em;
+            line-height: 1;
+            margin-top: 0.2em;
           }
         }
-      }
       }
     }
 
     &-card {
-      display: flex;
-      justify-content: space-between;
-      gap: 16px;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: clamp(10px, 1.4vw, 16px);
 
-      @include devices(lg) {
-        gap: 14px;
-        flex-wrap: wrap; // sig‘masa pastga tushadi
+      @include devices(xl) {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
       @include devices(md) {
-        gap: 12px;
-      }
-
-      @include devices(sm) {
-        gap: 10px;
-        justify-content: center;
+        grid-template-columns: 1fr;
       }
 
       &-card1 {
         position: relative;
-        width: 235px;
-        padding: 30px 20px;
+        width: 100%; // ✅ qattiq width yo‘q
+        padding: clamp(18px, 2vw, 30px) clamp(12px, 1.6vw, 20px);
+
         border: 1px solid #e3e8ef;
-        border-radius: 12px;
+        border-radius: clamp(10px, 1.1vw, 12px);
         background-color: #ffffff;
+
         display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center;
+
         overflow: hidden;
-        transition: transform 0.3s ease;
-
-        @include devices(lg) {
-          width: calc(50% - 7px); // 2ta ustun bo‘lib turadi
-          padding: 26px 18px;
-        }
-
-        @include devices(md) {
-          width: 100%; // 1 tadan
-          padding: 22px 16px;
-        }
-
-        @include devices(sm) {
-          padding: 20px 14px;
-        }
-
-        @include devices(xs) {
-          padding: 18px 12px;
-        }
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
 
         &:hover {
-          transform: translateY(-5px);
+          transform: translateY(-4px);
           box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
         }
 
-        &::before {
-          content: "";
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 80px;
-          height: 80px;
-          background-image: url("../../images/naqish.svg");
-          background-repeat: no-repeat;
-          background-size: contain;
-          opacity: 0.8;
-
-          @include devices(sm) {
-            width: 64px;
-            height: 64px;
-          }
-
-          @include devices(xs) {
-            width: 56px;
-            height: 56px;
-          }
-        }
-
+        &::before,
         &::after {
           content: "";
           position: absolute;
-          bottom: 0px;
-          right: -10px;
-          width: 80px;
-          height: 80px;
+          width: clamp(56px, 5vw, 80px);
+          height: clamp(56px, 5vw, 80px);
           background-image: url("../../images/naqish.svg");
           background-repeat: no-repeat;
           background-size: contain;
-          transform: rotate(180deg);
           opacity: 0.8;
+          pointer-events: none;
+        }
 
-          @include devices(sm) {
-            width: 64px;
-            height: 64px;
-          }
+        &::before {
+          top: 0;
+          left: 0;
+        }
 
-          @include devices(xs) {
-            width: 56px;
-            height: 56px;
-          }
+        &::after {
+          bottom: 0;
+          right: -10px;
+          transform: rotate(180deg);
         }
 
         img {
-          width: 72px;
-          height: 72px;
+          width: clamp(56px, 5vw, 72px);
+          height: clamp(56px, 5vw, 72px);
           border-radius: 50%;
-          margin-bottom: 16px;
+          margin-bottom: clamp(10px, 1.2vw, 16px);
           z-index: 2;
-
-          @include devices(sm) {
-            width: 64px;
-            height: 64px;
-            margin-bottom: 14px;
-          }
-
-          @include devices(xs) {
-            width: 56px;
-            height: 56px;
-            margin-bottom: 12px;
-          }
+          object-fit: cover;
         }
 
         .line-blue {
           width: 80%;
           height: 2px;
           background-color: #145fcb;
-          margin-bottom: 15px;
+          margin-bottom: clamp(10px, 1.2vw, 15px);
           opacity: 0.8;
-
-          @include devices(sm) {
-            margin-bottom: 12px;
-          }
-
-          @include devices(xs) {
-            margin-bottom: 10px;
-          }
+          z-index: 2;
         }
 
         b {
-          font-size: 18px;
+          font-size: clamp(15px, 1.2vw, 18px);
           font-weight: 700;
           color: #111827;
-          margin-bottom: 10px;
+          margin-bottom: clamp(6px, 1vw, 10px);
           z-index: 2;
-
-          @include devices(md) {
-            font-size: 17px;
-          }
-
-          @include devices(sm) {
-            font-size: 16px;
-            margin-bottom: 8px;
-          }
-
-          @include devices(xs) {
-            font-size: 15px;
-          }
+          line-height: 1.2;
         }
 
         p {
-          font-size: 14px;
+          font-size: clamp(12px, 1vw, 14px);
           font-weight: 400;
           color: #4b5563;
           line-height: 1.5;
           z-index: 2;
 
-          @include devices(sm) {
-            font-size: 13px;
-          }
-
-          @include devices(xs) {
-            font-size: 12px;
-          }
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          margin: 0;
         }
       }
     }
@@ -383,15 +214,7 @@
     width: 100%;
     height: 0;
     border: 1px solid #e3e8ef;
-    margin-bottom: 16px;
-
-    @include devices(sm) {
-      margin-bottom: 12px;
-    }
-
-    @include devices(xs) {
-      margin-bottom: 10px;
-    }
+    margin-bottom: clamp(10px, 1.4vw, 16px);
   }
 
   .top2 {

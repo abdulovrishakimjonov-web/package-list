@@ -1,312 +1,154 @@
 .lider {
-  &-top {
-    width: 100%;
-    height: 0.5px;
-    background-color: #e3e8ef;
-    margin-bottom: 25px;
-
-    @include devices(md) {
-      margin-bottom: 20px;
-    }
-    @include devices(sm) {
-      margin-bottom: 15px;
-    }
-  }
-
+  // 🔹 umumiy
   border-radius: 8px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: clamp(12px, 1vw, 14px);
   font-weight: 600;
   transition: background 0.3s ease;
 
-  @include devices(sm) {
-    font-size: 13px;
-  }
-  @include devices(xs) {
-    font-size: 12px;
+  &-top {
+    width: 100%;
+    height: 1px;
+    background-color: #e3e8ef;
+    margin-bottom: clamp(15px, 2vw, 25px);
   }
 
-  /* ================= CARD 4 ================= */
   &-card4 {
     background-color: #ffffff;
-    border-radius: 12px;
-    background-image: url("../../images/events-img.png");
-    background-repeat: no-repeat;
-    cursor: pointer;
-    margin-bottom: 30px;
-
-    /* ✅ details card ichida chiqishi uchun */
+    border-radius: clamp(10px, 1.2vw, 12px);
     overflow: hidden;
+    margin-bottom: clamp(15px, 2vw, 30px);
+    position: relative;
 
-    @include devices(lg) {
-      margin-bottom: 25px;
-    }
+    // fon rasm desktopda bor, md dan pastda yo‘q (sizdagidek)
+    background-image: url("../../images/events-img.png");
+    background-repeat: repeat-y;
+
     @include devices(md) {
       background-image: none;
-      margin-bottom: 20px;
-      position: relative;
-    }
-    @include devices(sm) {
-      border-radius: 10px;
-      margin-bottom: 15px;
     }
 
-    /* ✅ cardning yuqori qismi (oldingi flex layout) */
+    // ✅ content layout
     &-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      display: grid;
+      grid-template-columns: 1fr minmax(280px, 420px);
+      align-items: stretch;
+      min-width: 0;
+
+      @include devices(lg) {
+        grid-template-columns: 1fr minmax(260px, 380px);
+      }
 
       @include devices(md) {
-        flex-direction: column;
-        align-items: stretch;
+        grid-template-columns: 1fr;
       }
     }
 
+    // ✅ o‘ngdagi rasm
     &-img {
-      border-radius: 0px 16px 16px 0px;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
 
-      @include devices(lg) {
-        max-width: 400px;
-      }
+      border-radius: 0; // grid ichida burchaklar card4 dan chiqadi
+
+      // desktopda balandlik barqaror bo‘lsin
+      min-height: 100%;
+      aspect-ratio: 4 / 3;
 
       @include devices(md) {
-        width: 100%;
-        max-width: 100%;
-        border-radius: 0;
         order: 2;
+        aspect-ratio: 16 / 9;
       }
 
       @include devices(sm) {
-        max-height: 250px;
-        object-fit: cover;
+        aspect-ratio: 16 / 10;
       }
 
       @include devices(xs) {
-        max-height: 200px;
+        aspect-ratio: 3 / 2;
       }
     }
 
-    &-line {
-      left: 10px;
-      width: 15px;
-      height: 334px;
-      background-color: #063462;
-      position: relative;
-
-      @include devices(lg) {
-        left: 30px;
-        width: 12px;
-        height: 300px;
-      }
-
-      @include devices(md) {
-        display: none;
-      }
-    }
-
-    &-gerb {
-      position: relative;
-      left: 60px;
-      z-index: 10;
-
-      @include devices(lg) {
-        left: 80px;
-        width: 120px;
-      }
-
-      @include devices(md) {
-        position: absolute;
-        left: auto;
-        right: 20px;
-        top: 20px;
-        width: 100px;
-        opacity: 0.3;
-      }
-
-      @include devices(sm) {
-        width: 80px;
-        right: 15px;
-        top: 15px;
-      }
-
-      @include devices(xs) {
-        width: 60px;
-        right: 10px;
-        top: 10px;
-      }
-    }
-
+    // ✅ chapdagi content
     &-text {
-      position: relative;
-      left: 49px;
       flex: 1;
-      padding-right: 20px;
+      min-width: 0;
 
-      @include devices(lg) {
-        left: 30px;
-      }
+      padding: clamp(12px, 2vw, 24px);
+      padding-right: clamp(12px, 2vw, 20px);
+
+      // line/gerb joy egallamasin deb chapdan biroz joy qoldiramiz
+      padding-left: clamp(12px, 2vw, 34px);
 
       @include devices(md) {
-        left: 0;
-        padding: 20px;
         order: 1;
-        width: 100%;
-      }
-
-      @include devices(sm) {
-        padding: 16px;
-      }
-      @include devices(xs) {
-        padding: 12px;
+        padding: clamp(12px, 2vw, 20px);
       }
 
       p {
-        font-size: 18px;
+        font-size: clamp(12px, 1.2vw, 18px);
         color: #145fcb;
         font-weight: 500;
-        margin-bottom: 9px;
+        margin: 0 0 clamp(8px, 1vw, 9px);
         display: flex;
-        gap: 8px;
+        gap: clamp(6px, 1vw, 8px);
         align-items: center;
-
-        @include devices(lg) {
-          font-size: 16px;
-        }
-        @include devices(md) {
-          font-size: 15px;
-          margin-bottom: 8px;
-        }
-        @include devices(sm) {
-          font-size: 14px;
-          gap: 6px;
-        }
-        @include devices(xs) {
-          font-size: 13px;
-        }
-        @include devices(xxs) {
-          font-size: 12px;
-        }
+        line-height: 1.2;
 
         span {
-          width: 4px;
-          height: 25px;
+          width: clamp(3px, 0.3vw, 4px);
+          height: clamp(18px, 2vw, 25px);
           border-radius: 26px;
           background-color: #145fcb;
-
-          @include devices(md) {
-            height: 22px;
-          }
-          @include devices(sm) {
-            width: 3px;
-            height: 20px;
-          }
-          @include devices(xs) {
-            height: 18px;
-          }
+          flex-shrink: 0;
         }
       }
 
       h3 {
-        font-size: 28px;
+        font-size: clamp(16px, 1.9vw, 28px);
         font-weight: 600;
-        color: #000000;
-        margin-bottom: 29px;
-
-        @include devices(lg) {
-          font-size: 24px;
-          margin-bottom: 24px;
-        }
-        @include devices(md) {
-          font-size: 22px;
-          margin-bottom: 20px;
-        }
-        @include devices(sm) {
-          font-size: 20px;
-          margin-bottom: 16px;
-        }
-        @include devices(xs) {
-          font-size: 18px;
-          margin-bottom: 14px;
-        }
-        @include devices(xxs) {
-          font-size: 16px;
-          margin-bottom: 12px;
-        }
+        color: #000;
+        margin: 0 0 clamp(12px, 2vw, 29px);
+        line-height: 1.2;
       }
 
       &-link {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 16px;
-        margin-bottom: 16px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: clamp(8px, 1.2vw, 16px);
+        margin-bottom: clamp(10px, 1.2vw, 16px);
 
-        @include devices(lg) {
-          gap: 12px;
-          margin-bottom: 14px;
-        }
-        @include devices(md) {
-          gap: 10px;
-          margin-bottom: 12px;
-        }
         @include devices(sm) {
           grid-template-columns: 1fr;
-          gap: 8px;
         }
 
         a {
           display: flex;
           align-items: center;
-          gap: 8px;
-          font-weight: 500;
-          font-size: 16px;
-          line-height: 24px;
-          color: #121926;
-          padding: 10px 16px;
-          background-color: #f4f8fd;
-          border-radius: 12px;
+          gap: clamp(6px, 1vw, 8px);
 
-          @include devices(lg) {
-            font-size: 15px;
-            padding: 9px 14px;
-          }
-          @include devices(md) {
-            font-size: 14px;
-            padding: 8px 12px;
-            border-radius: 10px;
-          }
-          @include devices(sm) {
-            font-size: 13px;
-            padding: 8px 12px;
-            gap: 6px;
-          }
-          @include devices(xs) {
-            font-size: 12px;
-            padding: 7px 10px;
-            border-radius: 8px;
-          }
-          @include devices(xxs) {
-            font-size: 11px;
-            padding: 6px 8px;
-          }
+          font-weight: 500;
+          font-size: clamp(11px, 1.1vw, 16px);
+          line-height: 1.35;
+          color: #121926;
+
+          padding: clamp(7px, 1vw, 10px) clamp(10px, 1.4vw, 16px);
+          background-color: #f4f8fd;
+          border-radius: clamp(8px, 1vw, 12px);
+
+          min-width: 0;
+
+          // ✅ uzun tel/email bo‘lsa chiqib ketmasin
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
 
           i {
-            font-size: 24px;
+            font-size: clamp(16px, 1.6vw, 24px);
             color: #145fcb;
             flex-shrink: 0;
-
-            @include devices(lg) {
-              font-size: 22px;
-            }
-            @include devices(md) {
-              font-size: 20px;
-            }
-            @include devices(sm) {
-              font-size: 18px;
-            }
-            @include devices(xs) {
-              font-size: 16px;
-            }
           }
         }
       }
@@ -314,55 +156,33 @@
       &-btn {
         display: flex;
         align-items: center;
-        gap: 16px;
+        gap: clamp(10px, 1.2vw, 16px);
 
-        @include devices(md) {
-          gap: 12px;
-        }
         @include devices(sm) {
           flex-direction: column;
           align-items: stretch;
-          gap: 10px;
         }
 
         button {
           border: 1px solid #145fcb;
           background-color: #f5f9ff;
-          border-radius: 12px;
+          border-radius: clamp(8px, 1vw, 12px);
           color: #145fcb;
-          font-size: 16px;
+
+          font-size: clamp(12px, 1.1vw, 16px);
           font-weight: 600;
-          display: flex;
+
+          display: inline-flex;
           align-items: center;
           justify-content: center;
-          gap: 8px;
-          padding: 10px 16px;
-          cursor: pointer;
-          transition: all 0.3s ease;
+          gap: clamp(6px, 1vw, 8px);
 
-          @include devices(lg) {
-            font-size: 15px;
-            padding: 9px 14px;
-          }
-          @include devices(md) {
-            font-size: 14px;
-            padding: 8px 12px;
-            border-radius: 10px;
-          }
+          padding: clamp(7px, 1vw, 10px) clamp(10px, 1.4vw, 16px);
+          cursor: pointer;
+          transition: all 0.25s ease;
+
           @include devices(sm) {
-            font-size: 13px;
-            padding: 8px 12px;
-            gap: 6px;
             width: 100%;
-          }
-          @include devices(xs) {
-            font-size: 12px;
-            padding: 7px 10px;
-            border-radius: 8px;
-          }
-          @include devices(xxs) {
-            font-size: 11px;
-            padding: 6px 8px;
           }
 
           &:hover {
@@ -372,23 +192,55 @@
         }
       }
     }
+
+    // ✅ chapdagi vertikal line (dekor)
+    &-line {
+      position: absolute;
+      left: clamp(10px, 1.5vw, 16px);
+      top: clamp(16px, 2vw, 24px);
+      bottom: clamp(16px, 2vw, 24px);
+
+      width: clamp(10px, 1vw, 15px);
+      background-color: #063462;
+      border-radius: 999px;
+      opacity: 1;
+
+      @include devices(md) {
+        display: none;
+      }
+    }
+
+    // ✅ gerb (dekor)
+    &-gerb {
+      position: absolute;
+      left: clamp(32px, 4vw, 60px);
+      top: clamp(18px, 3vw, 28px);
+      width: clamp(90px, 8vw, 140px);
+      z-index: 2;
+
+      @include devices(md) {
+        left: auto;
+        right: clamp(10px, 3vw, 20px);
+        top: clamp(10px, 3vw, 20px);
+        width: clamp(60px, 10vw, 100px);
+        opacity: 0.3;
+      }
+    }
   }
 }
 
+// ✅ dropdown/details wrapper
 .lider-details-wrapper {
   width: 100%;
   display: none;
-  background: transparent; 
+  background: transparent;
   padding: 20px 25px 25px 25px;
 
+  padding: clamp(0px, 0vw, 20px) clamp(12px, 2vw, 25px)
+    clamp(12px, 2vw, 25px);
+
   @include devices(md) {
-    padding: 0 20px 20px 20px;
-  }
-  @include devices(sm) {
-    padding: 0 16px 16px 16px;
-  }
-  @include devices(xs) {
-    padding: 0 12px 12px 12px;
+    padding: 0 clamp(12px, 2vw, 20px) clamp(12px, 2vw, 20px);
   }
 
   &.is-open {
@@ -398,75 +250,36 @@
 
 .lider-details {
   display: none;
-  background: transparent; 
+  background: transparent;
   border: 0;
-  border-radius: 0;
   margin: 0;
   padding: 0;
   animation: slideDown 0.3s ease-out;
   border-radius: 12px;
+
   &.is-active {
     display: block;
-    padding-top: 18px;
+    padding-top: clamp(12px, 1.4vw, 18px);
     border-top: 1px solid #e3e8ef;
-
-    @include devices(sm) {
-      padding-top: 14px;
-    }
-    @include devices(xs) {
-      padding-top: 12px;
-    }
   }
 
   h5 {
     font-weight: 700;
-    margin-bottom: 15px;
-    font-size: 18px;
-
-    @include devices(md) {
-      font-size: 16px;
-      margin-bottom: 12px;
-    }
-    @include devices(sm) {
-      font-size: 15px;
-      margin-bottom: 10px;
-    }
-    @include devices(xs) {
-      font-size: 14px;
-      margin-bottom: 8px;
-    }
-    @include devices(xxs) {
-      font-size: 13px;
-    }
+    margin: 0 0 clamp(8px, 1.2vw, 15px);
+    font-size: clamp(13px, 1.2vw, 18px);
   }
 
   ul {
     list-style: none;
     padding-left: 0;
+    margin: 0;
 
     li {
-      padding-left: 20px;
-      margin-bottom: 10px;
+      padding-left: clamp(14px, 1.6vw, 20px);
+      margin-bottom: clamp(6px, 1vw, 10px);
       position: relative;
-      font-size: 16px;
-
-      @include devices(md) {
-        font-size: 15px;
-        padding-left: 18px;
-        margin-bottom: 8px;
-      }
-      @include devices(sm) {
-        font-size: 14px;
-        padding-left: 16px;
-      }
-      @include devices(xs) {
-        font-size: 13px;
-        padding-left: 14px;
-        margin-bottom: 6px;
-      }
-      @include devices(xxs) {
-        font-size: 12px;
-      }
+      font-size: clamp(12px, 1.1vw, 16px);
+      line-height: 1.5;
 
       &::before {
         content: "-";
@@ -477,19 +290,10 @@
   }
 
   p {
-    font-size: 16px;
+    font-size: clamp(12px, 1.1vw, 16px);
     line-height: 1.7;
     color: #121926;
-
-    @include devices(md) {
-      font-size: 15px;
-    }
-    @include devices(sm) {
-      font-size: 14px;
-    }
-    @include devices(xs) {
-      font-size: 13px;
-    }
+    margin: 0;
   }
 }
 

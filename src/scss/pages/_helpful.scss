@@ -1,62 +1,35 @@
-.container {
-  margin: 0 auto;
-  padding: 0 20px;
-
-  @include devices(sm) {
-    padding: 0 16px;
-  }
-
-  @include devices(xs) {
-    padding: 0 12px;
-  }
-}
-
 .helpful {
-  padding: 80px 0px;
-  background-image:
-    url("../../images/helpful-backrund.png"),
+  padding: clamp(30px, 5vw, 80px) 0;
+
+  background-image: url("../../images/helpful-backrund.png"),
     url("../../images/helpful-img.png");
   background-repeat: no-repeat, no-repeat;
-  background-position:
-    left center,
-    right center;
+  background-position: left center, right center;
+  background-size: min(360px, 28vw), min(360px, 28vw);
 
   @include devices(lg) {
-    padding: 60px 0;
-    background-size: 300px, 300px;
+    background-size: min(320px, 30vw), min(320px, 30vw);
   }
 
   @include devices(md) {
-    padding: 50px 0;
-    background-size: 250px, 250px;
+    background-size: min(260px, 34vw), min(260px, 34vw);
   }
 
   @include devices(sm) {
-    padding: 40px 0;
     background-image: none;
-  }
-
-  @include devices(xs) {
-    padding: 30px 0;
   }
 
   &-wrapper {
     display: flex;
-    gap: 20px;
-    align-items: start;
+    gap: clamp(14px, 2vw, 20px);
+    align-items: flex-start;
     justify-content: center;
-
-    @include devices(lg) {
-      gap: 16px;
-    }
+    min-width: 0;
 
     @include devices(md) {
       flex-direction: column;
-      gap: 40px;
-    }
-
-    @include devices(sm) {
-      gap: 30px;
+      gap: clamp(22px, 4vw, 40px);
+      align-items: stretch; // ✅ column bo‘lganda bloklar full bo‘lsin
     }
   }
 
@@ -64,56 +37,26 @@
     background: #f5f9ff;
     color: #145fcb;
     border: 1px solid #145fcb;
-    font-size: 16px;
+
+    font-size: clamp(12px, 1.1vw, 16px);
     font-weight: 600;
-    padding: 10px;
+
+    padding: clamp(6px, 1vw, 10px) clamp(12px, 2vw, 16px);
     border-radius: 12px;
-    display: flex;
+
+    display: inline-flex;
     align-items: center;
-    gap: 8px;
-    width: 118px;
+    justify-content: center;
+    gap: clamp(6px, 1vw, 8px);
+    width: fit-content;
+
     cursor: pointer;
-    transition: all 0.3s ease;
-
-    @include devices(lg) {
-      width: 110px;
-      padding: 9px;
-      font-size: 15px;
-    }
-
-    @include devices(md) {
-      width: 100px;
-      padding: 8px;
-      font-size: 14px;
-    }
-
-    @include devices(sm) {
-      width: auto;
-      padding: 8px 16px;
-      gap: 6px;
-    }
-
-    @include devices(xs) {
-      padding: 7px 14px;
-      font-size: 13px;
-    }
-
-    @include devices(xxs) {
-      padding: 6px 12px;
-      font-size: 12px;
-    }
+    transition: transform 0.15s ease, box-shadow 0.25s ease;
 
     i {
       transition: transform 0.3s ease;
       font-style: normal;
-
-      @include devices(xs) {
-        font-size: 14px;
-      }
-
-      @include devices(xxs) {
-        font-size: 12px;
-      }
+      font-size: 1em;
     }
 
     &:hover {
@@ -124,82 +67,49 @@
     }
 
     &:active {
-      transform: translateY(0) scale(0.96);
+      transform: scale(0.96);
       box-shadow: 0 2px 8px rgba(0, 113, 220, 0.2);
     }
   }
 
   &-left {
-    width: 680px;
-
-    @include devices(xl) {
-      width: 600px;
-    }
-
-    @include devices(lg) {
-      width: 50%;
-    }
+    flex: 1 1 480px;
+    max-width: 680px;
+    min-width: 0;
 
     @include devices(md) {
-      width: 100%;
+      max-width: 100%;
+      flex-basis: auto;
     }
 
     &__header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 24px;
-
-      @include devices(md) {
-        margin-bottom: 20px;
-      }
+      margin-bottom: clamp(16px, 2vw, 24px);
+      gap: 14px;
+      min-width: 0;
 
       @include devices(sm) {
         flex-direction: column;
         align-items: flex-start;
         gap: 12px;
-        margin-bottom: 18px;
       }
 
       h2 {
-        font-size: 32px;
+        font-size: clamp(20px, 2vw, 32px);
         font-weight: 700;
         color: #000;
-
-        @include devices(lg) {
-          font-size: 28px;
-        }
-
-        @include devices(md) {
-          font-size: 26px;
-        }
-
-        @include devices(sm) {
-          font-size: 24px;
-        }
-
-        @include devices(xs) {
-          font-size: 22px;
-        }
-
-        @include devices(xxs) {
-          font-size: 20px;
-        }
+        margin: 0;
+        line-height: 1.15;
+        min-width: 0;
       }
     }
 
     &__cards {
       display: flex;
       flex-direction: column;
-      gap: 16px;
-
-      @include devices(md) {
-        gap: 14px;
-      }
-
-      @include devices(sm) {
-        gap: 12px;
-      }
+      gap: clamp(12px, 1.5vw, 16px);
     }
   }
 
@@ -208,64 +118,39 @@
     position: relative;
     display: flex;
     align-items: center;
-    gap: 20px;
-    padding: 16px;
-    border-radius: 16px;
+    gap: clamp(10px, 1.6vw, 20px);
+
+    padding: clamp(10px, 1.4vw, 16px);
+    border-radius: clamp(12px, 1.4vw, 16px);
+
     overflow: hidden;
-    transition: all 0.3s ease;
+    min-width: 0;
 
-    @include devices(md) {
-      gap: 16px;
-      padding: 14px;
-      border-radius: 14px;
-    }
-
-    @include devices(sm) {
-      gap: 12px;
-      padding: 12px;
-      border-radius: 12px;
-    }
-
-    @include devices(xs) {
-      gap: 10px;
-      padding: 10px;
-    }
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 
     &::after {
       content: "";
       position: absolute;
       right: 10px;
       bottom: -10px;
-      width: 120px;
-      height: 120px;
+      width: clamp(70px, 9vw, 120px);
+      height: clamp(70px, 9vw, 120px);
       background-repeat: no-repeat;
       background-size: contain;
       opacity: 0.25;
-      transition: all 0.3s ease;
       transform: translateX(10%) scale(1);
       transform-origin: right bottom;
       transition: transform 0.45s ease;
-
-      @include devices(lg) {
-        width: 100px;
-        height: 100px;
-      }
-
-      @include devices(md) {
-        width: 80px;
-        height: 80px;
-      }
-
-      @include devices(sm) {
-        width: 70px;
-        height: 70px;
-        right: 5px;
-        bottom: -5px;
-      }
+      pointer-events: none;
     }
 
     &:hover::after {
       transform: translateX(0) scale(1.25);
+    }
+
+    &:hover {
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+      transform: translateY(-1px);
     }
 
     &--purple {
@@ -293,239 +178,121 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      flex-shrink: 0;
+      flex: 0 0 auto;
 
       img {
-        width: 102px;
-
-        @include devices(lg) {
-          width: 90px;
-        }
-
-        @include devices(md) {
-          width: 80px;
-        }
-
-        @include devices(sm) {
-          width: 70px;
-        }
-
-        @include devices(xs) {
-          width: 60px;
-        }
-
-        @include devices(xxs) {
-          width: 50px;
-        }
+        width: clamp(46px, 7vw, 102px);
+        height: auto;
+        display: block;
       }
     }
 
     &__content {
+      min-width: 0;
+
       h3 {
-        font-size: 24px;
-        color: #ffff;
+        font-size: clamp(15px, 1.4vw, 24px);
+        color: #fff;
         font-weight: 600;
-        margin-bottom: 8px;
+        margin: 0 0 clamp(4px, 0.8vw, 8px);
+        line-height: 1.2;
 
-        @include devices(lg) {
-          font-size: 22px;
-        }
-
-        @include devices(md) {
-          font-size: 20px;
-          margin-bottom: 6px;
-        }
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
 
         @include devices(sm) {
-          font-size: 18px;
-        }
-
-        @include devices(xs) {
-          font-size: 16px;
-          margin-bottom: 4px;
-        }
-
-        @include devices(xxs) {
-          font-size: 15px;
+          white-space: normal;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
         }
       }
 
       p {
-        font-size: 20px;
+        font-size: clamp(13px, 1.2vw, 20px);
         opacity: 0.9;
         margin: 0;
         font-weight: 400;
         color: #eef2f6;
+        line-height: 1.35;
 
-        @include devices(lg) {
-          font-size: 18px;
-        }
-
-        @include devices(md) {
-          font-size: 16px;
-        }
-
-        @include devices(sm) {
-          font-size: 15px;
-        }
-
-        @include devices(xs) {
-          font-size: 14px;
-        }
-
-        @include devices(xxs) {
-          font-size: 13px;
-        }
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
       }
     }
   }
 
   &-right {
-    width: 920px;
-
-    @include devices(xl) {
-      width: 800px;
-    }
-
-    @include devices(lg) {
-      width: 50%;
-    }
+    flex: 1 1 560px;
+    max-width: 920px;
+    min-width: 0;
 
     @include devices(md) {
-      width: 100%;
+      max-width: 100%;
+      flex-basis: auto;
     }
 
     &__header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 24px;
-
-      @include devices(md) {
-        margin-bottom: 20px;
-      }
+      margin-bottom: clamp(16px, 2vw, 24px);
+      gap: 14px;
+      min-width: 0;
 
       @include devices(sm) {
         flex-direction: column;
         align-items: flex-start;
         gap: 12px;
-        margin-bottom: 18px;
       }
 
       h2 {
-        font-size: 32px;
+        font-size: clamp(20px, 2vw, 32px);
         font-weight: 700;
         color: #000;
-
-        @include devices(lg) {
-          font-size: 28px;
-        }
-
-        @include devices(md) {
-          font-size: 26px;
-        }
-
-        @include devices(sm) {
-          font-size: 24px;
-        }
-
-        @include devices(xs) {
-          font-size: 22px;
-        }
-
-        @include devices(xxs) {
-          font-size: 20px;
-        }
+        margin: 0;
+        line-height: 1.15;
+        min-width: 0;
       }
     }
 
     &__accordion {
       background: linear-gradient(135deg, #063462, #063462, #1e4f8f, #0071dc);
-      padding: 25px;
-      border-radius: 16px;
+      padding: clamp(12px, 2vw, 25px);
+      border-radius: clamp(12px, 1.4vw, 16px);
+
       display: flex;
       flex-direction: column;
-      gap: 16px;
-
-      @include devices(md) {
-        padding: 20px;
-        gap: 14px;
-        border-radius: 14px;
-      }
-
-      @include devices(sm) {
-        padding: 16px;
-        gap: 12px;
-        border-radius: 12px;
-      }
-
-      @include devices(xs) {
-        padding: 12px;
-        gap: 10px;
-      }
+      gap: clamp(10px, 1.4vw, 16px);
 
       .accordion-item {
         background: #fff;
-        border-radius: 10px;
+        border-radius: clamp(8px, 1vw, 10px);
         overflow: hidden;
-        transition: all 0.3s ease;
+        transition: box-shadow 0.25s ease;
 
-        @include devices(sm) {
-          border-radius: 8px;
+        &:hover {
+          box-shadow: 0 10px 26px rgba(0, 0, 0, 0.08);
         }
 
         &.active {
           .accordion-toggle {
             background: #f0f5ff;
-            transition: all 0.3s ease;
+
             span i {
               transform: rotate(45deg);
-              color: red;
+              color: #145fcb;
             }
           }
+
           .accordion-content {
-            max-height: 500px;
-            padding: 16px 20px;
+            max-height: 520px;
+            padding: clamp(10px, 1.4vw, 16px) clamp(12px, 1.8vw, 20px);
             opacity: 1;
             visibility: visible;
-
-            @include devices(md) {
-              padding: 14px 16px;
-            }
-
-            @include devices(sm) {
-              padding: 12px 14px;
-            }
-
-            @include devices(xs) {
-              padding: 10px 12px;
-            }
-
-            p {
-              font-size: 16px;
-              font-weight: 500;
-              color: #121926;
-              margin-bottom: 28px;
-
-              @include devices(md) {
-                font-size: 15px;
-                margin-bottom: 24px;
-              }
-
-              @include devices(sm) {
-                font-size: 14px;
-                margin-bottom: 20px;
-              }
-
-              @include devices(xs) {
-                font-size: 13px;
-                margin-bottom: 16px;
-              }
-
-              @include devices(xxs) {
-                font-size: 12px;
-              }
-            }
           }
         }
       }
@@ -534,57 +301,45 @@
         width: 100%;
         background: #fff;
         border: none;
-        padding: 20px;
+
+        padding: clamp(1px, 0.5vw, 20px);
         display: flex;
-        justify-content: space-between;
         align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+
         text-align: left;
-        font-size: 16px;
+        font-size: clamp(12px, 1.15vw, 16px);
         font-weight: 500;
         color: #121926;
         cursor: pointer;
-        transition: all 0.3s ease;
 
-        @include devices(md) {
-          padding: 16px;
-          font-size: 15px;
-        }
+        transition: background 0.25s ease;
+        min-width: 0;
 
-        @include devices(sm) {
-          padding: 14px;
-          font-size: 14px;
-        }
+        .title {
+          flex: 1 1 auto;
+          min-width: 0;
 
-        @include devices(xs) {
-          padding: 12px;
-          font-size: 13px;
-        }
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
 
-        @include devices(xxs) {
-          padding: 10px;
-          font-size: 12px;
+          line-height: 1.35;
         }
 
         span {
           color: #145fcb;
-          font-size: 24px;
+          font-size: clamp(18px, 1.6vw, 24px);
           display: flex;
           align-items: center;
           justify-content: center;
-          transition: transform 0.3s ease;
-          flex-shrink: 0;
-
-          @include devices(md) {
-            font-size: 22px;
-          }
-
-          @include devices(sm) {
-            font-size: 20px;
-          }
-
-          @include devices(xs) {
-            font-size: 18px;
-          }
+          flex: 0 0 auto;
+          width: clamp(34px, 3.2vw, 44px);
+          height: clamp(34px, 3.2vw, 44px);
+          border-radius: 10px;
+          background: #f0f6ff;
 
           i {
             font-style: normal;
@@ -599,61 +354,25 @@
 
       .accordion-content {
         max-height: 0;
-        padding: 0 20px;
+        padding: 0 clamp(12px, 1.8vw, 20px);
         overflow: hidden;
         opacity: 0;
         visibility: hidden;
         transition: all 0.3s ease;
         background: #fff;
 
-        @include devices(md) {
-          padding: 0 16px;
-        }
-
-        @include devices(sm) {
-          padding: 0 14px;
-        }
-
-        @include devices(xs) {
-          padding: 0 12px;
-        }
-
         .top {
           width: 100%;
           height: 1px;
           background-color: #e3e8ef;
-          margin-bottom: 16px;
-
-          @include devices(md) {
-            margin-bottom: 14px;
-          }
-
-          @include devices(sm) {
-            margin-bottom: 12px;
-          }
+          margin-bottom: clamp(10px, 0.1s, 16px);
         }
 
         p {
           margin: 0;
-          font-size: 14px;
+          font-size: clamp(10px, 1vw, 14px);
           line-height: 1.6;
           color: #4b5563;
-
-          @include devices(md) {
-            font-size: 13px;
-          }
-
-          @include devices(sm) {
-            font-size: 12px;
-          }
-
-          @include devices(xs) {
-            font-size: 11px;
-          }
-
-          @include devices(xxs) {
-            font-size: 10px;
-          }
         }
       }
     }

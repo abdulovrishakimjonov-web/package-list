@@ -70,19 +70,7 @@
         margin-bottom: 10px;
       }
     }
-
-    &-list {
-      margin-bottom: 10px;
-
-      @include devices(sm) {
-        margin-bottom: 8px;
-      }
-
-      @include devices(xs) {
-        margin-bottom: 6px;
-      }
-
-      h3 {
+       p  {
         font-size: 24px;
         font-weight: 500;
         color: #121926;
@@ -113,24 +101,20 @@
           font-size: 15px;
         }
 
-        &::before {
-          content: ".";
-          font-size: 24px;
-          line-height: 1;
-
-          @include devices(md) {
-            font-size: 20px;
-          }
-
-          @include devices(sm) {
-            font-size: 18px;
-          }
-
-          @include devices(xs) {
-            font-size: 16px;
-          }
-        }
       }
+
+    &-list {
+      margin-bottom: 10px;
+
+      @include devices(sm) {
+        margin-bottom: 8px;
+      }
+
+      @include devices(xs) {
+        margin-bottom: 6px;
+      }
+
+   
 
       p {
         font-weight: 500;
@@ -139,6 +123,9 @@
         letter-spacing: 0%;
         vertical-align: middle;
         color: #364152;
+      }
+      h3 {
+        margin-bottom: 10px;
       }
 
       li {

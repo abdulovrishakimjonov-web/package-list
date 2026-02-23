@@ -1,116 +1,59 @@
 .careers {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(10px, 1.4vw, 16px);
 
   @include devices(lg) {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 14px;
-  }
-
-  @include devices(md) {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   @include devices(sm) {
     grid-template-columns: 1fr;
-    gap: 12px;
-  }
-
-  @include devices(xs) {
-    gap: 10px;
   }
 
   &-card {
-    border-radius: 16px;
-    background-color: #ffffffff;
-    overflow: hidden; // pastdagi radius chiroyli ko‘rinsin
-
-    @include devices(md) {
-      border-radius: 14px;
-    }
-
-    @include devices(sm) {
-      border-radius: 12px;
-    }
+    border-radius: clamp(12px, 1.4vw, 16px);
+    background-color: #ffffff;
+    overflow: hidden;
 
     h3 {
-      font-size: 24px;
+      font-size: clamp(17px, 1.6vw, 24px);
       font-weight: 600;
-      color: #000000;
-      padding: 16px;
-
-      @include devices(lg) {
-        font-size: 22px;
-        padding: 14px;
-      }
-
-      @include devices(md) {
-        font-size: 20px;
-        padding: 12px;
-      }
-
-      @include devices(sm) {
-        font-size: 18px;
-      }
-
-      @include devices(xs) {
-        font-size: 17px;
-        padding: 10px;
-      }
+      color: #000;
+      padding: clamp(10px, 1.4vw, 16px);
+      margin: 0;
+      line-height: 1.2;
     }
 
     &-top {
       width: 100%;
-      height: 0.5px;
+      height: 1px;
       background-color: #e3e8ef;
-      margin-bottom: 16px;
-
-      @include devices(md) {
-        margin-bottom: 14px;
-      }
-
-      @include devices(sm) {
-        margin-bottom: 12px;
-      }
-
-      @include devices(xs) {
-        margin-bottom: 10px;
-      }
+      margin-bottom: clamp(10px, 1.4vw, 16px);
     }
 
     p {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: clamp(8px, 1.2vw, 12px);
+
       color: #364152;
-      font-size: 18px;
+      font-size: clamp(13px, 1.2vw, 18px);
       font-weight: 500;
-      margin-bottom: 20px;
-      padding: 0px 16px;
 
-      @include devices(lg) {
-        font-size: 16px;
-        padding: 0 14px;
-        margin-bottom: 16px;
-      }
+      margin: 0 0 clamp(14px, 1.8vw, 20px);
+      padding: 0 clamp(10px, 1.4vw, 16px);
 
-      @include devices(md) {
-        font-size: 15px;
-        padding: 0 12px;
-        gap: 10px;
-      }
+      min-width: 0;
 
-      @include devices(sm) {
-        font-size: 14px;
-        padding: 0 12px;
-        margin-bottom: 14px;
+      span,
+      strong,
+      em,
+      a {
+        min-width: 0;
       }
 
       @include devices(xs) {
-        font-size: 13px;
-        padding: 0 10px;
         gap: 8px;
       }
     }
@@ -119,40 +62,24 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 16px;
+
+      padding: clamp(10px, 1.4vw, 16px);
       background-color: #f8fafc;
-      border-radius: 0px 0px 12px 12px;
 
-      @include devices(lg) {
-        padding: 14px;
-      }
-
-      @include devices(md) {
-        padding: 12px;
-      }
-
-      @include devices(xs) {
-        padding: 10px;
-      }
+      border-radius: 0 0 clamp(10px, 1.2vw, 12px) clamp(10px, 1.2vw, 12px);
 
       b {
         display: flex;
         align-items: center;
         gap: 6px;
-        color: #000000;
-        font-size: 16px;
+
+        color: #000;
+        font-size: clamp(13px, 1.1vw, 16px);
         font-weight: 500;
-
-        @include devices(md) {
-          font-size: 15px;
-        }
-
-        @include devices(sm) {
-          font-size: 14px;
-        }
 
         i {
           color: #145fcb;
+          flex-shrink: 0;
         }
       }
     }
@@ -160,255 +87,110 @@
 }
 
 .careersview {
+  &-text,
+  &-input {
+    background-color: #ffffff;
+    padding: clamp(10px, 1.4vw, 16px);
+    border-radius: clamp(12px, 1.4vw, 16px);
+    margin-bottom: clamp(10px, 1.4vw, 16px);
+  }
+
   &-text {
-    background-color: #ffffffff;
-    padding: 16px;
-    border-radius: 16px;
-    margin-bottom: 16px;
-
-    @include devices(md) {
-      padding: 14px;
-      border-radius: 14px;
-      margin-bottom: 14px;
-    }
-
-    @include devices(sm) {
-      padding: 12px;
-      border-radius: 12px;
-      margin-bottom: 12px;
-    }
-
-    @include devices(xs) {
-      padding: 10px;
-      margin-bottom: 10px;
-    }
-
     h2 {
       color: #121926;
-      font-size: 30px;
+      font-size: clamp(20px, 1.9vw, 30px);
       font-weight: 600;
-      margin-bottom: 16px;
-
-      @include devices(lg) {
-        font-size: 28px;
-      }
-
-      @include devices(md) {
-        font-size: 26px;
-        margin-bottom: 14px;
-      }
-
-      @include devices(sm) {
-        font-size: 22px;
-        margin-bottom: 12px;
-      }
-
-      @include devices(xs) {
-        font-size: 20px;
-        margin-bottom: 10px;
-      }
+      margin: 0 0 clamp(10px, 1.4vw, 16px);
+      line-height: 1.2;
     }
 
     &-top {
       width: 100%;
-      height: 0.5px;
+      height: 1px;
       background-color: #e3e8ef;
-      margin-bottom: 16px;
-
-      @include devices(sm) {
-        margin-bottom: 12px;
-      }
-
-      @include devices(xs) {
-        margin-bottom: 10px;
-      }
+      margin-bottom: clamp(10px, 1.4vw, 16px);
     }
 
     b {
       display: block;
       color: #121926;
-      font-size: 20px;
+      font-size: clamp(15px, 1.3vw, 20px);
       font-weight: 600;
-      margin-bottom: 10px;
-
-      @include devices(md) {
-        font-size: 18px;
-      }
-
-      @include devices(sm) {
-        font-size: 16px;
-        margin-bottom: 8px;
-      }
-
-      @include devices(xs) {
-        font-size: 15px;
-      }
+      margin: 0 0 clamp(8px, 1vw, 10px);
     }
 
     ul {
+      margin: 0;
+      padding-left: 18px;
+
       li {
         color: #121926;
-        font-size: 18px;
-        font-weight: 500; // SENDA xato: font-family emas, font-weight bo‘lishi kerak
-
-        @include devices(md) {
-          font-size: 16px;
-        }
-
-        @include devices(sm) {
-          font-size: 15px;
-        }
-
-        @include devices(xs) {
-          font-size: 14px;
-        }
+        font-size: clamp(14px, 1.2vw, 18px);
+        font-weight: 500;
+        line-height: 1.6;
+        margin-bottom: 6px;
       }
     }
   }
 
   &-input {
-    background-color: #ffffffff;
-    padding: 16px;
-    border-radius: 16px;
-
-    @include devices(md) {
-      padding: 14px;
-      border-radius: 14px;
-    }
-
-    @include devices(sm) {
-      padding: 12px;
-      border-radius: 12px;
-    }
-
-    @include devices(xs) {
-      padding: 10px;
-    }
+    margin-bottom: 0;
 
     h2 {
       color: #121926;
-      font-size: 30px;
+      font-size: clamp(20px, 1.9vw, 30px);
       font-weight: 600;
-      margin-bottom: 16px;
-
-      @include devices(lg) {
-        font-size: 28px;
-      }
-
-      @include devices(md) {
-        font-size: 26px;
-        margin-bottom: 14px;
-      }
-
-      @include devices(sm) {
-        font-size: 22px;
-        margin-bottom: 12px;
-      }
-
-      @include devices(xs) {
-        font-size: 20px;
-        margin-bottom: 10px;
-      }
+      margin: 0 0 clamp(10px, 1.4vw, 16px);
+      line-height: 1.2;
     }
 
     &-top {
       width: 100%;
-      height: 0.5px;
+      height: 1px;
       background-color: #e3e8ef;
-      margin-bottom: 16px;
-
-      @include devices(sm) {
-        margin-bottom: 12px;
-      }
-
-      @include devices(xs) {
-        margin-bottom: 10px;
-      }
+      margin-bottom: clamp(10px, 1.4vw, 16px);
     }
 
     &-img {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 30px;
-      margin-bottom: 20px;
-
-      @include devices(lg) {
-        gap: 20px;
-      }
-
-      @include devices(md) {
-        gap: 16px;
-      }
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: clamp(10px, 2vw, 30px);
+      margin-bottom: clamp(14px, 1.6vw, 20px);
 
       @include devices(sm) {
         grid-template-columns: 1fr;
-        gap: 12px;
-        margin-bottom: 16px;
-      }
-
-      @include devices(xs) {
-        gap: 10px;
-        margin-bottom: 14px;
       }
 
       &-flex {
         display: flex;
         align-items: center;
         gap: 8px;
+        min-width: 0;
 
         &-p1 {
-          font-size: 18px;
+          font-size: clamp(14px, 1.2vw, 18px);
           color: #4b5565;
           font-weight: 500;
-
-          @include devices(md) {
-            font-size: 16px;
-          }
-
-          @include devices(sm) {
-            font-size: 15px;
-          }
-
-          @include devices(xs) {
-            font-size: 14px;
-          }
+          margin: 0;
         }
 
         &-p2 {
-          font-size: 18px;
+          font-size: clamp(14px, 1.2vw, 18px);
           color: #4b5565;
           font-weight: 600;
-
-          @include devices(md) {
-            font-size: 16px;
-          }
-
-          @include devices(sm) {
-            font-size: 15px;
-          }
-
-          @include devices(xs) {
-            font-size: 14px;
-          }
+          margin: 0;
         }
       }
     }
 
     form {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-      margin-bottom: 20px;
-
-      @include devices(md) {
-        gap: 12px;
-        margin-bottom: 16px;
-      }
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: clamp(10px, 1.2vw, 16px);
+      margin-bottom: clamp(14px, 1.6vw, 20px);
 
       @include devices(sm) {
         grid-template-columns: 1fr;
-        gap: 10px;
-        margin-bottom: 14px;
       }
     }
 
@@ -416,30 +198,31 @@
       background: linear-gradient(to right, #083d91, #0071dc);
       border-radius: 12px;
       border: none;
-      width: 130px;
-      display: flex;
+
+      width: fit-content;
+      min-width: 130px;
+
+      display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 10px;
+
+      padding: clamp(9px, 1vw, 10px) clamp(14px, 1.6vw, 18px);
       color: #ffffff;
-      font-size: 16px;
+
+      font-size: clamp(13px, 1.1vw, 16px);
       font-weight: 600;
       cursor: pointer;
 
-      @include devices(md) {
-        width: 150px;
-        padding: 9px;
-        font-size: 15px;
-      }
+      transition:
+        transform 0.15s ease,
+        box-shadow 0.25s ease;
 
       @include devices(sm) {
         width: 100%;
-        padding: 10px;
-        font-size: 14px;
       }
 
-      @include devices(xs) {
-        font-size: 13px;
+      &:active {
+        transform: scale(0.98);
       }
     }
   }
