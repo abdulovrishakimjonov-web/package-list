@@ -124,7 +124,6 @@
     }
   }
 
-  /* ✅ GRID — ham desktop, ham tablet uchun stabil */
   &-main {
     position: relative;
     z-index: 10;
@@ -135,20 +134,17 @@
     gap: clamp(12px, 1.4vw, 20px);
     align-items: stretch;
 
-    /* Large ekran biroz kichrayganda 3 ta */
     @include devices(xl) {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    /* ✅ iPad / Tablet: 2 ta ustun (eng to‘g‘risi) */
     @include devices(md) {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    /* ✅ Telefon: 1 ta ustun va markazda */
     @include devices(sm) {
       grid-template-columns: 1fr;
-      justify-items: center; // ✅ center
+      justify-items: center; 
     }
 
     &-card {
@@ -166,10 +162,8 @@
 
       transition: transform 0.25s ease, opacity 0.25s ease;
 
-      /* ✅ Grid bo‘lgani uchun karta width 100% bo‘lsin */
       width: 100%;
 
-      /* ✅ Telefon: kartani juda keng qilib yubormaslik */
       @include devices(sm) {
         max-width: 520px;
       }
@@ -264,3 +258,5 @@
     }
   }
 }
+
+

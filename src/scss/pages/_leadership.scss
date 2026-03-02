@@ -120,6 +120,11 @@
         gap: clamp(8px, 1.2vw, 16px);
         margin-bottom: clamp(10px, 1.2vw, 16px);
 
+        @include devices(xl) {
+          grid-template-columns: 1fr;
+          gap: 10px;
+        }
+
         @include devices(sm) {
           grid-template-columns: 1fr;
         }
@@ -140,7 +145,6 @@
 
           min-width: 0;
 
-          // ✅ uzun tel/email bo‘lsa chiqib ketmasin
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap;
@@ -193,30 +197,44 @@
       }
     }
 
-    // ✅ chapdagi vertikal line (dekor)
     &-line {
       position: absolute;
-      left: clamp(10px, 1.5vw, 16px);
-      top: clamp(16px, 2vw, 24px);
-      bottom: clamp(16px, 2vw, 24px);
+      left: 843px;
+      top:0;
+      bottom: 0px;
 
       width: clamp(10px, 1vw, 15px);
       background-color: #063462;
-      border-radius: 999px;
       opacity: 1;
 
       @include devices(md) {
         display: none;
       }
+
+       @include devices(xl) {
+         position: absolute;
+      left: 503px;
+      top:0;
+      bottom: 0px;
+
+      width: clamp(10px, 1vw, 15px);
+      background-color: #063462;
+      opacity: 1;
+      }
     }
 
-    // ✅ gerb (dekor)
     &-gerb {
       position: absolute;
-      left: clamp(32px, 4vw, 60px);
-      top: clamp(18px, 3vw, 28px);
-      width: clamp(90px, 8vw, 140px);
+      left: 800px;
+      top:105px;
+      width: 100px;
       z-index: 2;
+
+      @include devices(xl) {
+        left: 460px;
+        top:105px;
+        width: 100px;
+      }
 
       @include devices(md) {
         left: auto;
@@ -229,15 +247,13 @@
   }
 }
 
-// ✅ dropdown/details wrapper
 .lider-details-wrapper {
   width: 100%;
   display: none;
   background: transparent;
   padding: 20px 25px 25px 25px;
 
-  padding: clamp(0px, 0vw, 20px) clamp(12px, 2vw, 25px)
-    clamp(12px, 2vw, 25px);
+  padding: clamp(0px, 0vw, 20px) clamp(12px, 2vw, 25px) clamp(12px, 2vw, 25px);
 
   @include devices(md) {
     padding: 0 clamp(12px, 2vw, 20px) clamp(12px, 2vw, 20px);
