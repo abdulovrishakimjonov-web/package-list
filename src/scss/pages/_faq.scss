@@ -2,13 +2,15 @@ $blue: #0056b3;
 $text: #121926;
 
 .faq {
-  background: #f0f2f5;
+  background: #ffffff;
+  padding: 16px;
+  width: 100%;
+  border-radius: 16px;
 }
 
 .faq-container {
   width: 100%;
   margin: 0 auto;
-  padding: 0 20px;
 
   display: flex;
   flex-direction: column;

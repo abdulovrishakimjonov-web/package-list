@@ -3,19 +3,47 @@
   border-radius: clamp(12px, 1.4vw, 16px);
   background-color: #ffffff;
 
-  .top {
+  &__divider {
     width: 100%;
     height: 1px;
     background-color: #e3e8ef;
     margin: clamp(10px, 1.4vw, 16px) 0;
   }
 
-  &-row {
+  &__head {
     display: grid;
     grid-template-columns: minmax(0, 2.5fr) minmax(0, 2fr) 155px;
     align-items: center;
     gap: clamp(10px, 1.6vw, 20px);
-    margin-bottom: 8px;
+
+    @include devices(lg) {
+      grid-template-columns: minmax(0, 2fr) minmax(0, 2fr) 140px;
+    }
+
+    @include devices(md) {
+      display: none;
+    }
+  }
+
+  &__th {
+    color: #121926;
+    font-size: clamp(14px, 1.2vw, 18px);
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.25;
+    min-width: 0;
+
+    &--right {
+      text-align: right;
+      padding-right: 20px;
+    }
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: minmax(0, 2.5fr) minmax(0, 2fr) 155px;
+    align-items: center;
+    gap: clamp(10px, 1.6vw, 20px);
 
     @include devices(lg) {
       grid-template-columns: minmax(0, 2fr) minmax(0, 2fr) 140px;
@@ -25,89 +53,83 @@
       grid-template-columns: 1fr;
       gap: 8px;
       padding: 12px 0;
+
       border-bottom: 1px solid #e3e8ef;
-      margin-bottom: 0;
+    }
+  }
+
+  &__cell {
+    min-width: 0;
+    margin: 0;
+  }
+
+  &__name {
+    color: #364152;
+    font-size: clamp(12px, 1.1vw, 16px);
+    font-weight: 600;
+    line-height: 1.35;
+  }
+
+  &__meta {
+    color: #364152;
+    font-size: clamp(12px, 1.1vw, 16px);
+    font-weight: 500;
+    line-height: 1.35;
+  }
+
+  &__action {
+    display: flex;
+    justify-content: flex-end;
+
+    @include devices(md) {
+      justify-content: flex-start;
+    }
+  }
+
+  &__btn {
+    width: clamp(130px, 12vw, 151px);
+    max-width: 100%;
+    border-radius: clamp(8px, 1vw, 12px);
+
+    border: 1px solid #145fcb;
+    color: #145fcb;
+    background-color: #f5f9ff;
+
+    padding: clamp(8px, 1vw, 10px);
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.25s ease;
+
+    @include devices(xs) {
+      width: 100%;
     }
 
-    h3 {
-      color: #121926;
-      font-size: clamp(14px, 1.2vw, 18px);
-      font-weight: 600;
-      margin: 0;
-      line-height: 1.25;
-      min-width: 0;
+    i {
+      font-size: clamp(16px, 1.4vw, 20px);
+      flex-shrink: 0;
     }
 
-    p {
-      color: #364152;
-      font-size: clamp(12px, 1.1vw, 16px);
-      font-weight: 500;
-      margin: 0;
-      line-height: 1.35;
-      min-width: 0;
+    &:hover {
+      box-shadow: 0 5px 15px rgba(20, 95, 203, 0.15);
     }
 
-    &.laws-header {
-      @include devices(md) {
-        display: none;
-      }
-
-      .text-right {
-        text-align: right;
-        padding-right: 20px;
-      }
-    }
-
-    .btn-wrapper {
-      display: flex;
-      justify-content: flex-end;
-
-      @include devices(md) {
-        justify-content: flex-start;
-      }
-
-      button {
-        width: clamp(130px, 12vw, 151px);
-        max-width: 100%;
-        border-radius: clamp(8px, 1vw, 12px);
-        border: 1px solid #145fcb;
-        color: #145fcb;
-        background-color: #f5f9ff;
-        padding: clamp(8px, 1vw, 10px);
-
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        justify-content: center;
-
-        cursor: pointer;
-        transition:
-          transform 0.15s ease,
-          box-shadow 0.25s ease;
-
-        @include devices(xs) {
-          width: 100%;
-        }
-
-        i {
-          font-size: clamp(16px, 1.4vw, 20px);
-          flex-shrink: 0;
-        }
-
-        &:hover {
-          box-shadow: 0 5px 15px rgba(20, 95, 203, 0.15);
-        }
-
-        &:active {
-          transform: scale(0.97);
-        }
-      }
+    &:active {
+      transform: scale(0.97);
     }
   }
 
   @include devices(md) {
-    &-row:last-child {
+    &__row:last-of-type {
       border-bottom: 0;
+    }
+
+    &__divider {
+      display: none;
     }
   }
 }

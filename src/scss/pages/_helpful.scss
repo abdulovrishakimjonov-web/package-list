@@ -1,10 +1,13 @@
 .helpful {
   padding: clamp(30px, 5vw, 80px) 0;
 
-  background-image: url("../../images/helpful-backrund.png"),
+  background-image:
+    url("../../images/helpful-backrund.png"),
     url("../../images/helpful-img.png");
   background-repeat: no-repeat, no-repeat;
-  background-position: left center, right center;
+  background-position:
+    left center,
+    right center;
   background-size: min(360px, 28vw), min(360px, 28vw);
 
   @include devices(lg) {
@@ -29,7 +32,7 @@
     @include devices(md) {
       flex-direction: column;
       gap: clamp(22px, 4vw, 40px);
-      align-items: stretch; // ✅ column bo‘lganda bloklar full bo‘lsin
+      align-items: stretch;
     }
   }
 
@@ -38,7 +41,7 @@
     color: #145fcb;
     border: 1px solid #145fcb;
 
-    font-size: clamp(12px, 1.1vw, 16px);
+    font-size: clamp(14px, 1.1vw, 16px);
     font-weight: 600;
 
     padding: clamp(6px, 1vw, 10px) clamp(12px, 2vw, 16px);
@@ -51,7 +54,9 @@
     width: fit-content;
 
     cursor: pointer;
-    transition: transform 0.15s ease, box-shadow 0.25s ease;
+    transition:
+      transform 0.15s ease,
+      box-shadow 0.25s ease;
 
     i {
       transition: transform 0.3s ease;
@@ -126,7 +131,9 @@
     overflow: hidden;
     min-width: 0;
 
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease;
 
     &::after {
       content: "";
@@ -191,7 +198,7 @@
       min-width: 0;
 
       h3 {
-        font-size: clamp(15px, 1.4vw, 24px);
+        font-size: clamp(14px, 1.4vw, 24px);
         color: #fff;
         font-weight: 600;
         margin: 0 0 clamp(4px, 0.8vw, 8px);
@@ -210,7 +217,7 @@
       }
 
       p {
-        font-size: clamp(13px, 1.2vw, 20px);
+        font-size: clamp(14px, 1.2vw, 20px);
         opacity: 0.9;
         margin: 0;
         font-weight: 400;
@@ -280,17 +287,14 @@
 
         &.active {
           .accordion-toggle {
-            background: #f0f5ff;
 
             span i {
               transform: rotate(45deg);
-              color: #145fcb;
+              color: red;
             }
           }
 
           .accordion-content {
-            max-height: 520px;
-            padding: clamp(10px, 1.4vw, 16px) clamp(12px, 1.8vw, 20px);
             opacity: 1;
             visibility: visible;
           }
@@ -309,7 +313,7 @@
         gap: 12px;
 
         text-align: left;
-        font-size: clamp(12px, 1.15vw, 16px);
+        font-size: clamp(14px, 1.15vw, 16px);
         font-weight: 500;
         color: #121926;
         cursor: pointer;
@@ -370,7 +374,7 @@
 
         p {
           margin: 0;
-          font-size: clamp(10px, 1vw, 14px);
+          font-size: clamp(14px, 1vw, 14px);
           line-height: 1.6;
           color: #4b5563;
         }

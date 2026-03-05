@@ -1,68 +1,93 @@
 <section class="news">
-    <div class="container">
-        <div class="news-text">
-            <h2>Yangiliklar</h2>
-            <a href="../../news-page.html"><button>Batafsil <i class="i-next"></i></button></a>
-        </div>
-        <div class="news-main">
-            <a href="#" class="news-main-card news-main-card--large">
-                <img src="../../images/news-img-1.png" alt="">
-                <div class="news-main-card__overlay">
-                    <div class="news-main-card__meta">
-                        <span class="news-main-card__date"><i class="i-calendar"></i> 13 Dekabr 2025</span>
-                        <span class="news-main-card__views"><i class="i-eye"></i> 325</span>
-                    </div>
-                    <h3 class="news-main-card__title">Samarqand viloyati sessiyasida tashkiliy masala ko'rilib, kelgusi vazifalar belgilandi</h3>
-                    <p class="news-main-card__text">25-noyabr kuni Xalq deputatlari Samarqand viloyat kengashining navbatdan tashqari sessiyasi bo'lib o'tdi. Unda O'zbekiston Respublikasi Prezidenti Shavkat Mirziyoyev ishtirok etdi...</p>
-                </div>
-            </a>
+  <div class="container news__container">
+    <!-- Header -->
+    <div class="news__header">
+      <h2 class="news__title">Yangiliklar</h2>
 
-            <div class="news-main-grid">
-                <a href="#" class="news-main-card news-main-card--small">
-                    <img src="../../images/news-img-2.png" alt="">
-                    <div class="news-main-card__overlay">
-                        <div class="news-main-card__meta">
-                            <span class="news-main-card__date"><i class="i-calendar"></i> 13 Dekabr 2025</span>
-                            <span class="news-main-card__views"><i class="i-eye"></i> 325</span>
-                        </div>
-                        <h3 class="news-main-card__title">O'zbekistonning xalqaro aloqalari kengaymoqda.</h3>
-                        <p class="news-main-card__text">Samarqandda xalqaro ta'lim forumlari o'tkazilishi rejalashtiririlmoqda.</p>
-                    </div>
-                </a>
-                <a href="#" class="news-main-card news-main-card--small">
-                    <img src="../../images/news-img-3.png" alt="">
-                    <div class="news-main-card__overlay">
-                        <div class="news-main-card__meta">
-                            <span class="news-main-card__date"><i class="i-calendar"></i> 13 Dekabr 2025</span>
-                            <span class="news-main-card__views"><i class="i-eye"></i> 325</span>
-                        </div>
-                        <h3 class="news-main-card__title">O‘zbekistonning xalqaro aloqalari kengaymoqda.</h3>
-                        <p class="news-main-card__text">Samarqandda xalqaro ta’lim forumlari o‘tkazilishi rejalashtirilmoqda.</p>
-                    </div>
-                </a>
-                <a href="#" class="news-main-card news-main-card--small">
-                    <img src="../../images/news-img-4.png" alt="">
-                    <div class="news-main-card__overlay">
-                        <div class="news-main-card__meta">
-                            <span class="news-main-card__date"><i class="i-calendar"></i> 13 Dekabr 2025</span>
-                            <span class="news-main-card__views"><i class="i-eye"></i> 325</span>
-                        </div>
-                        <h3 class="news-main-card__title">O‘zbekiston ta’lim tizimi xalqaro standartlarga muvofiqlashtirilmoqda.</h3>
-                        <p class="news-main-card__text">2024-yilda yangi diplom dasturlari joriy etiladi.</p>
-                    </div>
-                </a>
-                <a href="#" class="news-main-card news-main-card--small">
-                    <img src="../../images/news-img-5.png" alt="">
-                    <div class="news-main-card__overlay">
-                        <div class="news-main-card__meta">
-                            <span class="news-main-card__date"><i class="i-calendar"></i> 13 Dekabr 2025</span>
-                            <span class="news-main-card__views"><i class="i-eye"></i> 325</span>
-                        </div>
-                        <h3 class="news-main-card__title">O‘zbekiston diplomlari endilikda 38 ta davlatda tan olinishi mumkin.</h3>
-                        <p class="news-main-card__text">25-noyabr kuni Xalq deputatlari Samarqand viloyati..</p>
-                    </div>
-                </a>
-                </div>
-        </div>
+      <a class="news__more" href="../../news-page.html">
+        <button class="news__btn" type="button">
+          Batafsil <i class="i-next"></i>
+        </button>
+      </a>
     </div>
+
+    <!-- Layout -->
+    <div class="news__layout">
+      <!-- Featured (left) -->
+      <a href="#" class="news__card news__card--featured">
+        <img class="news__card-img" src="../../images/news-img-1.png" alt="" />
+
+        <div class="news__card-overlay">
+          <div class="news__card-meta">
+            <span class="news__card-badge">
+              <i class="i-calendar"></i> <span>13 Dekabr 2025</span>
+            </span>
+            <span class="news__card-badge">
+              <i class="i-eye"></i> <span>325</span>
+            </span>
+          </div>
+
+          <h3 class="news__card-title">
+            Samarqand viloyati sessiyasida tashkiliy masala ko'rilib, kelgusi vazifalar belgilandi
+          </h3>
+
+          <p class="news__card-text">
+            25-noyabr kuni Xalq deputatlari Samarqand viloyat kengashining navbatdan tashqari sessiyasi bo'lib o'tdi.
+            Unda O'zbekiston Respublikasi Prezidenti Shavkat Mirziyoyev ishtirok etdi...
+          </p>
+        </div>
+      </a>
+
+      <!-- Right grid -->
+      <div class="news__grid">
+        <a href="#" class="news__card news__card--compact">
+          <img class="news__card-img" src="../../images/news-img-2.png" alt="" />
+          <div class="news__card-overlay">
+            <div class="news__card-meta">
+              <span class="news__card-badge"><i class="i-calendar"></i> <span>13 Dekabr 2025</span></span>
+              <span class="news__card-badge"><i class="i-eye"></i> <span>325</span></span>
+            </div>
+            <h3 class="news__card-title">O'zbekistonning xalqaro aloqalari kengaymoqda.</h3>
+            <p class="news__card-text">Samarqandda xalqaro ta'lim forumlari o'tkazilishi rejalashtiririlmoqda.</p>
+          </div>
+        </a>
+
+        <a href="#" class="news__card news__card--compact">
+          <img class="news__card-img" src="../../images/news-img-3.png" alt="" />
+          <div class="news__card-overlay">
+            <div class="news__card-meta">
+              <span class="news__card-badge"><i class="i-calendar"></i> <span>13 Dekabr 2025</span></span>
+              <span class="news__card-badge"><i class="i-eye"></i> <span>325</span></span>
+            </div>
+            <h3 class="news__card-title">O‘zbekistonning xalqaro aloqalari kengaymoqda.</h3>
+            <p class="news__card-text">Samarqandda xalqaro ta’lim forumlari o‘tkazilishi rejalashtirilmoqda.</p>
+          </div>
+        </a>
+
+        <a href="#" class="news__card news__card--compact">
+          <img class="news__card-img" src="../../images/news-img-4.png" alt="" />
+          <div class="news__card-overlay">
+            <div class="news__card-meta">
+              <span class="news__card-badge"><i class="i-calendar"></i> <span>13 Dekabr 2025</span></span>
+              <span class="news__card-badge"><i class="i-eye"></i> <span>325</span></span>
+            </div>
+            <h3 class="news__card-title">O‘zbekiston ta’lim tizimi xalqaro standartlarga muvofiqlashtirilmoqda.</h3>
+            <p class="news__card-text">2024-yilda yangi diplom dasturlari joriy etiladi.</p>
+          </div>
+        </a>
+
+        <a href="#" class="news__card news__card--compact">
+          <img class="news__card-img" src="../../images/news-img-5.png" alt="" />
+          <div class="news__card-overlay">
+            <div class="news__card-meta">
+              <span class="news__card-badge"><i class="i-calendar"></i> <span>13 Dekabr 2025</span></span>
+              <span class="news__card-badge"><i class="i-eye"></i> <span>325</span></span>
+            </div>
+            <h3 class="news__card-title">O‘zbekiston diplomlari endilikda 38 ta davlatda tan olinishi mumkin.</h3>
+            <p class="news__card-text">25-noyabr kuni Xalq deputatlari Samarqand viloyati..</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
 </section>

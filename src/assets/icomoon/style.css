@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?2qq178');
-  src:  url('fonts/icomoon.eot?2qq178#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?2qq178') format('truetype'),
-    url('fonts/icomoon.woff?2qq178') format('woff'),
-    url('fonts/icomoon.svg?2qq178#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?ozwmv7');
+  src:  url('fonts/icomoon.eot?ozwmv7#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?ozwmv7') format('truetype'),
+    url('fonts/icomoon.woff?ozwmv7') format('woff'),
+    url('fonts/icomoon.svg?ozwmv7#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -31,76 +31,78 @@
 .i-arrow-right:before {
   content: "\e901";
 }
-.i-calendar:before {
+.i-burger-button:before {
   content: "\e902";
 }
-.i-copy:before {
+.i-calendar:before {
   content: "\e903";
 }
-.i-download:before {
+.i-copy:before {
   content: "\e904";
 }
-.i-dropdown:before {
+.i-download:before {
   content: "\e905";
 }
-.i-email:before {
+.i-dropdown:before {
   content: "\e906";
 }
-.i-eye:before {
+.i-email:before {
   content: "\e907";
 }
-.i-facebook:before {
+.i-eye:before {
   content: "\e908";
 }
-.i-instagram:before {
+.i-facebook:before {
   content: "\e909";
 }
-.i-link:before {
+.i-instagram:before {
   content: "\e90a";
 }
-.i-linkedin:before {
+.i-link:before {
   content: "\e90b";
 }
-.i-location:before {
+.i-linkedin:before {
   content: "\e90c";
 }
-.i-maile:before {
+.i-location:before {
   content: "\e90d";
 }
-.i-message:before {
+.i-maile:before {
   content: "\e90e";
 }
-.i-money:before {
+.i-message:before {
   content: "\e90f";
 }
-.i-next:before {
+.i-money:before {
   content: "\e910";
 }
-.i-paperclip:before {
+.i-next:before {
   content: "\e911";
 }
-.i-phone:before {
+.i-paperclip:before {
   content: "\e912";
 }
-.i-pilus:before {
+.i-phone:before {
   content: "\e913";
 }
-.i-play:before {
+.i-pilus:before {
   content: "\e914";
 }
-.i-prev:before {
+.i-play:before {
   content: "\e915";
 }
-.i-printer:before {
+.i-prev:before {
   content: "\e916";
 }
-.i-search:before {
+.i-printer:before {
   content: "\e917";
-  font-size: 20px;
 }
-.i-telegram:before {
+.i-search:before {
   content: "\e918";
 }
-.i-youtube:before {
+.i-telegram:before {
   content: "\e919";
+}
+.i-youtube:before {
+  content: "\e91a";
 }

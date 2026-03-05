@@ -1,422 +1,224 @@
+:root {
+  --min-font: 14px;
+}
+
 .news {
-  padding: 80px 0;
+  padding: clamp(30px, 5vw, 80px) 0;
   background-color: #f9fafb;
 
-  @include devices(lg) {
-    padding: 60px 0;
+  &__container {
+    width: 100%;
   }
 
-  @include devices(md) {
-    padding: 50px 0;
-  }
-
-  @include devices(sm) {
-    padding: 40px 0;
-  }
-
-  @include devices(xs) {
-    padding: 30px 0;
-  }
-
-  &-text {
+  /* ===== Header ===== */
+  &__header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 30px;
-
-    @include devices(md) {
-      margin-bottom: 25px;
-    }
+    gap: 14px;
+    margin-bottom: clamp(18px, 3vw, 30px);
 
     @include devices(sm) {
       flex-direction: column;
       align-items: flex-start;
-      gap: 15px;
-      margin-bottom: 20px;
-    }
-
-    h2 {
-      color: #000000;
-      font-size: 36px;
-      font-weight: 700;
-
-      @include devices(lg) {
-        font-size: 32px;
-      }
-
-      @include devices(md) {
-        font-size: 28px;
-      }
-
-      @include devices(sm) {
-        font-size: 24px;
-      }
-
-      @include devices(xs) {
-        font-size: 22px;
-      }
-
-      @include devices(xxs) {
-        font-size: 20px;
-      }
-    }
-
-    button {
-      background: #f5f9ff;
-      background-size: 150% auto;
-      color: #145fcb;
-      border: none;
-      border: 1px solid #145fcb;
-      width: 118px;
-      padding: 10px;
-      border-radius: 12px;
-      display: flex;
-      justify-content: center;
-      font-size: 16px;
-      font-weight: 600;
-      align-items: center;
-      gap: 8px;
-      cursor: pointer;
-      flex-shrink: 0;
-
-      @include devices(lg) {
-        width: 110px;
-        padding: 9px;
-        font-size: 15px;
-      }
-
-      @include devices(md) {
-        width: 100px;
-        padding: 8px;
-        font-size: 14px;
-      }
-
-      @include devices(sm) {
-        width: auto;
-        padding: 8px 16px;
-        font-size: 14px;
-        gap: 6px;
-      }
-
-      @include devices(xs) {
-        padding: 7px 14px;
-        font-size: 13px;
-      }
-
-      @include devices(xxs) {
-        padding: 6px 12px;
-        font-size: 12px;
-      }
-
-      i {
-        transition: transform 0.3s ease;
-
-        @include devices(xs) {
-          font-size: 14px;
-        }
-
-        @include devices(xxs) {
-          font-size: 12px;
-        }
-      }
-
-      &:hover {
-        i {
-          transform: translateX(4px);
-        }
-      }
-
-      &:active {
-        transform: translateY(0) scale(0.96);
-        box-shadow: 0 2px 8px rgba(0, 113, 220, 0.2);
-      }
+      gap: 12px;
     }
   }
 
-  &-main {
+  &__title {
+    color: #000000;
+    font-size: clamp(20px, 2.4vw, 36px);
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.15;
+  }
+
+  &__more {
+    text-decoration: none;
+  }
+
+  /* ✅ min 14px */
+  &__btn {
+    background: #f5f9ff;
+    color: #145fcb;
+    border: 1px solid #145fcb;
+
+    padding: clamp(8px, 1.2vw, 10px) clamp(12px, 2vw, 16px);
+    border-radius: 12px;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(6px, 1vw, 8px);
+
+    cursor: pointer;
+    flex-shrink: 0;
+    width: fit-content;
+
+    font-size: clamp(var(--min-font), 1.2vw, 16px);
+    font-weight: 600;
+
+    i {
+      transition: transform 0.3s ease;
+    }
+
+    &:hover i {
+      transform: translateX(4px);
+    }
+
+    &:active {
+      transform: scale(0.96);
+      box-shadow: 0 2px 8px rgba(0, 113, 220, 0.2);
+    }
+  }
+
+  /* ===== Layout: featured + grid ===== */
+  &__layout {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    height: 600px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(14px, 2vw, 20px);
 
-    @include devices(lg) {
-      height: 500px;
-      gap: 16px;
-    }
-
-    @include devices(md) {
-      height: 450px;
-      gap: 14px;
-    }
+    /* eski fixed height o‘rniga responsiv */
+    min-height: clamp(420px, 55vw, 600px);
 
     @include devices(sm) {
       grid-template-columns: 1fr;
-      height: auto;
-      gap: 16px;
+      min-height: unset;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(12px, 1.6vw, 16px);
+
+    @include devices(sm) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* ===== Card (hammasi news ichida) ===== */
+  &__card {
+    position: relative;
+    border-radius: clamp(12px, 1.6vw, 20px);
+    overflow: hidden;
+    text-decoration: none;
+
+    /* featured (chap) baland, compact (o‘ng) grid bilan moslashadi */
+    height: 100%;
+
+    /* kompakt kartlar mobile’da balandligi ko‘rinadigan bo‘lsin */
+    @include devices(sm) {
+      min-height: 320px;
     }
 
-    &-card {
-      position: relative;
-      border-radius: 20px;
-      overflow: hidden;
+    &-img {
+      width: 100%;
       height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
 
-      @include devices(md) {
-        border-radius: 16px;
-      }
+    &:hover &-img {
+      transform: scale(1.05);
+    }
 
-      @include devices(sm) {
-        height: 350px;
-        border-radius: 14px;
-      }
+    &-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0) 40%,
+        rgba(0, 0, 0, 0.9) 100%
+      );
 
-      @include devices(xs) {
-        height: 300px;
-        border-radius: 12px;
-      }
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
 
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.5s ease;
-      }
+      padding: clamp(14px, 2vw, 24px);
+      color: #fff;
+    }
 
-      &:hover img {
-        transform: scale(1.05);
-      }
+    &-meta {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
 
-      &__overlay {
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.9) 100%);
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        padding: 24px;
-        color: #fff;
+      gap: clamp(8px, 1.2vw, 12px);
+      margin-bottom: clamp(10px, 1.6vw, 15px);
+    }
 
-        @include devices(md) {
-          padding: 20px;
-        }
+    /* ✅ min 14px */
+    &-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
 
-        @include devices(sm) {
-          padding: 16px;
-        }
+      background: #0634624d;
+      backdrop-filter: blur(8px);
+      padding: clamp(5px, 0.9vw, 7px) clamp(8px, 1.2vw, 10px);
+      border-radius: 6px;
 
-        @include devices(xs) {
-          padding: 14px;
-        }
-      }
+      font-size: clamp(var(--min-font), 1.1vw, 16px);
+      font-weight: 600;
+      color: #ffffff;
 
-      &__meta {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        margin-bottom: 15px;
-        flex-wrap: wrap;
-
-        @include devices(md) {
-          gap: 10px;
-          margin-bottom: 12px;
-        }
-
-        @include devices(sm) {
-          gap: 8px;
-          margin-bottom: 10px;
-        }
-
-        span {
-          display: flex;
-          align-items: center;
-          gap: 6px;
-          background: #0634624D;
-          backdrop-filter: blur(8px);
-          padding: 7px 10px;
-          opacity: 70%;
-          opacity: 1;
-          border-radius: 6px;
-          font-size: 16px;
-          font-weight: 600;
-          color: #ffffffff;
-          z-index: 100;
-
-          @include devices(md) {
-            padding: 6px 8px;
-            font-size: 12px;
-            gap: 5px;
-          }
-
-          @include devices(sm) {
-            padding: 5px 7px;
-            font-size: 11px;
-          }
-
-          @include devices(xs) {
-            padding: 4px 6px;
-            font-size: 10px;
-          }
-
-          i {
-            font-size: 20px;
-
-            @include devices(md) {
-              font-size: 18px;
-            }
-
-            @include devices(sm) {
-              font-size: 16px;
-            }
-
-            @include devices(xl) {
-              font-size: 14px;
-            }
-          }
-        }
-      }
-
-      &__title {
-        font-weight: 700;
-        margin-bottom: 10px;
-        line-height: 1.3;
-        color: #fff;
-
-        @include devices(md) {
-          margin-bottom: 8px;
-        }
-
-        @include devices(sm) {
-          margin-bottom: 6px;
-        }
-      }
-
-      &__text {
-        font-size: 15px;
-        opacity: 0.8;
-        line-height: 1.5;
-        margin: 0;
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-
-        @include devices(md) {
-          font-size: 14px;
-        }
-
-        @include devices(sm) {
-          font-size: 13px;
-          -webkit-line-clamp: 2;
-        }
-
-        @include devices(xs) {
-          font-size: 12px;
-        }
-      }
-
-      &--large {
-        .news-main-card__title {
-          font-size: 28px;
-
-          @include devices(lg) {
-            font-size: 24px;
-          }
-
-          @include devices(md) {
-            font-size: 22px;
-          }
-
-          @include devices(sm) {
-            font-size: 20px;
-          }
-
-          @include devices(xs) {
-            font-size: 18px;
-          }
-
-          @include devices(xxs) {
-            font-size: 16px;
-          }
-        }
-      }
-
-      &--small {
-        .news-main-card__title {
-          font-size: 16px;
-
-          @include devices(md) {
-            font-size: 15px;
-          }
-
-          @include devices(sm) {
-            font-size: 14px;
-          }
-
-          @include devices(xs) {
-            font-size: 13px;
-          }
-
-          @include devices(xxs) {
-            font-size: 12px;
-          }
-        }
-
-        .news-main-card__text {
-          font-size: 13px;
-
-          @include devices(md) {
-            font-size: 12px;
-          }
-
-          @include devices(sm) {
-            font-size: 11px;
-          }
-
-          @include devices(xs) {
-            font-size: 10px;
-          }
-        }
-
-        .news-main-card__overlay {
-          padding: 15px;
-
-          @include devices(md) {
-            padding: 12px;
-          }
-
-          @include devices(sm) {
-            padding: 10px;
-          }
-
-          @include devices(xs) {
-            padding: 8px;
-          }
-        }
+      i {
+        font-size: 1.2em;
       }
     }
 
-    &-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
-      gap: 16px;
-      height: 600px;
+    &-title {
+      font-weight: 700;
+      margin: 0 0 clamp(6px, 1vw, 10px);
+      line-height: 1.3;
+      color: #fff;
+    }
 
-      @include devices(lg) {
-        height: 500px;
-        gap: 14px;
+    /* ✅ min 14px */
+    &-text {
+      font-size: clamp(var(--min-font), 1.15vw, 15px);
+      opacity: 0.85;
+      line-height: 1.5;
+      margin: 0;
+
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    /* ===== Modifiers ===== */
+    &--featured {
+      .news__card-title {
+        font-size: clamp(18px, 2vw, 28px);
       }
 
-      @include devices(md) {
-        height: 450px;
-        gap: 12px;
+      .news__card-text {
+        -webkit-line-clamp: 3; /* featured’da ko‘proq matn chiqsin */
       }
+    }
+
+    &--compact {
+      min-height: clamp(200px, 18vw, 290px);
 
       @include devices(sm) {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
-        height: auto;
-        gap: 16px;
+        min-height: 280px;
+      }
+
+      .news__card-title {
+        font-size: clamp(var(--min-font), 1.2vw, 16px);
+      }
+
+      .news__card-text {
+        font-size: clamp(var(--min-font), 1.05vw, 13px);
+        -webkit-line-clamp: 2;
+      }
+
+      .news__card-overlay {
+        padding: clamp(10px, 1.3vw, 15px);
       }
     }
   }
