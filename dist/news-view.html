@@ -710,6 +710,26 @@
     });
 </script>
 
+<script>
+    $(document).ready(function () {
+    $(".international-carusel.owl-carousel").owlCarousel({
+      loop: true,
+      margin: 0,
+      nav: true,
+      dots: true,
+      autoplay: true,
+      autoplayTimeout: 3500,
+      smartSpeed: 600,
+      autoHeight: true,
+      responsive: {
+        0: { items: 1 },
+        768: { items: 3 },
+        1200: { items: 4 }
+      }
+    });
+  });
+</script>
+
 </body>
 
 </html>

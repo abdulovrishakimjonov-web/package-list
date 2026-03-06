@@ -107,9 +107,7 @@
     font-size: clamp(14px, 1.1vw, 16px);
     font-weight: 600;
 
-    transition:
-      transform 0.15s ease,
-      box-shadow 0.25s ease;
+    transition: transform 0.15s ease, box-shadow 0.25s ease;
 
     i {
       transition: transform 0.3s ease;
@@ -166,9 +164,7 @@
     background-color: #ffffff;
     position: relative;
 
-    transition:
-      transform 0.25s ease,
-      opacity 0.25s ease;
+    transition: transform 0.25s ease, opacity 0.25s ease;
     width: 100%;
     text-decoration: none;
     z-index: 10;
@@ -181,21 +177,27 @@
       content: "";
       position: absolute;
       inset: 0;
+      pointer-events: none;
+      z-index: 0;
+
       background-image: url("../../images/hover-gerb.svg");
       background-repeat: no-repeat;
 
-      background-size: clamp(80px, 8vw, 130px);
-      background-position: right clamp(60px, 10vw, 130px) bottom
-        clamp(24px, 5vw, 50px);
+      background-size: clamp(80px, 10vw, 160px);
 
-      transform: translateX(50%);
+      background-position: center;
+
+      transform: translateX(50%) scale(1);
+      transform-origin: center;
       transition: transform 0.45s ease;
-      z-index: 0;
-      pointer-events: none;
     }
 
     &:hover::before {
-      transform: translateX(0);
+      transform: translateX(0) scale(1.06);
+    }
+
+    &:hover {
+      transform: translateY(-1px);
     }
 
     > * {

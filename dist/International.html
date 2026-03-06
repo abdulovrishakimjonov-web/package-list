@@ -367,12 +367,16 @@
         <div class="container">
             <div class="layout-content">
                 <section class="international">
-    <div class="international-text">
-        <h2>Xalqaro hamkorlik</h2>
-        <div class="international-text-top"></div>
-        <p><strong>Milliy malaka tizimini rivojlantirish instituti tomonidan Xalqaro hamkorlik yo‘nalishida bir qator ishlar
-            amalga oshirilgan. Xususan:</strong></p>
-        <ul>
+  <div class="international-text">
+    <h2>Xalqaro hamkorlik</h2>
+    <div class="international-text-top"></div>
+    <p>
+      <strong>
+        Milliy malaka tizimini rivojlantirish instituti tomonidan Xalqaro hamkorlik
+        yo‘nalishida bir qator ishlar amalga oshirilgan. Xususan:
+      </strong>
+    </p>
+<ul>
             <li>2024-yil 15-17-oktyabr kunlari Bishkek shahrida <span>DARYA loyihasi</span> doirasida <span>“Markaziy
                     Osiyoda ko‘nikmalar va malakalar bo‘yicha mintaqaviy hamkorlik vaziyatlari”</span> mavzusida
                 o‘tkazilgan mintaqaviy seminarda ishtirok etildi.</li>
@@ -406,15 +410,26 @@
                 ularni validatsiya tizimini shakllantirishga qaratilgan navbatdagi loyihaga ishtirok etishga rozilik
                 berildi.</li>
         </ul>
-    </div>
+  </div>
 
-    <div class="international-carusel">
-        <img src="../../images/international-img-1.png" alt="">
-        <img src="../../images/international-img-2.png" alt="">
-        <img src="../../images/international-img-3.png" alt="">
-        <img src="../../images/international-img-4.png" alt="">
+  <div class="international-carusel owl-carousel">
+    <div class="international-carusel__item">
+      <img src="../../images/international-img-1.png" alt="International 1" />
     </div>
+    <div class="international-carusel__item">
+      <img src="../../images/international-img-2.png" alt="International 2" />
+    </div>
+    <div class="international-carusel__item">
+      <img src="../../images/international-img-3.png" alt="International 3" />
+    </div>
+    <div class="international-carusel__item">
+      <img src="../../images/international-img-4.png" alt="International 4" />
+    </div>
+  </div>
 </section>
+
+
+
             </div>
             <div class="layout-sidebar">
                 <div class="sidebar">
@@ -663,6 +678,26 @@
             }
         });
     });
+</script>
+
+<script>
+    $(document).ready(function () {
+    $(".international-carusel.owl-carousel").owlCarousel({
+      loop: true,
+      margin: 0,
+      nav: true,
+      dots: true,
+      autoplay: true,
+      autoplayTimeout: 3500,
+      smartSpeed: 600,
+      autoHeight: true,
+      responsive: {
+        0: { items: 1 },
+        768: { items: 3 },
+        1200: { items: 4 }
+      }
+    });
+  });
 </script>
 
 </body>

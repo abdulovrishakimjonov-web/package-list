@@ -402,15 +402,12 @@
         </div>
       </div>
 
-      <!-- DECOR -->
       <img src="../../images/qoshma-2.svg" alt="" class="lider__gerb" />
       <div class="lider__divider"></div>
 
-      <!-- RIGHT IMAGE -->
       <img src="../../images/Direktor.png" alt="" class="lider__image" />
     </div>
 
-    <!-- DETAILS (inside card) -->
     <div class="lider__detailsWrap">
       <div class="lider__details" data-id="tasks">
         <h5 class="lider__detailsTitle">Vazifalari</h5>
@@ -463,15 +460,12 @@
         </div>
       </div>
 
-      <!-- DECOR -->
       <img src="../../images/qoshma-2.svg" alt="" class="lider__gerb" />
       <div class="lider__divider"></div>
 
-      <!-- RIGHT IMAGE -->
       <img src="../../images/Direktor.png" alt="" class="lider__image" />
     </div>
 
-    <!-- DETAILS (inside card) -->
     <div class="lider__detailsWrap">
       <div class="lider__details" data-id="tasks">
         <h5 class="lider__detailsTitle">Vazifalari</h5>
@@ -524,15 +518,12 @@
         </div>
       </div>
 
-      <!-- DECOR -->
       <img src="../../images/qoshma-2.svg" alt="" class="lider__gerb" />
       <div class="lider__divider"></div>
 
-      <!-- RIGHT IMAGE -->
       <img src="../../images/Direktor.png" alt="" class="lider__image" />
     </div>
 
-    <!-- DETAILS (inside card) -->
     <div class="lider__detailsWrap">
       <div class="lider__details" data-id="tasks">
         <h5 class="lider__detailsTitle">Vazifalari</h5>
@@ -585,15 +576,12 @@
         </div>
       </div>
 
-      <!-- DECOR -->
       <img src="../../images/qoshma-2.svg" alt="" class="lider__gerb" />
       <div class="lider__divider"></div>
 
-      <!-- RIGHT IMAGE -->
       <img src="../../images/Direktor.png" alt="" class="lider__image" />
     </div>
 
-    <!-- DETAILS (inside card) -->
     <div class="lider__detailsWrap">
       <div class="lider__details" data-id="tasks">
         <h5 class="lider__detailsTitle">Vazifalari</h5>
@@ -612,7 +600,6 @@
     </div>
   </article>
 
-  <!-- QOLGAN CARDLAR: shu <article class="lider__card"> ni ko‘paytirasan -->
 </section>
 
 <script>
@@ -638,7 +625,6 @@
           const panel = wrap.querySelector(`.lider__details[data-id="${target}"]`);
           if (!panel) return;
 
-          // boshqa cardlarni yopish
           document.querySelectorAll(".lider__detailsWrap.is-open").forEach((w) => {
             if (w !== wrap) {
               w.classList.remove("is-open");
@@ -916,6 +902,26 @@
             }
         });
     });
+</script>
+
+<script>
+    $(document).ready(function () {
+    $(".international-carusel.owl-carousel").owlCarousel({
+      loop: true,
+      margin: 0,
+      nav: true,
+      dots: true,
+      autoplay: true,
+      autoplayTimeout: 3500,
+      smartSpeed: 600,
+      autoHeight: true,
+      responsive: {
+        0: { items: 1 },
+        768: { items: 3 },
+        1200: { items: 4 }
+      }
+    });
+  });
 </script>
 
 </body>

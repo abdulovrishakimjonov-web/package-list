@@ -75,10 +75,11 @@
     line-height: 1.2;
   }
 
+  /* ===== LINKS ===== */
   &__links {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: clamp(8px, 1.2vw, 16px);
+    flex-wrap: wrap;
+    display: flex;
+    gap: 16px;
     margin-bottom: clamp(10px, 1.2vw, 16px);
 
     @include devices(xl) {
@@ -92,7 +93,7 @@
   }
 
   &__link {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: clamp(6px, 1vw, 8px);
 
@@ -106,12 +107,12 @@
     background-color: #f4f8fd;
     border-radius: clamp(8px, 1vw, 12px);
 
-    min-width: 0;
+    width: fit-content;
+    max-width: 100%;
+
+    transition: all 0.25s ease;
 
     span {
-      min-width: 0;
-      overflow: hidden;
-      text-overflow: ellipsis;
       white-space: nowrap;
     }
 
@@ -119,6 +120,10 @@
       font-size: clamp(16px, 1.6vw, 24px);
       color: #145fcb;
       flex-shrink: 0;
+    }
+
+    &:hover {
+      background-color: #e9f2ff;
     }
   }
 
@@ -205,16 +210,6 @@
   }
 
   &__divider {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: calc(
-      100% - minmax(280px, 420px)
-    ); /* fallback emas, shuning uchun pastda aniqroq yo‘l */
-    display: none;
-  }
-
-  &__divider {
     display: block;
     position: absolute;
     top: 0;
@@ -260,10 +255,14 @@
     display: none;
     background: transparent;
 
-    padding: clamp(0px, 0vw, 20px) clamp(12px, 2vw, 25px) clamp(12px, 2vw, 25px);
+    padding: clamp(12px, 1.6vw, 20px)
+      clamp(18px, 2.2vw, 30px)
+      clamp(16px, 2vw, 24px);
 
     @include devices(md) {
-      padding: 0 clamp(12px, 2vw, 20px) clamp(12px, 2vw, 20px);
+      padding: clamp(12px, 1.6vw, 18px)
+        clamp(16px, 2vw, 20px)
+        clamp(14px, 1.8vw, 18px);
     }
 
     &.is-open {
@@ -273,16 +272,18 @@
 
   &__details {
     display: none;
-    background: transparent;
+
+    background: #f8fbff;
     border: 0;
     margin: 0;
-    padding: 0;
     border-radius: 12px;
+
+    padding: clamp(14px, 1.6vw, 20px);
+
     animation: liderSlideDown 0.3s ease-out;
 
     &.is-active {
       display: block;
-      padding-top: clamp(12px, 1.4vw, 18px);
       border-top: 1px solid #e3e8ef;
     }
   }
@@ -307,7 +308,7 @@
   }
 
   &__listItem {
-    padding-left: clamp(14px, 1.6vw, 20px);
+    padding-left: 16px;
     margin-bottom: clamp(6px, 1vw, 10px);
     position: relative;
     font-size: clamp(12px, 1.1vw, 16px);
@@ -315,7 +316,7 @@
 
     &::before {
       content: "-";
-      position: absolute;
+      position: absolute; 
       left: 0;
     }
   }

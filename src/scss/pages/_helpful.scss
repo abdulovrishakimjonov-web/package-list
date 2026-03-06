@@ -279,6 +279,7 @@
         background: #fff;
         border-radius: clamp(8px, 1vw, 10px);
         overflow: hidden;
+        padding: 0px 0px 0px 8px;
         transition: box-shadow 0.25s ease;
 
         &:hover {
@@ -287,7 +288,7 @@
 
         &.active {
           .accordion-toggle {
-
+            margin-bottom: 10px;
             span i {
               transform: rotate(45deg);
               color: red;
@@ -358,7 +359,7 @@
 
       .accordion-content {
         max-height: 0;
-        padding: 0 clamp(12px, 1.8vw, 20px);
+        padding: 0 clamp(8px, 1.9vw, 1px);
         overflow: hidden;
         opacity: 0;
         visibility: hidden;

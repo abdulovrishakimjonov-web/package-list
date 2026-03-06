@@ -283,7 +283,7 @@
     }
 
     @include devices(md) {
-      flex: 0 0 100%;
+      display: none;
     }
   }
 
@@ -332,9 +332,11 @@
 
     @include devices(sm) {
       flex-direction: column;
-      align-items: flex-start;
+      align-items: center;
       gap: 10px;
       padding-bottom: 16px;
+      text-align: center;
+      display: flex;
     }
 
     @include devices(xs) {
@@ -355,6 +357,7 @@
 
       @include devices(xs) {
         height: 20px;
+       
       }
     }
   }
